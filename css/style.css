@@ -34,6 +34,7 @@
 *     12.41 partie avis page-06 responsive
 *   13.0 main page07 quizz
 *     13.1 main page07 quizz responsive
+*   14.0 main page08 ajout media
 
 /* A-partie desktop */
 
@@ -125,6 +126,28 @@ border-radius: 10px;
   width: 35%;
   height: 1em;
 }
+.zone-remplir{
+  text-align: center;
+  height: 2em;
+  border: 1px solid black;
+  border-radius: 7px;
+}
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0.5em;
+    height: 2em;
+    width: 4.5em;
+    text-align: center;
+    background-color: grey;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
 /*1.1 commun responsive*/
 
 @media screen and (min-width:768px) {
@@ -868,12 +891,6 @@ main{
   border: 2px solid #FFDE59;
   border-radius: 10px;
 }
-.zone-remplir{
-  text-align: center;
-  height: 2em;
-  border: 1px solid black;
-  border-radius: 7px;
-}
 .validation{
   width: 7em;
   height: 2em;
@@ -1237,4 +1254,158 @@ main{
 @media screen and (min-width:768px) {
 }
 @media screen and (max-width:768px) {
+}
+/* 14.0 main page08 ajout media */
+
+#page08_main{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 2em;
+  font-size: 1.2em;
+}
+.main_main-contenu{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin-top: 2em;
+}
+.main-contenu_newMedia{
+  width: 100%;
+  height: 8em;
+}
+#main-contenu_box-haut{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#main-contenu_box-bas{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.box-haut_contain{
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+.contain_boxlist{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1%;
+}
+.box-haut_contain2{
+  padding: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 45%;
+}
+.boxlist_list{
+  width: 15em;
+}
+/* 14.0 main-head partie basse*/
+.box-bas_contain{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 40%;
+  max-width: 20em;
+}
+.zone-film{
+  width: 18em;
+}
+.btn-new-media{
+  margin-bottom: 2em;
+}
+
+/* 14.0 main-head partie affiche*/
+.main_affiche{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  min-height: 28em;
+  width: 90%;
+  padding: 2.5em 1%;
+}
+.affiche_container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.container_selection{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 1em;
+  padding: 0.5em;
+  cursor: pointer;
+}
+.container_selection:hover, .liste-ba_vid:hover{
+  border: 2px solid #FFDE59;
+  border-radius: 10px;
+  transform: scale(1.25);
+}
+.selection_img{
+
+  height: 15em;
+  width: 10em;
+}
+.selection_titre{
+  font-size: 1.4em;
+  margin: 0.2em;
+}
+
+/* 14.0 main-head partie afiche*/
+.main_ba{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  min-height: 14em;
+  width: 90%;
+  padding: 2.5em 1%;
+}
+.ba_liste-ba{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  cursor: pointer;
+}
+.liste-ba_vid{
+  margin: 2em 1em;
+}
+.vid{
+  height: 10.1em;
+  width: 18em;
+}
+.legende_texte{
+  font-size: 1.2em;
+  margin: 0.25em;
+}
+.sous-titre{
+  margin: 2em;
+}
+.btn-send{
+  font-size: 1.3em;
+}
+.js___select,  .js___BAselect{
+  border: 2px solid #FFDE59;
+  border-radius: 10px;
+  transform: scale(1.10);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.invisibility{
+  visibility: hidden;
 }

@@ -64,4 +64,5 @@
         </div>
     </footer>
 </body>
+<script src="script/JavaScript.js" defer></script>
 </html>
