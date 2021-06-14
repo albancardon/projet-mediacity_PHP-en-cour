@@ -6,8 +6,8 @@ include_once 'PHP/head.php'
 include_once 'PHP/header.php'
 ?>
 <main id="page08_main">
-    <h1 class="majuscule">Ajouter un nouveau media </br> sur le site</h1>
-    <form class="main_main-contenu boite-formulaire">
+    <h1 class="majuscule">Ajouter un nouveau media </br>sur le site</h1>
+    <form id="main08" class="main_main-contenu boite-formulaire">
         <div class="main-contenu_newMedia" id="main-contenu_box-haut">
             <section class="box-haut_contain">
                 <div class="contain_boxlist">
@@ -34,8 +34,8 @@ include_once 'PHP/header.php'
         </div>
         <div class="main-contenu_newMedia" id="main-contenu_box-bas">
             <div class="box-bas_contain">
-                <label for="nomFilm">Titre film</label>
-                <input class="zone-remplir zone-film" type="text" name="nomFilm" id="nomFilm" placeholder="Votre film" required />
+                <label for="nomFilm">Titre média</label>
+                <input class="zone-remplir zone-film" type="text" name="nomFilm" id="nomFilm" placeholder="Nom média" required />
             </div>
             <div type="button" class="btn btn-new-media" id="btn-valider">Valider</div>
         </div>
@@ -50,8 +50,23 @@ include_once 'PHP/header.php'
         <div id="js___baFilm" class="ba_liste-ba">
         </div>
     </article>
-    <button id="btn-envoyer" class="btn btn-send invisibility">Envoyer</button>
+    <a href="#modal1" id="btn-envoyer" class="btn btn-send js-modal invisibility">Envoyer</a>
 </main>
+
+<aside id="modal1" class="modal dial__hidden" aria-hidden="true" role="dialog" aria-labelledby="titlemodal" style="display:none;">
+    <form class="modal-ajoutBDD js-modal-stop">
+        <h3 class="titlemodal">
+            Ajouter à la base de donnée?
+        </h3>
+        <button class="js-modal-close">Non fermer la fenetre</button>
+        <div class="box-bas_contain">
+            <label for="nbCopie">Nombre de copies</label>
+            <input class="zone-remplir zone-film" type="text" name="nbCopie" id="nbCopie" placeholder="nombre copie"/>
+        </div>
+        <button class="js-btn-val js-modal-close">Oui, ajouter média</button>
+    </form>
+</aside>
+<script src="script/Javascript-page08.js" defer></script>
 <?php
 include_once 'PHP/footer.php'
 ?>

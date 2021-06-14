@@ -31,7 +31,7 @@ include_once 'PHP/header.php'
         </div>
         <div class="dialogue dial__hidden">
             <div class="block"></div>
-            <a href="#modal2" class="lien btn-quizz btn-start-modal js-modal">Passer au deuième questionnaire.</a>
+            <a href="#modal2" class="lien btn-quizz btn-start-modal js-modal">Passer au deuxième questionnaire.</a>
             <img class="img-mascote" src="img/page-07-quizz/mascotte-v02.png" alt="mascotte">
             <div class="block"></div>
         </div>

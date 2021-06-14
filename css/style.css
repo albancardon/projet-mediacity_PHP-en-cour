@@ -34,7 +34,16 @@
 *     12.41 partie avis page-06 responsive
 *   13.0 main page07 quizz
 *     13.1 main page07 quizz responsive
-*   14.0 main page08 ajout media
+*   14.0 main page-08 ajout media
+*     14.1 main-head partie haute page-08
+*     14.2 main-head partie basse page-08
+*     14.3 main partie affiche page-08
+*     14.4 partie basse page-08
+*   15.0 main page09 ajout media base de donnee
+*     15.1 main ajout media base de donnee page-09
+*     15.2 aside page-09 gestion media base de donnee page-09
+*/
+
 
 /* A-partie desktop */
 
@@ -43,6 +52,10 @@
 *{
   margin: 0;
   padding: 0;
+}
+.aside-back{
+  background-color: #0c1e5e;
+  color: white;
 }
 .majuscule{
 text-transform:uppercase;
@@ -147,6 +160,9 @@ border-radius: 10px;
     color: white;
     cursor: pointer;
 }
+.invisibility{
+  visibility: hidden;
+}
 
 /*1.1 commun responsive*/
 
@@ -218,7 +234,7 @@ header{
 .liste-nav{
   display: flex;
   justify-content: space-around;
-  width: 7em; 
+  width: 8em; 
 }
 #page01 #lien-page01{
   display: none;
@@ -1086,7 +1102,7 @@ main{
   margin-bottom: 1em;
   height: 2.5em;
   text-align: center;
-  background-color: #0c1e5e9c;;
+  background-color: #0c1e5e;
   border: 1px solid #FFDE59;
   border-radius: 8px;  
 }
@@ -1202,7 +1218,7 @@ main{
   padding: 20px;
   font-size: 1.7em;
   color: white;
-  background-color: #0c1e5e9c;
+  background-color: #0c1e5e;
   border: 2px solid #FFDE59;
   border-radius: 8px;  
   animation: slideFromRigth .3s both;
@@ -1255,7 +1271,9 @@ main{
 }
 @media screen and (max-width:768px) {
 }
-/* 14.0 main page08 ajout media */
+
+/* 14.0 main page-08 ajout media */
+/* 14.1 main-head partie haute page-08*/
 
 #page08_main{
   display: flex;
@@ -1273,8 +1291,8 @@ main{
   margin-top: 2em;
 }
 .main-contenu_newMedia{
+  margin-top: 2em;
   width: 100%;
-  height: 8em;
 }
 #main-contenu_box-haut{
   display: flex;
@@ -1308,28 +1326,32 @@ main{
 .boxlist_list{
   width: 15em;
 }
-/* 14.0 main-head partie basse*/
+
+/* 14.2 main-head partie basse page-08*/
 .box-bas_contain{
   display: flex;
   align-items: center;
+  align-content: space-between;
   justify-content: space-between;
-  width: 40%;
-  max-width: 20em;
+  min-width: 40%;
+  max-width: 25em;
+  margin: 0.5em;
 }
 .zone-film{
-  width: 18em;
+  width: 40%;
+  margin: 0.5em;
 }
 .btn-new-media{
   margin-bottom: 2em;
 }
 
-/* 14.0 main-head partie affiche*/
+/* 14.3 main partie affiche page-08*/
 .main_affiche{
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-  min-height: 28em;
+  min-height: 15em;
   width: 90%;
   padding: 2.5em 1%;
 }
@@ -1364,13 +1386,13 @@ main{
   margin: 0.2em;
 }
 
-/* 14.0 main-head partie afiche*/
+/* 14.4 partie basse page-08*/
 .main_ba{
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-  min-height: 14em;
+  min-height: 10em;
   width: 90%;
   padding: 2.5em 1%;
 }
@@ -1405,7 +1427,94 @@ main{
   transform: scale(1.10);
   background-color: rgba(255, 255, 255, 0.1);
 }
+.modal-ajoutBDD{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: auto;
+  width: 600px;
+  padding: 20px;
+  font-size: 1.3em;
+  color: white;
+  background-color: #0c1e5e;
+  border: 2px solid #FFDE59;
+  border-radius: 8px;  
+  animation: slideFromRigth .3s both;
+}
+.modal[aria-hidden="true"] .modal-ajoutBDD{
+  animation-name: slideFromLeft;
+}
 
-.invisibility{
-  visibility: hidden;
+/* 15.0 body gestion media base de donnee page-09*/
+/* 15.1 main ajout media base de donnee page-09*/
+#page09_main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 2em;
+}
+#main09{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 80%;
+}
+.boxlistP9{
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+}
+/* 15.2 aside page-09 gestion media base de donnee page-09*/
+
+#page09_aside{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.box-search{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 2em;
+  width: 80%;
+}
+.aside09__film-select{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  margin: 1em;
+  height: 25em;
+}
+.aside09__select-action{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  margin: 2em;
+  width: 100%;
+}
+.action__boxAction{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  margin: 2em;
+  width: 80%;
+}
+.boxAction_contain{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1em;
+  width: 80%;
 }
