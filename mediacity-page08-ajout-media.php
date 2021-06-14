@@ -14,6 +14,7 @@ include_once 'PHP/header.php'
                     <label for="type">Type de media</label>
                     <select name="type" id="type" class="boxlist_list" required>
                         <option value="">Choisissez un type</option>
+                        <option value="acc">Acceuil</option>
                         <option value="film">Film</option>
                         <option value="serie">Série</option>
                     </select>

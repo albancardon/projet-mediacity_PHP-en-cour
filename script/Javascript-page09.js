@@ -15,11 +15,16 @@ btnValider.addEventListener("click",getInfoFilm);
 btnEnvoyer.addEventListener("click",sendData);
 
 function reorganizationDate(dateENG){
-    let yearTemp = dateENG.split("-")[0];
-    let monthTemp = dateENG.split("-")[1];
-    let dayTemp = dateENG.split("-")[2];
-    let dateFRA = dayTemp +"-"+ monthTemp +"-"+ yearTemp;
-    return dateFRA
+    console.log(dateENG);
+    if (dateENG != undefined){
+        let yearTemp = dateENG.split("-")[0];
+        let monthTemp = dateENG.split("-")[1];
+        let dayTemp = dateENG.split("-")[2];
+        let dateFRA = dayTemp +"-"+ monthTemp +"-"+ yearTemp;
+        return dateFRA
+    }else {
+        return
+    }
 }
 
 function ajoutListeGenre(){
@@ -32,32 +37,7 @@ function ajoutListeGenre(){
     }
 
     let value = type.value;
-    if (value == "film"){
-        let option = document.createElement("option");
-        option.classList.add("optionGenre");
-        option.textContent = "Choisissez une option";
-        option.value="";
-        genre.appendChild(option);
-
-        let option1 = document.createElement("option");
-        option1.classList.add("optionGenre");
-        option1.textContent = "Action/aventure";
-        option1.value="act";
-        genre.appendChild(option1);
-
-        let option2 = document.createElement("option");
-        option2.classList.add("optionGenre");
-        option2.textContent = "Comedie/comique";
-        option2.value="com";
-        genre.appendChild(option2);
-
-        let option3 = document.createElement("option");
-        option3.classList.add("optionGenre");
-        option3.textContent = "Animation/famillial";
-        option3.value="fam";
-        genre.appendChild(option3);
-
-    }else if (value == "serie"){
+    if (value == "film" || value == "serie"){
         let option = document.createElement("option");
         option.classList.add("optionGenre");
         option.textContent = "Choisissez une option";

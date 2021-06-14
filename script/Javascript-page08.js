@@ -18,11 +18,16 @@ btnValider.addEventListener("click",getInfoFilm);
 btnEnvoyer.addEventListener("click",sendData);
 
 function reorganizationDate(dateENG){
-    let yearTemp = dateENG.split("-")[0];
-    let monthTemp = dateENG.split("-")[1];
-    let dayTemp = dateENG.split("-")[2];
-    let dateFRA = dayTemp +"-"+ monthTemp +"-"+ yearTemp;
-    return dateFRA
+    console.log(dateENG);
+    if (dateENG != undefined){
+        let yearTemp = dateENG.split("-")[0];
+        let monthTemp = dateENG.split("-")[1];
+        let dayTemp = dateENG.split("-")[2];
+        let dateFRA = dayTemp +"-"+ monthTemp +"-"+ yearTemp;
+        return dateFRA
+    }else {
+        return
+    }
 }
 
 function ajoutListeGenre(){
@@ -41,7 +46,7 @@ function ajoutListeGenre(){
     }
 
     let value = type.value;
-    if (value == "film"){
+    if (value == "acc"){
         let option = document.createElement("option");
         option.classList.add("optionGenre");
         option.textContent = "Choisissez une option";
@@ -50,29 +55,17 @@ function ajoutListeGenre(){
 
         let option1 = document.createElement("option");
         option1.classList.add("optionGenre");
-        option1.textContent = "Selection du chef";
-        option1.value="chef";
+        option1.textContent = "Film";
+        option1.value="ac-film";
         genre.appendChild(option1);
 
         let option2 = document.createElement("option");
         option2.classList.add("optionGenre");
-        option2.textContent = "Action/aventure";
-        option2.value="act";
+        option2.textContent = "Série";
+        option2.value="ac-Serie";
         genre.appendChild(option2);
 
-        let option3 = document.createElement("option");
-        option3.classList.add("optionGenre");
-        option3.textContent = "Comedie/comique";
-        option3.value="com";
-        genre.appendChild(option3);
-
-        let option4 = document.createElement("option");
-        option4.classList.add("optionGenre");
-        option4.textContent = "Animation/famillial";
-        option4.value="fam";
-        genre.appendChild(option4);
-
-    }else if (value == "serie"){
+    }else if (value == "film" || value == "serie"){
         let option = document.createElement("option");
         option.classList.add("optionGenre");
         option.textContent = "Choisissez une option";
@@ -118,7 +111,7 @@ function ajoutListeEmplacement(){
     }
 
     let value = genre.value;
-    if (value == "chef"){
+    if (value == "chef" || value == "ac-film" || value == "ac-serie"){
         let option = document.createElement("option");
         option.classList.add("optionEmplacement");
         option.textContent = "Choisissez une option";
@@ -143,71 +136,7 @@ function ajoutListeEmplacement(){
         option3.value="emp3";
         emplacement.appendChild(option3);
 
-    }else if (value == "act"){
-        let option = document.createElement("option");
-        option.classList.add("optionEmplacement");
-        option.textContent = "Choisissez une option";
-        option.value="";
-        emplacement.appendChild(option);
-
-        let option1 = document.createElement("option");
-        option1.classList.add("optionEmplacement");
-        option1.textContent = "Emplacement 1";
-        option1.value="emp1";
-        emplacement.appendChild(option1);
-
-        let option2 = document.createElement("option");
-        option2.classList.add("optionEmplacement");
-        option2.textContent = "Emplacement 2";
-        option2.value="emp2";
-        emplacement.appendChild(option2);
-
-        let option3 = document.createElement("option");
-        option3.classList.add("optionEmplacement");
-        option3.textContent = "Emplacement 3";
-        option3.value="emp3";
-        emplacement.appendChild(option3);
-
-        let option4 = document.createElement("option");
-        option4.classList.add("optionEmplacement");
-        option4.textContent = "Emplacement 4";
-        option4.value="emp4";
-        emplacement.appendChild(option4);
-
-    }else if (value == "com"){
-        let option = document.createElement("option");
-        option.classList.add("optionEmplacement");
-        option.textContent = "Choisissez une option";
-        option.value="";
-        emplacement.appendChild(option);
-
-        let option1 = document.createElement("option");
-        option1.classList.add("optionEmplacement");
-        option1.textContent = "Emplacement 1";
-        option1.value="emp1";
-        emplacement.appendChild(option1);
-
-        let option2 = document.createElement("option");
-        option2.classList.add("optionEmplacement");
-        option2.textContent = "Emplacement 2";
-        option2.value="emp2";
-        emplacement.appendChild(option2);
-
-        let option3 = document.createElement("option");
-        option3.classList.add("optionEmplacement");
-        option3.textContent = "Emplacement 3";
-        option3.value="emp3";
-        emplacement.appendChild(option3);
-
-        let option4 = document.createElement("option");
-        option4.classList.add("optionEmplacement");
-        option4.textContent = "Emplacement 4";
-        option4.value="emp4";
-        emplacement.appendChild(option4);
-
-    
-
-    }else if (value == "fam"){
+    }else if (value == "act" || value == "com" || value == "fam"){
         let option = document.createElement("option");
         option.classList.add("optionEmplacement");
         option.textContent = "Choisissez une option";
