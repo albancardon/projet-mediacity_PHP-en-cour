@@ -34,10 +34,11 @@ CREATE TABLE ressource(
 	idRessource int PRIMARY KEY AUTO_INCREMENT,
     media__idMedia int NOT NULL,
     titre VARCHAR (25) NOT NULL,
+    typeMedia VARCHAR (25) NOT NULL,
     genrePrincipale VARCHAR (25) NOT NULL,
     nbPossede smallint(3),
     disponibilite smallint(3),
-    reserver bool DEFAULT FALSE
+    reserver BOOLEAN DEFAULT FALSE
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE demande(
@@ -57,43 +58,59 @@ CREATE TABLE noteRessource(
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE contenuAccueil(
-	idContenuAccueil int PRIMARY KEY AUTO_INCREMENT,
-    type VARCHAR(25) NOT NULL,
-    genre VARCHAR (25) NOT NULL,
-    emplacement smallint(3),
+    media__idMedia int NOT NULL,
     titre VARCHAR (25) NOT NULL,
-    media__idMedia int NOT NULL
+    typeMedia VARCHAR(25) NOT NULL,
+    zoneEmplacement VARCHAR (25) NOT NULL,
+    emplacement smallint(3)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE contenuFilm(
-	idContenuAccueil int PRIMARY KEY AUTO_INCREMENT,
-    type VARCHAR(25) NOT NULL,
-    genre VARCHAR (25) NOT NULL,
-    emplacement smallint(3),
-    titre VARCHAR (25) NOT NULL,
     media__idMedia int NOT NULL,
+    titre VARCHAR (25) NOT NULL,
+    typeMedia VARCHAR(25) NOT NULL,
+    zoneEmplacement VARCHAR (25) NOT NULL,
+    emplacement smallint(3),
     idVideo VARCHAR (25) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE contenuSerie(
-	idContenuAccueil int PRIMARY KEY AUTO_INCREMENT,
-    type VARCHAR(25) NOT NULL,
-    genre VARCHAR (25) NOT NULL,
-    emplacement smallint(3),
-    titre VARCHAR (25) NOT NULL,
     media__idMedia int NOT NULL,
+    titre VARCHAR (25) NOT NULL,
+    typeMedia VARCHAR(25) NOT NULL,
+    zoneEmplacement VARCHAR (25) NOT NULL,
+    emplacement smallint(3),
     idVideo VARCHAR (25) NOT NULL
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE media(
+	idMedia int PRIMARY KEY ,
+    titre VARCHAR (25) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 ALTER TABLE listeCompte
 ADD CONSTRAINT fk_client_idUtilisateur FOREIGN KEY (client_idUtilisateur) REFERENCES client(idUtilisateur);
 
 ALTER TABLE locationReservation
-ADD CONSTRAINT fk_client_idUtilisateur2 FOREIGN KEY (client_idUtilisateur) REFERENCES client(idUtilisateur);
+ADD CONSTRAINT fk_client_idUtilisateur2 FOREIGN KEY (client_idUtilisateur) REFERENCES client(idUtilisateur),
+ADD CONSTRAINT fk_media_idMedia FOREIGN KEY (media__idMedia) REFERENCES media(idMedia);
 
 ALTER TABLE demande
-ADD CONSTRAINT fk_client_idUtilisateur4 FOREIGN KEY (client_idUtilisateur) REFERENCES client(idUtilisateur);
+ADD CONSTRAINT fk_client_idUtilisateur4 FOREIGN KEY (client_idUtilisateur) REFERENCES client(idUtilisateur),
+ADD CONSTRAINT fk_media_idMedia2 FOREIGN KEY (media__idMedia) REFERENCES media(idMedia);
 
 ALTER TABLE noteRessource
 ADD CONSTRAINT fk_client_idUtilisateur3 FOREIGN KEY (client_idUtilisateur) REFERENCES client(idUtilisateur),
 ADD CONSTRAINT fk_ressource_idRessource FOREIGN KEY (ressource_idRessource) REFERENCES ressource(idRessource);
+
+ALTER TABLE ressource
+ADD CONSTRAINT fk_media_idMedia3 FOREIGN KEY (media__idMedia) REFERENCES media(idMedia);
+
+ALTER TABLE contenuAccueil
+ADD CONSTRAINT fk_media_idMedia4 FOREIGN KEY (media__idMedia) REFERENCES media(idMedia);
+
+ALTER TABLE contenuFilm
+ADD CONSTRAINT fk_media_idMedia5 FOREIGN KEY (media__idMedia) REFERENCES media(idMedia);
+
+ALTER TABLE contenuSerie
+ADD CONSTRAINT fk_media_idMedia6 FOREIGN KEY (media__idMedia) REFERENCES media(idMedia);

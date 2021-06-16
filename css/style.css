@@ -266,6 +266,16 @@ header{
   width: 0;
   overflow: hidden;
 }
+#page08 #lien-page08{
+  display: none;
+  width: 0;
+  overflow: hidden;
+}
+#page09 #lien-page09{
+  display: none;
+  width: 0;
+  overflow: hidden;
+}
 
 /* 2.1 header nav responsive*/
 
