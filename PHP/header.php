@@ -50,7 +50,9 @@
                 <li id="lien-page06" class="liste-nav effet-lien"><a class="lien"
                         href="mediacity-page06-contact.php">contact</a></li>
                 <li id="lien-page08" class="liste-nav effet-lien"><a class="lien"
-                    href="mediacity-page08-ajout-media.php">contact</a></li>
+                    href="mediacity-page08-ajout-media.php">ajout media</a></li>
+                <li id="lien-page09" class="liste-nav effet-lien"><a class="lien"
+                    href="mediacity-page09-ajout-base-donnee.php">gestion media</a></li>
             </ul>
         </nav>
     </details>
