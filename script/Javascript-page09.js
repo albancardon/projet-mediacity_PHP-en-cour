@@ -17,6 +17,9 @@ var nbpossedeSelection = document.getElementById("nbpossede-selection");
 var idPosterSelection = document.getElementById("idPoster-selection");
 
 type.addEventListener("change",ajoutListeGenre);
+type.addEventListener("change",()=>changeData (typeSelection,type));
+genre.addEventListener("change",()=>changeData (genreSelection,genre));
+nbCopie.addEventListener("change",()=>changeData (nbpossedeSelection,nbCopie));
 btnValider.addEventListener("click",getInfoFilm);
 btnEnvoyer.addEventListener("click",sendData);
 
@@ -92,9 +95,9 @@ function getInfoFilm(){
 
     }
 
-    let invisibilityOld = document.getElementsByClassName("invisibility");
-    if (invisibilityOld.length<1){
-        btnEnvoyer.classList.add("invisibility")
+    let invisibilityBtnEnvoyerOld = document.getElementsByClassName("invisibilityBtnEnvoyer");
+    if (invisibilityBtnEnvoyerOld.length<1){
+        btnEnvoyer.classList.add("invisibilityBtnEnvoyer")
     }
 
     let afficheOld = document.getElementsByClassName("container_selection");
@@ -158,9 +161,9 @@ function selectionFilmPoster (recupdonnee){
 }
 
 function selectionMedia () {
-    let invisibilityOld = document.getElementsByClassName("invisibility");
-    if (invisibilityOld.length<1){
-        btnEnvoyer.classList.add("invisibility")
+    let invisibilityBtnEnvoyerOld = document.getElementsByClassName("invisibilityBtnEnvoyer");
+    if (invisibilityBtnEnvoyerOld.length<1){
+        btnEnvoyer.classList.add("invisibilityBtnEnvoyer")
     }
     let selctOld = document.getElementsByClassName("js___select");
     if (selctOld.length>0){
@@ -171,21 +174,14 @@ function selectionMedia () {
     this.classList.add("js___select");
     let idPosterRecupTemp = document.getElementsByName(this.id)[0].src;
     let titleRecup = document.getElementsByName(this.id)[1].innerHTML;
-    idSelection.value = this.id;
-    titreSelection.value = titleRecup;
-    typeSelection.value = type.value;
-    genreSelection.value = genre.value;
-    nbpossedeSelection.value = nbCopie.value;
-    idPosterRecup = idPosterRecupTemp.replace("https://image.tmdb.org/t/p/w500",'');
-    idPosterSelection.value = idPosterRecup;
-
-    btnEnvoyer.classList.remove("invisibility");
+    dataSend (this, titleRecup,idPosterRecupTemp);
+    btnEnvoyer.classList.remove("invisibilityBtnEnvoyer");
 }
 
 function resetPage(){
-    let invisibilityOld = document.getElementsByClassName("invisibility");
-    if (invisibilityOld.length<1){
-        btnEnvoyer.classList.add("invisibility")
+    let invisibilityBtnEnvoyerOld = document.getElementsByClassName("invisibilityBtnEnvoyer");
+    if (invisibilityBtnEnvoyerOld.length<1){
+        btnEnvoyer.classList.add("invisibilityBtnEnvoyer")
     }
     let afficheOld = document.getElementsByClassName("container_selection");
     if (afficheOld.length>0){
@@ -198,5 +194,55 @@ function resetPage(){
 
 function sendData(){
     resetPage();
-    alert("Nouveau média ajouter")
 }
+
+function dataSend (idRecup, titleRecup,idPosterRecupTemp){
+    idSelection.value = idRecup.id;
+    titreSelection.value = titleRecup;
+    idPosterRecup = idPosterRecupTemp.replace("https://image.tmdb.org/t/p/w500",'');
+    idPosterSelection.value = idPosterRecup;
+}
+
+function changeData (data,saisie){
+    data.value = saisie.value;
+}
+
+
+// partie deux/bas du site
+
+var btnValiderSearch = document.getElementById("btn-valider-search");
+var titleSearch = document.getElementById("titleSearch");
+var posterSearch = document.getElementById("posterSearch");
+var nomFilm = document.getElementById("nomFilm2");
+var filmSelect = document.getElementById("aside09__film-select");
+var titreRecherche = document.getElementById("titreRecherche");
+var btnValiderModifNb = document.getElementById("btn-valider-modifNb");
+
+btnValiderSearch.addEventListener("click", recupLinkPoster);
+btnValiderModifNb.addEventListener("click", (evt)=>{
+    let modifNbCopie = document.getElementById("modifNbCopie").value;
+    let modifNbCopieConfirm = document.getElementById("modifNbCopieConfirm").value;
+    if (modifNbCopie != modifNbCopieConfirm) {
+        alert("nombre entre non identique");
+        evt.preventDefault();
+    }});
+
+function recupLinkPoster (){
+    filmSelect.classList.remove("invisibility");
+    filmSelect.classList.add("aside09__film-select");
+    var xhr = new XMLHttpRequest();
+    let envoiNomFilm = nomFilm.value;
+    var page = "http://localhost/php_projet-CDA/projet-mediacity_PHP-en-cour/PHP/treatment/mediacity-get-ajax.php?nomFilmGet="+envoiNomFilm;
+    xhr.open("GET", page, true);
+    xhr.send(null);
+    xhr.onreadystatechange = function() {
+        if(xhr.readyState == 4 && (xhr.status == 200 || xhr.status ==0)){
+            reponse = xhr.responseText;
+            titleSearch.innerHTML = nomFilm.value;
+            posterSearch.setAttribute("src", "https://image.tmdb.org/t/p/w500"+reponse);
+            titreRecherche.value = envoiNomFilm;
+        }
+    }
+    
+}
+

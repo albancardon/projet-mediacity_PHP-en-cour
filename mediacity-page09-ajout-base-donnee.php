@@ -1,5 +1,5 @@
 <?php
-include_once 'PHP/head.php'
+include_once 'PHP/head.php';
 ?>
 <body id="page09">
 <?php
@@ -44,35 +44,35 @@ include_once 'PHP/header.php'
         <div id="js___posterFilm" class="affiche_container">
         </div>
     </article>
-    <form action="/php_projet-CDA/projet-mediacity-2021-06-16_PHP/PHP/treatment/mediacity-ajout-media-BDD.php"  method="get">
-    <input id="id-selection" type="text" name="id"/>
-    <input id="titre-selection" type="text" name="titre"/>
-    <input id="type-selection" type="text" name="type"/>
-    <input id="genre-selection" type="text" name="genre"/>
-    <input id="nbpossede-selection" type="text" name="nbpossede"/>
-    <input id="idPoster-selection" type="text" name="idPosterSelection"/>
-
-    <button id="btn-envoyer1" class="btn btn-send invisibility">Envoyer</button>
+    <form action="/php_projet-CDA/projet-mediacity_PHP-en-cour/PHP/treatment/mediacity-ajout-media-BDD.php"  method="get">
+        <input id="id-selection" type="text" name="id"/>
+        <input id="titre-selection" type="text" name="titre"/>
+        <input id="type-selection" type="text" name="type"/>
+        <input id="genre-selection" type="text" name="genre"/>
+        <input id="nbpossede-selection" type="text" name="nbpossede"/>
+        <input id="idPoster-selection" type="text" name="idPosterSelection"/>
+        <button id="btn-envoyer1" class="btn btn-send invisibilityBtnEnvoyer">Envoyer</button>
     </form>
 </main>
 <aside id="page09_aside" class="aside-back">
     <h2>Gestion Media </h2>
     <form class="boite-formulaire box-search">
         <div class="box-bas_contain">
-            <label for="nomFilm1">Titre média</label>
-            <input class="zone-remplir zone-film " type="text" name="nomFilm1" id="nomFilm1" placeholder="Nom média" required value="Jurassic parc" />
+            <label for="nomFilm2">Titre média</label>
+            <input class="zone-remplir zone-film " type="text" name="nomFilm2" id="nomFilm2" placeholder="Nom média" required value="jurassique park"/>
         </div>
-        <div type="button" class="btn btn-new-media" id="btn-valider-search">Valider</div>
+        <div class="btn btn-new-media" id="btn-valider-search">Valider</div>
     </form>
-    <article class="aside09__film-select">
-        <h3>Jurassic parc</h3>
+    <article id="aside09__film-select" class="invisibility">
+        <h3 id="titleSearch" class="majuscule"></h3>
         <div id="js___posterFilm" class="affiche_container">
-            <img class="selection_img" src="img/page-02-film/jurassic-park.jpg" alt="affiche jurassic park">
+            <img id="posterSearch" class="selection_img" src="">
         </div>
     </article>
-    <article class="aside09__select-action">
+    <article id="aside09__select-action">
         <h2>Que voulez vous faire?</h2>
-        <form  class="boite-formulaire action__boxAction">
+        <form action="/php_projet-CDA/projet-mediacity_PHP-en-cour/PHP/treatment/medicity-modif-quantite-BDD.php"  method="get" class="boite-formulaire action__boxAction">
+            <input id="titreRecherche" type="text" name="id"/>
             <div class="boxAction_contain">
                 <label for="modifNbCopie">
                     Modifier le nombre d'exemplaire que vous posséder?</br>
@@ -81,12 +81,12 @@ include_once 'PHP/header.php'
                 <input class="zone-remplir zone-film" type="text" name="modifNbCopie" id="modifNbCopie" placeholder="nouveau nombre copie" required />
             </div>
             <div class="boxAction_contain">
-                <label for="modifNbCopie1">
+                <label for="modifNbCopieConfirm">
                     Veuillez confirmer le nouveau nombre
                 </label>
-                <input class="zone-remplir zone-film" type="text" name="modifNbCopie1" id="modifNbCopie1" placeholder="nouveau nombre copie" required />
+                <input class="zone-remplir zone-film" type="text" name="modifNbCopieConfirm" id="modifNbCopieConfirm" placeholder="nouveau nombre copie" required />
             </div>
-            <div type="button" class="btn btn-new-media" id="btn-valider-modifNb">Valider</div>
+            <button class="btn btn-new-media" id="btn-valider-modifNb">Valider</button>
         </form>
         <form  class="boite-formulaire action__boxAction">
             <div class="boxAction_contain">

@@ -51,7 +51,7 @@ include_once 'PHP/header.php'
         <div id="js___baFilm" class="ba_liste-ba">
         </div>
     </article>
-    <a href="#modal1" id="btn-envoyer" class="btn btn-send js-modal invisibility">Envoyer</a>
+    <a href="#modal1" id="btn-envoyer" class="btn btn-send js-modal invisibilityBtnEnvoyer">Envoyer</a>
 </main>
 
 <aside id="modal1" class="modal dial__hidden" aria-hidden="true" role="dialog" aria-labelledby="titlemodal" style="display:none;">

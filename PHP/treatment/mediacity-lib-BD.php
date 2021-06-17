@@ -14,9 +14,9 @@ function connectionBDD(){
     }
 }
 
-function getData($conn,$nameTable,$nameOption,$emplacement){
+function getDataPage($conn,$nameTable,$zoneEmplacement,$emplacement){
     try{
-        $qry = $conn->query("SELECT * FROM ".$nameTable." WHERE zoneEmplacement = '".$nameOption."' AND emplacement = '".$emplacement."'");
+        $qry = $conn->query("SELECT * FROM ".$nameTable." WHERE zoneEmplacement = '".$zoneEmplacement."' AND emplacement = '".$emplacement."'");
         $donnees = $qry->fetchAll();
         return $donnees;
     } catch (PDOException $e) {
@@ -24,4 +24,17 @@ function getData($conn,$nameTable,$nameOption,$emplacement){
         die();
     }
 }
+
+function getDataModif($conn,$titre){
+    try{
+        $qry = $conn->query("SELECT * FROM ressource WHERE titre = '".$titre."'");
+        $donnees = $qry->fetchAll();
+        return $donnees;
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage() . "<br/>";
+        die();
+    }
+}
+
+$conn = connectionBDD();
 ?>

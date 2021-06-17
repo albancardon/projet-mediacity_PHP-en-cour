@@ -192,9 +192,9 @@ function getInfoFilm(){
 
     }
 
-    let invisibilityOld = document.getElementsByClassName("invisibility");
-    if (invisibilityOld.length<1){
-        btnEnvoyer.classList.add("invisibility")
+    let invisibilityBtnEnvoyerOld = document.getElementsByClassName("invisibilityBtnEnvoyer");
+    if (invisibilityBtnEnvoyerOld.length<1){
+        btnEnvoyer.classList.add("invisibilityBtnEnvoyer")
     }
 
     let baOld = document.getElementsByClassName("liste-ba_vid");
@@ -262,9 +262,9 @@ function selectionFilmPoster (recupdonnee){
 }
 
 function selectionFilmBa () {
-    let invisibilityOld = document.getElementsByClassName("invisibility");
-    if (invisibilityOld.length<1){
-        btnEnvoyer.classList.add("invisibility")
+    let invisibilityBtnEnvoyerOld = document.getElementsByClassName("invisibilityBtnEnvoyer");
+    if (invisibilityBtnEnvoyerOld.length<1){
+        btnEnvoyer.classList.add("invisibilityBtnEnvoyer")
     }
     let selctOld = document.getElementsByClassName("js___select");
     if (selctOld.length>0){
@@ -338,13 +338,13 @@ function baSelectionner () {
     console.log(this.parentElement.id);
     this.parentElement.classList.add("js___BAselect");
 
-    btnEnvoyer.classList.remove("invisibility");
+    btnEnvoyer.classList.remove("invisibilityBtnEnvoyer");
 }
 
 function resetPage(){
-    let invisibilityOld = document.getElementsByClassName("invisibility");
-    if (invisibilityOld.length<1){
-        btnEnvoyer.classList.add("invisibility")
+    let invisibilityBtnEnvoyerOld = document.getElementsByClassName("invisibilityBtnEnvoyer");
+    if (invisibilityBtnEnvoyerOld.length<1){
+        btnEnvoyer.classList.add("invisibilityBtnEnvoyer")
     }
     let baOld = document.getElementsByClassName("liste-ba_vid");
     if (baOld.length>0){
@@ -365,3 +365,4 @@ function sendData(){
     resetPage();
     alert("Nouveau média ajouter")
 }
+

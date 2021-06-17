@@ -33,9 +33,10 @@ CREATE TABLE locationReservation(
 CREATE TABLE ressource(
 	idRessource int PRIMARY KEY AUTO_INCREMENT,
     media__idMedia int NOT NULL,
-    titre VARCHAR (25) NOT NULL,
+    titre VARCHAR (50) NOT NULL,
     typeMedia VARCHAR (25) NOT NULL,
     genrePrincipale VARCHAR (25) NOT NULL,
+    idPoster VARCHAR (40) NOT NULL,
     nbPossede smallint(3),
     disponibilite smallint(3),
     reserver BOOLEAN DEFAULT FALSE
@@ -59,33 +60,36 @@ CREATE TABLE noteRessource(
 
 CREATE TABLE contenuAccueil(
     media__idMedia int NOT NULL,
-    titre VARCHAR (25) NOT NULL,
+    titre VARCHAR (50) NOT NULL,
     typeMedia VARCHAR(25) NOT NULL,
     zoneEmplacement VARCHAR (25) NOT NULL,
-    emplacement smallint(3)
+    emplacement VARCHAR (5) NOT NULL,
+    idPoster VARCHAR (40) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE contenuFilm(
     media__idMedia int NOT NULL,
-    titre VARCHAR (25) NOT NULL,
+    titre VARCHAR (50) NOT NULL,
     typeMedia VARCHAR(25) NOT NULL,
     zoneEmplacement VARCHAR (25) NOT NULL,
-    emplacement smallint(3),
+    emplacement VARCHAR (5) NOT NULL,
+    idPoster VARCHAR (40) NOT NULL,
     idVideo VARCHAR (25) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE contenuSerie(
     media__idMedia int NOT NULL,
-    titre VARCHAR (25) NOT NULL,
+    titre VARCHAR (50) NOT NULL,
     typeMedia VARCHAR(25) NOT NULL,
     zoneEmplacement VARCHAR (25) NOT NULL,
-    emplacement smallint(3),
+    emplacement VARCHAR (5) NOT NULL,
+    idPoster VARCHAR (40) NOT NULL,
     idVideo VARCHAR (25) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE media(
 	idMedia int PRIMARY KEY ,
-    titre VARCHAR (25) NOT NULL
+    titre VARCHAR (50) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 ALTER TABLE listeCompte

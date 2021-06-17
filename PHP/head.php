@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
-
+<?php
+include_once 'PHP/treatment/mediacity-lib-BD.php';
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

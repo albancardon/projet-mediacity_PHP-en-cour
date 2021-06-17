@@ -1,8 +1,6 @@
 <?php
 include_once 'mediacity-lib-BD.php';
 
-$conn = connectionBDD();
-
 function ajoutMedia ($conn, $idMedia, $titre){
     try{
         $qry = $conn->prepare("INSERT INTO media (idMedia, titre) Values (?, ?)");
@@ -12,8 +10,20 @@ function ajoutMedia ($conn, $idMedia, $titre){
         $qry->execute();
         
     
-    } catch (PDOException $e) {
-        print "Erreur !: " . $e->getMessage() . "<br/>";
+    } catch (PDOException $e) { 
+        $codErreur = "SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '".$idMedia."' for key 'PRIMARY'";
+        $exeption = $e->getMessage();
+        if ($exeption==$codErreur){
+            echo "
+                <div style='display:flex; flex-direction: column; text-align: center;'>
+                    <h2>Erreur !</h2>
+                    <h3>Ce média existe déjà  dans la base de donnée!</h3>
+                    <a href='../../mediacity-page09-ajout-base-donnee.php'>Retour à page ajout de film</a>
+                </div>";
+        }else{
+            print $e->getMessage();
+            print "Erreur !: " . $e->getMessage() . "<br/>";
+        }
         die();
     }
 }
@@ -41,7 +51,6 @@ function recupDonneeEntre(){
     // Récupération des valeurs saisies et application sécurité
     foreach ($_GET as $key => $value) {
         $params[':' . $key] = (isset($_GET[$key]) && !empty($_GET[$key])) ? htmlspecialchars($_GET[$key]) : null;
-        echo $value;
     }
     $conn = connectionBDD();
     $idMedia =  $params[":id"];
@@ -52,10 +61,10 @@ function recupDonneeEntre(){
     $idposter =  $params[":idPosterSelection"];
     $reserver = FALSE;
     
-    // ajoutMedia ($conn, $idMedia, $titre);
+    ajoutMedia ($conn, $idMedia, $titre);
     ajoutRessource ($conn, $idMedia, $titre, $typeMedia, $genrePrincipale, $nbPossede, $reserver, $idposter);
     
-    header('Location: /php_projet-CDA/projet-mediacity-2021-06-16_PHP/mediacity-page09-ajout-base-donnee.php');
+    header('Location: /php_projet-CDA/projet-mediacity_PHP-en-cour/mediacity-page09-ajout-base-donnee.php');
     exit();
 }
 

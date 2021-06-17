@@ -543,16 +543,7 @@ include_once 'PHP/header.php'
     <input class="btn-quizz btn-valider js-btn-val js-modal-close" type="submit" value="Valider le quizz">
     </form>
 </aside>
-<!--slogant recurant avant footer-->
-<aside class="slogan-avant-footer majuscule">
-    <p class="texte-slogan">
-        vous aussi rejoignez
-        <span class="saut-ligne"></span>
-        la communauté de l'abo dès maintenant!
-        <span class="saut-ligne"></span>
-    </p>
-        <a class="lien boite-ici" href="mediacity-page05-infos.html">ici</a>
-</aside>
 <?php
-include_once 'PHP/footer.php'
+include_once 'PHP/slogan.php';
+include_once 'PHP/footer.php';
 ?>

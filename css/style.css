@@ -162,8 +162,13 @@ border-radius: 10px;
 }
 .invisibility{
   visibility: hidden;
+  display: none;
+  margin: 0;
+  padding: 0;
 }
-
+.invisibilityBtnEnvoyer{
+  visibility: hidden;
+}
 /*1.1 commun responsive*/
 
 @media screen and (min-width:768px) {
@@ -1505,7 +1510,7 @@ main{
   margin: 1em;
   height: 25em;
 }
-.aside09__select-action{
+#aside09__select-action{
   display: flex;
   align-items: center;
   justify-content: space-around;
