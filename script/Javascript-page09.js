@@ -3,19 +3,24 @@
 
 var type = document.getElementById("type1");
 var genre = document.getElementById("genre1");
+var nbCopie = document.getElementById("nbCopie");
 var filmName = document.getElementById("nomFilm1");
 var btnValider = document.getElementById("btn-valider1");
 var posterFilm = document.getElementById("js___posterFilm");
 var btnEnvoyer = document.getElementById("btn-envoyer1");
 var form = document.getElementById("main09");
-var nbCopie = document.getElementById("nbCopie");
+var idSelection = document.getElementById("id-selection");
+var titreSelection = document.getElementById("titre-selection");
+var typeSelection = document.getElementById("type-selection");
+var genreSelection = document.getElementById("genre-selection");
+var nbpossedeSelection = document.getElementById("nbpossede-selection");
+var idPosterSelection = document.getElementById("idPoster-selection");
 
 type.addEventListener("change",ajoutListeGenre);
 btnValider.addEventListener("click",getInfoFilm);
 btnEnvoyer.addEventListener("click",sendData);
 
 function reorganizationDate(dateENG){
-    console.log(dateENG);
     if (dateENG != undefined){
         let yearTemp = dateENG.split("-")[0];
         let monthTemp = dateENG.split("-")[1];
@@ -100,8 +105,8 @@ function getInfoFilm(){
     }
     let filmNameRecup = filmName.value;
     let xhr = new XMLHttpRequest();
-    let api = "https://api.themoviedb.org/3/search/movie?api_key=369494a80cb8a4b4357c06142e1b61cf&language=FR&query="+filmNameRecup;
-    xhr.open("GET", api, true);
+    let api1 = "https://api.themoviedb.org/3/search/multi?api_key=369494a80cb8a4b4357c06142e1b61cf&language=fr-FR&query="+filmNameRecup;
+    xhr.open("GET", api1, true);
     xhr.send();
     xhr.onreadystatechange = function() {
         if(xhr.readyState == 4 && (xhr.status == 200 || xhr.status ==0)){
@@ -119,6 +124,9 @@ function getInfoFilm(){
 function selectionFilmPoster (recupdonnee){
     for (i = 0; i < recupdonnee.length; i++) {
         let titleTemp = recupdonnee[i].title;
+        if (titleTemp == undefined){
+            titleTemp = recupdonnee[i].name;
+        }
         let linkPosterTemp = recupdonnee[i].poster_path;
         let dateTemp = recupdonnee[i].release_date;
         let idTemp = recupdonnee[i].id;
@@ -130,9 +138,11 @@ function selectionFilmPoster (recupdonnee){
 
         let img = document.createElement("img");
         img.classList.add("selection_img");
+        img.setAttribute("name", idTemp);
         img.setAttribute("src", "https://image.tmdb.org/t/p/w500"+linkPosterTemp);
 
         let pTitle = document.createElement("p");
+        pTitle.setAttribute("name", idTemp);
         pTitle.classList.add("selection_titre");
         pTitle.innerHTML = titleTemp;
 
@@ -159,6 +169,16 @@ function selectionMedia () {
         }
     }
     this.classList.add("js___select");
+    let idPosterRecupTemp = document.getElementsByName(this.id)[0].src;
+    let titleRecup = document.getElementsByName(this.id)[1].innerHTML;
+    idSelection.value = this.id;
+    titreSelection.value = titleRecup;
+    typeSelection.value = type.value;
+    genreSelection.value = genre.value;
+    nbpossedeSelection.value = nbCopie.value;
+    idPosterRecup = idPosterRecupTemp.replace("https://image.tmdb.org/t/p/w500",'');
+    idPosterSelection.value = idPosterRecup;
+
     btnEnvoyer.classList.remove("invisibility");
 }
 

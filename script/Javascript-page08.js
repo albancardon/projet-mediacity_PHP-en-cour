@@ -18,7 +18,6 @@ btnValider.addEventListener("click",getInfoFilm);
 btnEnvoyer.addEventListener("click",sendData);
 
 function reorganizationDate(dateENG){
-    console.log(dateENG);
     if (dateENG != undefined){
         let yearTemp = dateENG.split("-")[0];
         let monthTemp = dateENG.split("-")[1];
@@ -62,7 +61,7 @@ function ajoutListeGenre(){
         let option2 = document.createElement("option");
         option2.classList.add("optionGenre");
         option2.textContent = "Série";
-        option2.value="ac-Serie";
+        option2.value="ac-serie";
         genre.appendChild(option2);
 
     }else if (value == "film" || value == "serie"){
@@ -169,7 +168,7 @@ function ajoutListeEmplacement(){
 
     }
     else{
-        alert("Erreur Saisie");
+        alert("Erreur Saisie1");
     }
 }
 
@@ -212,8 +211,8 @@ function getInfoFilm(){
     }
     let filmNameRecup = filmName.value;
     let xhr = new XMLHttpRequest();
-    let api = "https://api.themoviedb.org/3/search/movie?api_key=369494a80cb8a4b4357c06142e1b61cf&language=FR&query="+filmNameRecup;
-    xhr.open("GET", api, true);
+    let api1 = "https://api.themoviedb.org/3/search/multi?api_key=369494a80cb8a4b4357c06142e1b61cf&language=fr-FR&query="+filmNameRecup;
+    xhr.open("GET", api1, true);
     xhr.send();
     xhr.onreadystatechange = function() {
         if(xhr.readyState == 4 && (xhr.status == 200 || xhr.status ==0)){
@@ -231,6 +230,9 @@ function getInfoFilm(){
 function selectionFilmPoster (recupdonnee){
     for (i = 0; i < recupdonnee.length; i++) {
         let titleTemp = recupdonnee[i].title;
+        if (titleTemp == undefined){
+            titleTemp = recupdonnee[i].name;
+        }
         let linkPosterTemp = recupdonnee[i].poster_path;
         let dateTemp = recupdonnee[i].release_date;
         let idTemp = recupdonnee[i].id;
@@ -278,6 +280,7 @@ function selectionFilmBa () {
         }
     }
     let idRecupTemp = this.id;
+    console.log(idRecupTemp);
     let xhr = new XMLHttpRequest();
     let api = "http://api.themoviedb.org/3/movie/" + idRecupTemp + "/videos?api_key=155fc5a9bbcf6f9a6241b3dbaf8b1656&append_to_response=videos&language=fr-FR";
     xhr.open("GET", api, true);
@@ -332,6 +335,7 @@ function baSelectionner () {
             BAselctOld[y].classList.remove("js___BAselect");
         }
     }
+    console.log(this.parentElement.id);
     this.parentElement.classList.add("js___BAselect");
 
     btnEnvoyer.classList.remove("invisibility");

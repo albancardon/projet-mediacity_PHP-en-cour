@@ -44,7 +44,16 @@ include_once 'PHP/header.php'
         <div id="js___posterFilm" class="affiche_container">
         </div>
     </article>
+    <form action="/php_projet-CDA/projet-mediacity-2021-06-16_PHP/PHP/treatment/mediacity-ajout-media-BDD.php"  method="get">
+    <input id="id-selection" type="text" name="id"/>
+    <input id="titre-selection" type="text" name="titre"/>
+    <input id="type-selection" type="text" name="type"/>
+    <input id="genre-selection" type="text" name="genre"/>
+    <input id="nbpossede-selection" type="text" name="nbpossede"/>
+    <input id="idPoster-selection" type="text" name="idPosterSelection"/>
+
     <button id="btn-envoyer1" class="btn btn-send invisibility">Envoyer</button>
+    </form>
 </main>
 <aside id="page09_aside" class="aside-back">
     <h2>Gestion Media </h2>

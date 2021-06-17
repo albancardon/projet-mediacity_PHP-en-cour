@@ -11,7 +11,7 @@ include_once 'PHP/header.php'
         <div class="main-contenu_newMedia" id="main-contenu_box-haut">
             <section class="box-haut_contain">
                 <div class="contain_boxlist">
-                    <label for="type">Type de media</label>
+                    <label for="type">Page du media</label>
                     <select name="type" id="type" class="boxlist_list" required>
                         <option value="">Choisissez un type</option>
                         <option value="acc">Acceuil</option>
@@ -57,9 +57,8 @@ include_once 'PHP/header.php'
 <aside id="modal1" class="modal dial__hidden" aria-hidden="true" role="dialog" aria-labelledby="titlemodal" style="display:none;">
     <form class="modal-ajoutBDD js-modal-stop">
         <h3 class="titlemodal">
-            Ajouter à la base de donnée?
+            Nombre de copie possédé?
         </h3>
-        <button class="js-modal-close">Non fermer la fenetre</button>
         <div class="box-bas_contain">
             <label for="nbCopie">Nombre de copies</label>
             <input class="zone-remplir zone-film" type="text" name="nbCopie" id="nbCopie" placeholder="nombre copie"/>
