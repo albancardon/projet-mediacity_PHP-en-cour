@@ -1,27 +1,26 @@
 
 CREATE TABLE listeCompte(
-	identifiant int PRIMARY KEY AUTO_INCREMENT,
-    client_idUtilisateur int NOT NULL,
+    users_idUtilisateur int NOT NULL,
 	pseudo VARCHAR(20) NOT NULL UNIQUE,
 	pass VARCHAR(255) NOT NULL,
-    typeCompte smallint(10) NOT NULL
+    typeCompte VARCHAR(10) NOT NULL,
+	preference VARCHAR(50) DEFAULT NULL,
+	penalite smallint(4) DEFAULT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE client(
+CREATE TABLE users(
 	idUtilisateur int PRIMARY KEY AUTO_INCREMENT,
     nom VARCHAR(25) NOT NULL,
 	prenom VARCHAR(20) NOT NULL,
 	age smallint(2) NOT NULL,
-	tel smallint(10) NOT NULL,
-	mail VARCHAR(255) NOT NULL UNIQUE,
-	preference VARCHAR(50) DEFAULT NULL,
-	penalite smallint(4) DEFAULT NULL,
-    autorisation VARCHAR(25) NOT NULL
+	tel VARCHAR (25) NOT NULL,
+	mail VARCHAR(100) NOT NULL UNIQUE,
+	codePostal INT(10) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE locationReservation(
 	idLocation int PRIMARY KEY AUTO_INCREMENT,
-    client_idUtilisateur int NOT NULL,
+    users_idUtilisateur int NOT NULL,
     media__idMedia int NOT NULL,
     typeInteraction VARCHAR(15) NOT NULL,
     dateRetrait date DEFAULT NULL,
@@ -44,13 +43,13 @@ CREATE TABLE ressource(
 
 CREATE TABLE demande(
 	idDemande int PRIMARY KEY AUTO_INCREMENT,
-    client_idUtilisateur int NOT NULL,
+    users_idUtilisateur int NOT NULL,
     media__idMedia int NOT NULL,
     nbDemande smallint (3) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE noteRessource(
-    client_idUtilisateur int NOT NULL,
+    users_idUtilisateur int NOT NULL,
     ressource_idRessource int NOT NULL,
     noteDonner smallint(2) NOT NULL,
     nbNote smallint(4) NOT NULL,
@@ -93,18 +92,18 @@ CREATE TABLE media(
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 ALTER TABLE listeCompte
-ADD CONSTRAINT fk_client_idUtilisateur FOREIGN KEY (client_idUtilisateur) REFERENCES client(idUtilisateur);
+ADD CONSTRAINT fk_users_idUtilisateur FOREIGN KEY (users_idUtilisateur) REFERENCES users(idUtilisateur);
 
 ALTER TABLE locationReservation
-ADD CONSTRAINT fk_client_idUtilisateur2 FOREIGN KEY (client_idUtilisateur) REFERENCES client(idUtilisateur),
+ADD CONSTRAINT fk_users_idUtilisateur2 FOREIGN KEY (users_idUtilisateur) REFERENCES users(idUtilisateur),
 ADD CONSTRAINT fk_media_idMedia FOREIGN KEY (media__idMedia) REFERENCES media(idMedia);
 
 ALTER TABLE demande
-ADD CONSTRAINT fk_client_idUtilisateur4 FOREIGN KEY (client_idUtilisateur) REFERENCES client(idUtilisateur),
+ADD CONSTRAINT fk_users_idUtilisateur4 FOREIGN KEY (users_idUtilisateur) REFERENCES users(idUtilisateur),
 ADD CONSTRAINT fk_media_idMedia2 FOREIGN KEY (media__idMedia) REFERENCES media(idMedia);
 
 ALTER TABLE noteRessource
-ADD CONSTRAINT fk_client_idUtilisateur3 FOREIGN KEY (client_idUtilisateur) REFERENCES client(idUtilisateur),
+ADD CONSTRAINT fk_users_idUtilisateur3 FOREIGN KEY (users_idUtilisateur) REFERENCES users(idUtilisateur),
 ADD CONSTRAINT fk_ressource_idRessource FOREIGN KEY (ressource_idRessource) REFERENCES ressource(idRessource);
 
 ALTER TABLE ressource

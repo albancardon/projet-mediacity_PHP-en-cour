@@ -18,7 +18,7 @@ function ajoutMedia ($conn, $idMedia, $titre){
                 <div style='display:flex; flex-direction: column; text-align: center;'>
                     <h2>Erreur !</h2>
                     <h3>Ce média existe déjà  dans la base de donnée!</h3>
-                    <a href='../../mediacity-page09-ajout-base-donnee.php'>Retour à page ajout de film</a>
+                    <a href='../../mediacity-page09-gestion-base-donnee.php'>Retour à page ajout de film</a>
                 </div>";
         }else{
             print $e->getMessage();
@@ -64,7 +64,7 @@ function recupDonneeEntre(){
     ajoutMedia ($conn, $idMedia, $titre);
     ajoutRessource ($conn, $idMedia, $titre, $typeMedia, $genrePrincipale, $nbPossede, $reserver, $idposter);
     
-    header('Location: /php_projet-CDA/projet-mediacity_PHP-en-cour/mediacity-page09-ajout-base-donnee.php');
+    header('Location: /php_projet-CDA/projet-mediacity_PHP-en-cour/mediacity-page09-gestion-base-donnee.php');
     exit();
 }
 

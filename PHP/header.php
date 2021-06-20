@@ -16,12 +16,15 @@
                 href="mediacity-page04-musique.php">musiques</a></li>
             <li id="lien-page05" class="liste-nav effet-lien"><a class="lien"
                 href="mediacity-page05-infos.php">infos</a></li>
-            <li id="lien-page06" class="liste-nav effet-lien"><a class="lien"
-                href="mediacity-page06-contact.php">contact</a></li>
             <li id="lien-page08" class="liste-nav effet-lien"><a class="lien"
-                href="mediacity-page08-ajout-media.php">ajout site</a></li>
+                href="mediacity-page08-ajout-site.php">ajout site</a></li>
             <li id="lien-page09" class="liste-nav effet-lien"><a class="lien"
-                href="mediacity-page09-ajout-base-donnee.php">gestion media</a></li>
+                href="mediacity-page09-gestion-base-donnee.php">gestion media</a></li>
+            <li id="lien-page06" class="liste-nav effet-lien">
+                <a class="lien" href="mediacity-page06-contact.php">
+                    <img class="reseau" src="logo/user.svg" alt="logo user">
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
@@ -50,9 +53,14 @@
                 <li id="lien-page06" class="liste-nav effet-lien"><a class="lien"
                         href="mediacity-page06-contact.php">contact</a></li>
                 <li id="lien-page08" class="liste-nav effet-lien"><a class="lien"
-                    href="mediacity-page08-ajout-media.php">ajout media</a></li>
+                    href="mediacity-page08-ajout-site.php">ajout media</a></li>
                 <li id="lien-page09" class="liste-nav effet-lien"><a class="lien"
-                    href="mediacity-page09-ajout-base-donnee.php">gestion media</a></li>
+                    href="mediacity-page09-gestion-base-donnee.php">gestion media</a></li>
+                <li id="lien-page06" class="liste-nav effet-lien">
+                    <a class="lien" href="mediacity-page06-contact.php">
+                        <img class="reseau" src="logo/user.svg" alt="logo user">
+                    </a>
+                </li>
             </ul>
         </nav>
     </details>

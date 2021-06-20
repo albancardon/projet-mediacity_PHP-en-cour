@@ -7,5 +7,5 @@
         la communauté de l'abo dès maintenant!
         <span class="saut-ligne"></span>
     </p>
-        <a class="lien boite-ici" href="mediacity-page05-infos.html">ici</a>
+        <a class="lien boite-ici" href="mediacity-page05-infos.php">ici</a>
 </aside>

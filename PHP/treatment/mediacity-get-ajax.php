@@ -14,8 +14,14 @@ function getUrlPoster($conn){
                 $recupReponse [':' . $key] = (isset($tab[$key]) && !empty($tab[$key])) ? $tab[$key] : null;
             }
         };
-        $urlPoster = $recupReponse[":idPoster"];
-        echo $urlPoster;
+        if (isset($recupReponse[":idPoster"])){
+            $urlPoster = $recupReponse[":idPoster"];
+            echo $urlPoster;
+            die();
+        }else {
+            echo "NotDATA";
+            die();
+        }
     } catch (PDOException $e) {
         print "Erreur !: " . $e->getMessage() . "<br/>";
         die();

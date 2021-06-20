@@ -15,6 +15,7 @@ var typeSelection = document.getElementById("type-selection");
 var genreSelection = document.getElementById("genre-selection");
 var nbpossedeSelection = document.getElementById("nbpossede-selection");
 var idPosterSelection = document.getElementById("idPoster-selection");
+var affichePoster = document.getElementById("affiche-Poster");
 
 type.addEventListener("change",ajoutListeGenre);
 type.addEventListener("change",()=>changeData (typeSelection,type));
@@ -115,6 +116,7 @@ function getInfoFilm(){
         if(xhr.readyState == 4 && (xhr.status == 200 || xhr.status ==0)){
             donneJson=JSON.parse(xhr.responseText);
             let tabRecup = donneJson.results;
+            console.log(tabRecup);
             selectionFilmPoster(tabRecup);
             let container = document.getElementsByClassName("container_selection");
             for (j = 0; j < container.length; j++){
@@ -125,6 +127,8 @@ function getInfoFilm(){
 }
 
 function selectionFilmPoster (recupdonnee){
+    affichePoster.classList.add("main_affiche");
+    affichePoster.classList.remove("invisibility");
     for (i = 0; i < recupdonnee.length; i++) {
         let titleTemp = recupdonnee[i].title;
         if (titleTemp == undefined){
@@ -134,6 +138,8 @@ function selectionFilmPoster (recupdonnee){
         let dateTemp = recupdonnee[i].release_date;
         let idTemp = recupdonnee[i].id;
         let dateFRATemp = reorganizationDate(dateTemp);
+        console.log(titleTemp);
+        console.log(linkPosterTemp);
 
         let div = document.createElement("div");
         div.classList.add("container_selection");
@@ -216,7 +222,9 @@ var posterSearch = document.getElementById("posterSearch");
 var nomFilm = document.getElementById("nomFilm2");
 var filmSelect = document.getElementById("aside09__film-select");
 var titreRecherche = document.getElementById("titreRecherche");
+var titreRecherche1 = document.getElementById("titreRecherche1");
 var btnValiderModifNb = document.getElementById("btn-valider-modifNb");
+var articleGestionNbCopie = document.getElementById("aside09__select-action");
 
 btnValiderSearch.addEventListener("click", recupLinkPoster);
 btnValiderModifNb.addEventListener("click", (evt)=>{
@@ -228,6 +236,8 @@ btnValiderModifNb.addEventListener("click", (evt)=>{
     }});
 
 function recupLinkPoster (){
+    articleGestionNbCopie.classList.remove("invisibility");
+    articleGestionNbCopie.classList.add("select-action");
     filmSelect.classList.remove("invisibility");
     filmSelect.classList.add("aside09__film-select");
     var xhr = new XMLHttpRequest();
@@ -238,9 +248,18 @@ function recupLinkPoster (){
     xhr.onreadystatechange = function() {
         if(xhr.readyState == 4 && (xhr.status == 200 || xhr.status ==0)){
             reponse = xhr.responseText;
-            titleSearch.innerHTML = nomFilm.value;
-            posterSearch.setAttribute("src", "https://image.tmdb.org/t/p/w500"+reponse);
-            titreRecherche.value = envoiNomFilm;
+            if (reponse == "NotDATA"){
+                titleSearch.innerHTML = "Media non présent dans la base de donnée";
+                articleGestionNbCopie.classList.add("invisibility");
+                articleGestionNbCopie.classList.remove("select-action");
+                return;
+            }else{
+                titleSearch.innerHTML = nomFilm.value;
+                posterSearch.classList.remove("invisibility");
+                posterSearch.setAttribute("src", "https://image.tmdb.org/t/p/w500"+reponse);
+                titreRecherche.value = envoiNomFilm;
+                titreRecherche1.value = envoiNomFilm;
+            }
         }
     }
     

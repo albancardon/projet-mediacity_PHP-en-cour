@@ -239,6 +239,7 @@ header{
 .liste-nav{
   display: flex;
   justify-content: space-around;
+  text-align: center;
   width: 8em; 
 }
 #page01 #lien-page01{
@@ -266,7 +267,7 @@ header{
   width: 0;
   overflow: hidden;
 }
-#lien-page06{
+#page06 #lien-page06{
   display: none;
   width: 0;
   overflow: hidden;
@@ -393,6 +394,13 @@ footer{
 .reseau{
   height: 2.0em;
   width: 2.0em;
+}
+#contact{
+  margin: 1em;
+  width: 100%;
+  text-emphasis: center;
+  font-size: 1.5em;
+  text-decoration: underline ;
 }
 
 /* 4.1 footer responsive*/
@@ -875,7 +883,6 @@ main{
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 30em;
   margin-bottom: 2em;
 }
 .titre-page06{
@@ -910,7 +917,7 @@ main{
     width: 100%;
   }
   .image-cinema{
-    width: 60%;
+    width: 45%;
   }
 }
 
@@ -1492,6 +1499,7 @@ main{
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  margin-bottom: 2.5em;
 }
 .box-search{
   display: flex;
@@ -1510,7 +1518,7 @@ main{
   margin: 1em;
   height: 25em;
 }
-#aside09__select-action{
+.select-action{
   display: flex;
   align-items: center;
   justify-content: space-around;

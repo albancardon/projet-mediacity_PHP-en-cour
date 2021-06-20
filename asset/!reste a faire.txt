@@ -1,0 +1,9 @@
+-connexion
+-creation de compte
+-acces page en foction du type de compte
+-page ajout site
+-page d'acceuil
+-page bibliotheque film
+-page serie
+-bdd serie
+-page bibliotheque serie

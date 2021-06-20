@@ -84,8 +84,12 @@ include_once 'PHP/header.php'
                     <input class="zone-remplir" type="email" name="email1" id="email1" placeholder="Votre e-mail" required />
                 </p>
                 <p class="champ-inscription">
-                    <label for="adresse">Votre adresse postale</label>
-                    <input class="zone-remplir" type="text" name="adresse" id="adresse" placeholder="Votre adresse postal" required />
+                    <label for="codePostal">Votre code postale</label>
+                    <input class="zone-remplir" type="text" name="codePostal" id="codePostal" placeholder="Votre code postal" required />
+                </p>
+                <p class="champ-inscription">
+                    <label for="password">Votre mot de passe</label>
+                    <input class="zone-remplir" type="password" name="password" id="password" placeholder="Votre mot de passe" required />
                 </p>
                 <p class="champ-inscription">
                     <label for="password">Votre mot de passe</label>
