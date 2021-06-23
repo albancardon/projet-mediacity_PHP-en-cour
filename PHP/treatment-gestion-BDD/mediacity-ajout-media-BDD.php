@@ -65,7 +65,7 @@ function recupDonneeEntre(){
     ajoutMedia ($conn, $idMedia, $titre);
     ajoutRessource ($conn, $idMedia, $titre, $typeMedia, $genrePrincipale, $nbPossede, $reserver, $idposter);
     
-    header('Location: /php_projet-CDA/projet-mediacity_PHP-en-cour/mediacity-page09-gestion-base-donnee.php');
+    header('Location: /php_projet-CDA/99.mediacity/projet-mediacity_PHP-en-cour/mediacity-page09-gestion-base-donnee.php');
     exit();
 }
 

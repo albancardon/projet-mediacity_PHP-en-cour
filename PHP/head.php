@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <?php
-include_once 'PHP/treatment/mediacity-lib-BD.php';
+include_once 'PHP/treatment-gestion-BDD/mediacity-lib-BD.php';
 ?>
 <head>
     <meta charset="UTF-8">

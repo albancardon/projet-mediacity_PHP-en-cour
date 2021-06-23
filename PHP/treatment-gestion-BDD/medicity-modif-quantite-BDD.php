@@ -25,7 +25,7 @@ function modifNbCopie ($conn){
         print "Erreur !: " . $e->getMessage() . "<br/>";
         die();
     }
-    header('Location: /php_projet-CDA/projet-mediacity_PHP-en-cour/mediacity-page09-gestion-base-donnee.php');
+    header('Location: /php_projet-CDA/99.mediacity/projet-mediacity_PHP-en-cour/mediacity-page09-gestion-base-donnee.php');
     exit();
 }
 
@@ -56,7 +56,7 @@ function suppCopie ($conn){
         print "Erreur !: " . $e->getMessage() . "<br/>";
         die();
     }
-    header('Location: /php_projet-CDA/projet-mediacity_PHP-en-cour/mediacity-page09-gestion-base-donnee.php');
+    header('Location: /php_projet-CDA/99.mediacity/projet-mediacity_PHP-en-cour/mediacity-page09-gestion-base-donnee.php');
     exit();
 }
 

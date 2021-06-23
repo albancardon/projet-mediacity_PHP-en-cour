@@ -46,7 +46,7 @@
             </div>
         </div>
         <div id="contact" class="liste-nav">
-            <a class="lien" href="mediacity-page06-contact.php">Contactez nous!</a>
+            <a class="lien" href="mediacity-page06-contact.php">Laissez nous un message!</a>
         </div>
         <!--reséau sociaux-->
         <div class="footer-aside">

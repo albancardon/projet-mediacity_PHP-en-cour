@@ -1,5 +1,5 @@
 <?php
-include_once 'PHP/treatment/mediacity-lib-BD.php';
+include_once 'PHP/treatment-gestion-BDD/mediacity-lib-BD.php';
 
 $conn = connectionBDD();
 
