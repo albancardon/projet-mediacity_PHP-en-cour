@@ -1,9 +1,10 @@
--connexion
 -creation de compte
+-connexion
 -acces page en foction du type de compte
 -page ajout site
 -page d'acceuil
 -page bibliotheque film
--page serie
 -bdd serie
+-page serie
 -page bibliotheque serie
+-créer un captcha pour la connexion et pour l'inscription

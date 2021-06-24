@@ -242,7 +242,7 @@ function recupLinkPoster (){
     filmSelect.classList.add("aside09__film-select");
     var xhr = new XMLHttpRequest();
     let envoiNomFilm = nomFilm.value;
-    var page = "http://localhost/php_projet-CDA/projet-mediacity_PHP-en-cour/PHP/treatment/mediacity-get-ajax.php?nomFilmGet="+envoiNomFilm;
+    var page = "http://localhost/php_projet-CDA/99.mediacity/projet-mediacity_PHP-en-cour/PHP/treatment-gestion-BDD/mediacity-get-ajax.php?nomFilmGet="+envoiNomFilm;
     xhr.open("GET", page, true);
     xhr.send(null);
     xhr.onreadystatechange = function() {

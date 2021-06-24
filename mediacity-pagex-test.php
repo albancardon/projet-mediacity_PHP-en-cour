@@ -8,9 +8,68 @@ include_once 'PHP/header.php'
 <main>
 
 
+<!--header du main page-06-->
+<section class="box-haut-page06">
+    <div class="titre-page06 majuscule">
+        <img class="logo-popcorn" src="logo/popcorn.svg" alt="logo popcorn">
+        <div class="texte-titre-page06">
+            <h1> 
+                Connectez-vous!
+            </h1>
+            <h2 class="titre-h2">
+                Ou rejoignez-nous pour de plus fantastiques aventures!
+            </h2>
+        </div>
+        <img class="logo-popcorn" src="logo/popcorn.svg" alt="logo popcorn">
+    </div>
+    <img  class="image-cinema" src="img/page-06-contact/Sortiescinemapoursonge.png" alt="image sortie au cinema">
+</section>
+
+<!--centre du main page-06-->
+<section class="box-general-connexion">
+    <article class="box-connexion">
+        <div class="login boite-formulaire">
+            <h2 class="titre-h2">Déjà dans la communauté de l'abo?!</h2>
+            <h3>Connectez-vous!!</h3>
+            <form class="formulaire-connexion" action="php/treatment-user/mediacity-connexion.php" method="get">
+                <p class="champ">
+                    <label for="pseudoConn">Votre nom d'utilisateur</label>
+                    <input class="zone-remplir" type="text" name="pseudoConn" id="pseudoConn" placeholder="Votre surnom" required />
+                </p>
+                <p class="champ">
+                    <label for="passConn">Votre mot de passe</label>
+                    <input class="zone-remplir" type="password" name="passConn" id="passConn" placeholder="Votre mot de passe" required />
+                </p>                        
+                <p>
+                    <input class="checkbox" type="checkbox" name="checkbox" id="checkbox"/>
+                    <label class="checkbox" for="checkbox">Se souvenir de moi</label>
+                </p>
+                <input class="validation" type="submit" value="Connexion">
+                <!--mettre un capcha ici-->
+            </form>
+        </div>
+        <!-- <div class="reinitialisation boite-formulaire">
+            <div class="formulaire-mdp-oublier">
+                <h3>
+                    Mot de passe ou nom utilisateur oublier?
+                </h3>
+                <p>
+                    Demande d'envoie d'e-mail de réinsirialisation 
+                </p>
+            </div>
+            <form class="champ-mdp-oublier">
+                <p>
+                    <label for="email">L'adresse e-mail utilisé lors de l'inscription</label>
+                    <input class="zone-remplir" type="email" name="email" id="email" placeholder="Votre e-mail" required />
+                </p>
+                <input class="validation" type="submit" value="Demande">                    
+            </form>
+        </div> -->
+    </article>
+
 <article class="box-inscription boite-formulaire">
     <h2 class="titre-h2">Pas encore dans la communauté de l'abo?!</h2>
-    <h3>Inscrivez-vous!!</h3>
+    <h3>Devenez membre et inscrivez-vous!!</h3>
     <form action="php/treatment-user/mediacity-inscription.php" method="post">
         <p class="champ-inscription">
             <label class="intitule" for="nom">Votre nom </label>
@@ -34,7 +93,7 @@ include_once 'PHP/header.php'
         </p>
         <p class="champ-inscription">
             <label for="codePostal">Votre code postale</label>
-            <input class="zone-remplir" type="text" name="codePostal" id="codePostal" placeholder="Votre code postal" pattern="[A-Za-z0-9]{3,20}" required />
+            <input class="zone-remplir" type="text" name="codePostal" id="codePostal" placeholder="Votre code postal" pattern="[A-Za-z0-9]{3,10}" required />
         </p>
         <p class="champ-inscription">
             <label for="pass">Votre mot de passe</label>
@@ -63,14 +122,17 @@ include_once 'PHP/header.php'
             <input class="checkbox" type="radio" name="age" value="p40" id="p40" required/> 
             <label class="checkbox" for="p40">Vous avez atteint la sagesse ?!</label>
         </p>                        
-        <p class="zone-age">
+        <!-- <p class="zone-age">
             <input class="checkbox" type="checkbox" name="" id="checkbox2" required />
             <label class="checkbox" for="checkbox2">J'accepte les termes et conditions d'utilisation</label>
-        </p>
+        </p> -->
         <!--mettre un capcha ici-->
-        <input class="validation" type="submit" value="Inscription">
+        <input class="btn validation" id="btn-inscr" type="submit" value="Inscription">
     </form>
 </article>
+
+
+<script src="script/Javascript-page06.js" defer></script>
 
 </main>
 <?php
