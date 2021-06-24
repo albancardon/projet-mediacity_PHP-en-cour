@@ -1,6 +1,6 @@
--creation de compte
--connexion
--acces page en foction du type de compte
+-creation de compte Ok-Fait
+-connexion Ok-Fait
+-acces page en fonction du type de compte
 -page ajout site
 -page d'acceuil
 -page bibliotheque film
