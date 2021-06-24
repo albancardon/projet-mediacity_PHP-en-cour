@@ -6,7 +6,7 @@ include_once 'PHP/head.php';
 include_once 'PHP/header.php'
 ?>
 <main id="page09_main">
-    <h1 class="majuscule">Gerer un media </br>a la base de donnee</h1>
+    <h1 class="majuscule">Gerer un media</h1>
     <span class="saut-ligne"></span>
     <h2>Ajout media à la base de données</h2> 
     <span class="saut-ligne"></span>

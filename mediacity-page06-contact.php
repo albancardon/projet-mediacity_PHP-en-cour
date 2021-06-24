@@ -123,7 +123,7 @@ include_once 'PHP/header.php';
     </section>    
 
     <!-- partie avis page-06-->    
-    <section class="section-bas-page-06">
+    <section class="section-bas-page-06" id="boxAvis">
         <article class="box-image-tele">
             <img class="image-tele" src="img/page-06-contact/tele.png" alt="image de télévision">
         </article>        

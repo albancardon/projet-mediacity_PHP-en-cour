@@ -31,7 +31,7 @@ include_once 'PHP/header.php'
         <div class="login boite-formulaire">
             <h2 class="titre-h2">Déjà dans la communauté de l'abo?!</h2>
             <h3>Connectez-vous!!</h3>
-            <form class="formulaire-connexion" action="php/treatment-user/mediacity-connexion.php" method="get">
+            <form class="formulaire-connexion" action="php/treatment-user/mediacity-connexion.php" method="POST">
                 <p class="champ">
                     <label for="pseudoConn">Votre nom d'utilisateur</label>
                     <input class="zone-remplir" type="text" name="pseudoConn" id="pseudoConn" placeholder="Votre surnom" required />
