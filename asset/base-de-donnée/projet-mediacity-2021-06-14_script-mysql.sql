@@ -5,6 +5,7 @@ CREATE TABLE listeCompte(
 	pass VARCHAR(255) NOT NULL,
     typeCompte VARCHAR(10) NOT NULL,
 	preference VARCHAR(50) DEFAULT NULL,
+	historique VARCHAR(255) DEFAULT NULL,
 	penalite smallint(4) DEFAULT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
