@@ -80,7 +80,7 @@ VALUES (4414, "highlander", "series", "chef", "emp1", "/vwoWfGx0ZYvpK7gTPeen64M0
 (4327, "mr. bean", "series", "chef", "emp3", "/bUBuXOa64h45uybuxBb6FTATzb4.jpg"),
 
 (1973, "24 heures chrono", "series", "act", "emp1", "/iq6yrZ5LEDXf1ArCOYLq8PIUBpV.jpg"),
-(1396, "breaking bad", "series", "act", "emp2", "/oLy2V6AWSEfdPgKOtrSGnwB3Q2R.jpg"),
+(1396, "breaking bad", "series", "act", "emp2", "/ggFHVNu6YYI5L9pCfOacjizRGt.jpg"),
 (1649, "sliders, les mondes parallèles", "series", "act", "emp3", "/9cBXIPl83fE2yQusoEt6vMpSjIJ.jpg"),
 (4515, "loïs et clack", "series", "act", "emp4", "/1LbPs6i1h4BKjVUwK5S9GjPCydi.jpg"),
 

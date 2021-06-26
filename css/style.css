@@ -52,6 +52,7 @@
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 .aside-back{
   background-color: #0c1e5e;
@@ -649,6 +650,91 @@ main{
   75% { left: -300%; }
   95% { left: -300%; }
   100% { left: -400%; }
+}
+
+.container-slide{
+  max-width: 75%;
+  margin: 0 auto;
+  padding: 3em;
+}
+.slider{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.active{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.suivant{
+  animation: fade 1s;
+}
+@keyframes fade{
+  from{
+    opacity: -1;
+    margin-left: 100%;
+  }
+  to{
+    opacity: 1;
+    margin-left: 0%;
+  }
+}
+.precedent{
+  animation: fadeRetour 1s;
+}
+@keyframes fadeRetour{
+  from{
+    opacity: -1;
+    margin-right: 100%;
+  }
+  to{
+    opacity: 1;
+    margin-right: 0%;
+  }
+}
+.inactive{
+  display: none;
+}
+.transition{
+  animation: disparition 1s;
+}
+@keyframes disparition{
+  from{
+    opacity: 1;
+    margin-right: 0%;
+  }
+  to{
+    opacity: 0;
+    margin-right: 100%;
+  }
+}
+.img-slider{
+  max-width: 100%;
+  height: 25em;
+  width: 18.5em;
+}
+.legende-slide{
+  margin: 1em;
+  width: 15em;
+  height: 2.5em;
+  font-size: 1.5em;
+  text-align: center;
+}
+.box-fleche{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  border: 1px solid #FFDE59;
+  box-shadow: 0.25em 0.25em 1em 0px  rgba(255,222,89,.30);
+}
+.btn-fleche{
+  font-size: 1.5em;
+  margin: 0 1.5em;
+  cursor: pointer;
 }
 
 /* 10.0 body page-04 musique */

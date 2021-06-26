@@ -83,8 +83,7 @@ CREATE TABLE contenuSerie(
     typeMedia VARCHAR(25) NOT NULL,
     zoneEmplacement VARCHAR (25) NOT NULL,
     emplacement VARCHAR (5) NOT NULL,
-    idPoster VARCHAR (40) NOT NULL,
-    idVideo VARCHAR (25) NOT NULL
+    idPoster VARCHAR (40) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE media(
