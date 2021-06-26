@@ -14,7 +14,7 @@ include_once 'PHP/head.php'
 include_once 'PHP/header.php';
 ?>
 <main>
-    <!--header du main page-06-->
+<!--header du main page-06-->
     <section class="box-haut-page06">
         <div class="titre-page06 majuscule">
             <img class="logo-popcorn" src="logo/popcorn.svg" alt="logo popcorn">
@@ -37,24 +37,40 @@ include_once 'PHP/header.php';
             <div class="login boite-formulaire">
                 <h2 class="titre-h2">Déjà dans la communauté de l'abo?!</h2>
                 <h3>Connectez-vous!!</h3>
-                <form class="formulaire-connexion">
-                <!-- action="php/treatment-user/mediacity-connexion.php" method="POST" -->
+                <form class="formulaire-connexion" action="php/treatment-user/mediacity-connexion.php" method="POST">
                     <p class="champ">
                         <label for="pseudoConn">Votre nom d'utilisateur</label>
-                        <input class="zone-remplir" type="text" name="pseudoConn" id="pseudoConn" placeholder="Votre surnom" autocomplete="nouveau mot de passe" required />
+                        <input class="zone-remplir" type="text" name="pseudoConn" id="pseudoConn" placeholder="Votre surnom" required />
                     </p>
                     <p class="champ">
                         <label for="passConn">Votre mot de passe</label>
-                        <input class="zone-remplir" type="password" name="passConn" id="passConn" placeholder="Votre mot de passe" autocomplete="on" required />
+                        <input class="zone-remplir" type="password" name="passConn" id="passConn" placeholder="Votre mot de passe" required />
                     </p>                        
-                    <p>
+                    <!-- <p>
                         <input class="checkbox" type="checkbox" name="checkbox" id="checkbox"/>
                         <label class="checkbox" for="checkbox">Se souvenir de moi</label>
-                    </p>
-                    <input class="validation" type="submit" value="Connexion" id="btn-conn">
+                    </p> -->
+                    <input class="validation" type="submit" value="Connexion">
                     <!--mettre un capcha ici-->
                 </form>
             </div>
+            <!-- <div class="reinitialisation boite-formulaire">
+                <div class="formulaire-mdp-oublier">
+                    <h3>
+                        Mot de passe ou nom utilisateur oublier?
+                    </h3>
+                    <p>
+                        Demande d'envoie d'e-mail de réinsirialisation 
+                    </p>
+                </div>
+                <form class="champ-mdp-oublier">
+                    <p>
+                        <label for="email">L'adresse e-mail utilisé lors de l'inscription</label>
+                        <input class="zone-remplir" type="email" name="email" id="email" placeholder="Votre e-mail" required />
+                    </p>
+                    <input class="validation" type="submit" value="Demande">                    
+                </form>
+            </div> -->
         </article>
 
         <article class="box-inscription boite-formulaire">
@@ -120,7 +136,7 @@ include_once 'PHP/header.php';
                 <input class="btn validation" id="btn-inscr" type="submit" value="Inscription">
             </form>
         </article>
-    </section>    
+    </section>
 
     <!-- partie avis page-06-->    
     <section class="section-bas-page-06" id="boxAvis">

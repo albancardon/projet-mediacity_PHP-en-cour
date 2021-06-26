@@ -93,3 +93,4 @@ VALUES (9739, "demolition man", "film", "chef", "emp1", "awZ8NiBShHA", "/r01JaOj
 (128, "princesse mononoke", "film", "fam", "emp2", "AelaSxxVses", "/AulQiyP2PMQKW5Vm7PviGrFbpPm.jpg"),
 (12, "le monde de nemo", "film", "fam", "emp3", "TKi8VJmBuLs", "/8zR2vXoXfdlknEYjfHvCbb1rJbI.jpg"),
 (856, "qui veut la peau de roger rabbit", "film", "fam", "emp4", "Fi6z6iC9lOk", "/rggLGRuANMRPwYJq0UMlNc7aia7.jpg");
+

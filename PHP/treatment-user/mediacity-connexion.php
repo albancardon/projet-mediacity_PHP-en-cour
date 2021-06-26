@@ -25,17 +25,17 @@ if ($pseudo && $pass) {
                 $_SESSION['conn']='ok';
                 $_SESSION['type']='emp';
                 $_SESSION['name']=$pseudo;
-                // header('location:mediacity-page06.5-user.php');
+                // header('location:mediacity-page06-1-user.php');
             } else if ($typeCompte === "prenium") {
                 $_SESSION['conn']='ok';
                 $_SESSION['type']='pren';
                 $_SESSION['name']=$pseudo;
-                // header('location:mediacity-page06.5-user.php');
+                // header('location:mediacity-page06-1-user.php');
             } else if ($typeCompte === "membre") {
                 $_SESSION['conn']='ok';
                 $_SESSION['type']='mem';
                 $_SESSION['name']=$pseudo;
-                // header('location:mediacity-page06.5-user.php');
+                // header('location:mediacity-page06-1-user.php');
             }
         } else {
             echo 'User inconnu';

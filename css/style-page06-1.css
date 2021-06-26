@@ -1,0 +1,176 @@
+/*
+*  CSS SOMMAIRE
+* 
+*   1.0 commun
+*     1.1 commun responsive
+*   2.0 main
+*     2.1 header main
+*     2.2 center main
+*       2.2.1 center left main
+*       2.2.1 center right main
+*    3.0 aside
+*/
+
+
+/* 1.0 commun*/
+#page06-1_main{
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+/* 1.1 commun responsive*/
+
+
+/* 2.0 main*/
+/* 2.1 header main*/
+#head06-1_titre{
+    font-size: 1.8em;
+    margin: 1em;
+}
+#head06-1_effect{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5em 0em 1em 0em;
+    min-height: 10em;
+}
+#effect-animation{
+    font-size: 1.7em;
+    color: #0c1e5e;
+    text-shadow: none;
+}
+#effect-slogan{
+    margin-top: 1em;
+    font-size: 1.3em;
+}
+.animation-part{
+    animation: animate 4s linear infinite;
+    margin: 0.1em;
+}
+.animation-part:nth-child(1){
+    animation-delay: 0s;
+}
+.animation-part:nth-child(2){
+    animation-delay: 0.15s;
+}
+.animation-part:nth-child(3){
+    animation-delay: 0.3s;
+}
+.animation-part:nth-child(4){
+    animation-delay: 0.45s;
+}
+@keyframes animate {
+    0%,100%
+    {
+        color: white;
+        text-shadow:0 0 10px #FFDE59,
+                    0 0 20px #c29e17,
+                    0 0 40px #86722e,
+                    0 0 80px #4a4846;
+    }
+    25%,75%
+    {
+        color: #0c1e5e;
+        text-shadow:none;
+    }
+}
+
+/* 2.2 center main*/
+/* 2.2.1 center left main*/
+#head06-1_center{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1em 1em 2em 1em;
+    width: 85%;
+}
+#center06-01_option{
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 20%;
+}
+.option_list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0.75em;
+    width: 100%;
+    list-style: none;
+}
+.list_box-modif{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.checkbox-modif{
+    font-size: 0.8em;
+}
+.btn-modif{
+    font-size: 45%;
+}
+
+/* 2.2.1 center right main*/
+#center06-01_suggestion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1em;
+    height: 20em;
+    width: 75%;
+}
+#suggestion_affiche{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 15em;
+    width: 100%;
+    margin-top: 1em;
+}
+
+/* 3.0 aside*/
+#page06-1_aside{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1em;
+}
+.titre-tableau{
+    margin: 0.5em;
+}
+.aside06-01_table{
+    display: flex;
+    flex-direction: column;
+    margin: 3em;
+    min-height: 15em;
+    width: 80%;
+}
+.case-table{
+    border: 2px solid #FFDE59;
+}
+.table_titre-colone{
+    width: 100%;
+}
+.ligne{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    flex-wrap: wrap;
+    border: 1px solid #FFDE59;
+}
+.inligne{
+    display: inline;
+    margin: 0.5em;
+    min-height: 2em;
+    width: 33%;
+}
