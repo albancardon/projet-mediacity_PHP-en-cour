@@ -17,7 +17,7 @@ include_once 'PHP/header.php';
 <!--header du main page-06-->
     <section class="box-haut-page06">
         <div class="titre-page06 majuscule">
-            <img class="logo-popcorn" src="logo/popcorn.svg" alt="logo popcorn">
+            <img class="logo-popcorn" src="asset/logo/popcorn.svg" alt="logo popcorn">
             <div class="texte-titre-page06">
                 <h1> 
                     Connectez-vous!
@@ -26,9 +26,9 @@ include_once 'PHP/header.php';
                     Ou rejoignez-nous pour de plus fantastiques aventures!
                 </h2>
             </div>
-            <img class="logo-popcorn" src="logo/popcorn.svg" alt="logo popcorn">
+            <img class="logo-popcorn" src="asset/logo/popcorn.svg" alt="logo popcorn">
         </div>
-        <img  class="image-cinema" src="img/page-06-contact/Sortiescinemapoursonge.png" alt="image sortie au cinema">
+        <img  class="image-cinema" src="asset/img/page-06-contact/Sortiescinemapoursonge.png" alt="image sortie au cinema">
     </section>
 
     <!--centre du main page-06-->
@@ -141,7 +141,7 @@ include_once 'PHP/header.php';
     <!-- partie avis page-06-->    
     <section class="section-bas-page-06" id="boxAvis">
         <article class="box-image-tele">
-            <img class="image-tele" src="img/page-06-contact/tele.png" alt="image de télévision">
+            <img class="image-tele" src="asset/img/page-06-contact/tele.png" alt="image de télévision">
         </article>        
         <article class="box-avis boite-formulaire">
             <div class="box-legende-avis">

@@ -1,7 +1,6 @@
 <?php
 include_once 'PHP/head.php';
 include_once 'PHP/loading/mediacity-page02-chargement.php';
-$conn = connectionBDD();
 ?>
 <body id="page02">
 <?php
@@ -19,12 +18,12 @@ include_once 'PHP/header.php'
             <!--commun carte page 02-03-->
             <section class="container">
             <?php 
-                createHtml($conn,"contenufilm","chef","emp1");
-                createHtml($conn,"contenufilm","chef","emp2");
-                createHtml($conn,"contenufilm","chef","emp3");
+                createHtmlFilm($conn,"contenufilm","chef","emp1");
+                createHtmlFilm($conn,"contenufilm","chef","emp2");
+                createHtmlFilm($conn,"contenufilm","chef","emp3");
             ?>
             </section>
-        </div>            
+        </div>
     </article>
 
     <!--main body-->
@@ -33,10 +32,10 @@ include_once 'PHP/header.php'
         <h2 class="titre-categorie majuscule">action/aventure</h2>
         <section class="container">
             <?php 
-                createHtml($conn,"contenufilm","act","emp1");
-                createHtml($conn,"contenufilm","act","emp2");
-                createHtml($conn,"contenufilm","act","emp3");
-                createHtml($conn,"contenufilm","act","emp4");
+                createHtmlFilm($conn,"contenufilm","act","emp1");
+                createHtmlFilm($conn,"contenufilm","act","emp2");
+                createHtmlFilm($conn,"contenufilm","act","emp3");
+                createHtmlFilm($conn,"contenufilm","act","emp4");
             ?>
         </section>
     </article>
@@ -45,10 +44,10 @@ include_once 'PHP/header.php'
         <h2 class="titre-categorie majuscule">comedie/comique</h2>
         <section class="container">
             <?php 
-                createHtml($conn,"contenufilm","com","emp1");
-                createHtml($conn,"contenufilm","com","emp2");
-                createHtml($conn,"contenufilm","com","emp3");
-                createHtml($conn,"contenufilm","com","emp4");
+                createHtmlFilm($conn,"contenufilm","com","emp1");
+                createHtmlFilm($conn,"contenufilm","com","emp2");
+                createHtmlFilm($conn,"contenufilm","com","emp3");
+                createHtmlFilm($conn,"contenufilm","com","emp4");
             ?>
         </section>
     </article>
@@ -56,10 +55,10 @@ include_once 'PHP/header.php'
         <h2 class="titre-categorie majuscule">animation/familial</h2>
         <section class="container">
             <?php 
-                createHtml($conn,"contenufilm","fam","emp1");
-                createHtml($conn,"contenufilm","fam","emp2");
-                createHtml($conn,"contenufilm","fam","emp3");
-                createHtml($conn,"contenufilm","fam","emp4");
+                createHtmlFilm($conn,"contenufilm","fam","emp1");
+                createHtmlFilm($conn,"contenufilm","fam","emp2");
+                createHtmlFilm($conn,"contenufilm","fam","emp3");
+                createHtmlFilm($conn,"contenufilm","fam","emp4");
             ?>
         </section>
     </article>

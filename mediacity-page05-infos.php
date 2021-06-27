@@ -46,16 +46,16 @@ include_once 'PHP/header.php'
                             <span class="colone">Visiteurs</span>
                         </li>
                         <li class="cellule">
-                            <img class="acces refus" src="img/page-05-infos/close.svg" alt="refus">
+                            <img class="acces refus" src="asset/img/page-05-infos/close.svg" alt="refus">
                         </li>
                         <li class="cellule">
-                            <img class="acces refus" src="img/page-05-infos/close.svg" alt="refus">
+                            <img class="acces refus" src="asset/img/page-05-infos/close.svg" alt="refus">
                         </li>
                         <li class="cellule">
-                            <img class="acces refus" src="img/page-05-infos/close.svg" alt="refus">
+                            <img class="acces refus" src="asset/img/page-05-infos/close.svg" alt="refus">
                         </li>
                         <li class="cellule">
-                            <img class="acces refus" src="img/page-05-infos/close.svg" alt="refus">
+                            <img class="acces refus" src="asset/img/page-05-infos/close.svg" alt="refus">
                         </li>
                         <li class="cellule">
                             <span class="attribut">48 heures</span>
@@ -71,16 +71,16 @@ include_once 'PHP/header.php'
                             <span class="colone">Membres</span>
                         </li>
                         <li class="cellule">
-                            <img class="acces check" src="img/page-05-infos/check.svg" alt="check">
+                            <img class="acces check" src="asset/img/page-05-infos/check.svg" alt="check">
                         </li>
                         <li class="cellule">
-                            <img class="acces refus" src="img/page-05-infos/close.svg" alt="refus">
+                            <img class="acces refus" src="asset/img/page-05-infos/close.svg" alt="refus">
                         </li>
                         <li class="cellule">
-                            <img class="acces refus" src="img/page-05-infos/close.svg" alt="refus">
+                            <img class="acces refus" src="asset/img/page-05-infos/close.svg" alt="refus">
                         </li>
                         <li class="cellule">
-                            <img class="acces check" src="img/page-05-infos/check.svg" alt="check">
+                            <img class="acces check" src="asset/img/page-05-infos/check.svg" alt="check">
                         </li>
                         <li class="cellule">
                             <span class="attribut">3 jours</span>
@@ -96,16 +96,16 @@ include_once 'PHP/header.php'
                             <span class="colone">Premium</span>
                         </li>
                         <li class="cellule">
-                            <img class="acces check" src="img/page-05-infos/check.svg" alt="check">
+                            <img class="acces check" src="asset/img/page-05-infos/check.svg" alt="check">
                         </li>
                         <li class="cellule">
-                            <img class="acces check" src="img/page-05-infos/check.svg" alt="check">
+                            <img class="acces check" src="asset/img/page-05-infos/check.svg" alt="check">
                         </li>
                         <li class="cellule">
-                            <img class="acces check" src="img/page-05-infos/check.svg" alt="check">
+                            <img class="acces check" src="asset/img/page-05-infos/check.svg" alt="check">
                         </li>
                         <li class="cellule">
-                            <img class="acces check" src="img/page-05-infos/check.svg" alt="check">
+                            <img class="acces check" src="asset/img/page-05-infos/check.svg" alt="check">
                         </li>
                         <li class="cellule">
                             <span class="attribut">5 jours</span>
@@ -152,16 +152,16 @@ include_once 'PHP/header.php'
                             <span class="colone">Visiteurs</span>
                         </li>
                         <li class="cellule">
-                            <img class="acces refus" src="img/page-05-infos/close.svg" alt="refus">
+                            <img class="acces refus" src="asset/img/page-05-infos/close.svg" alt="refus">
                         </li>
                         <li class="cellule">
-                            <img class="acces refus" src="img/page-05-infos/close.svg" alt="refus">
+                            <img class="acces refus" src="asset/img/page-05-infos/close.svg" alt="refus">
                         </li>
                         <li class="cellule">
-                            <img class="acces refus" src="img/page-05-infos/close.svg" alt="refus">
+                            <img class="acces refus" src="asset/img/page-05-infos/close.svg" alt="refus">
                         </li>
                         <li class="cellule">
-                            <img class="acces refus" src="img/page-05-infos/close.svg" alt="refus">
+                            <img class="acces refus" src="asset/img/page-05-infos/close.svg" alt="refus">
                         </li>
                         <li class="cellule">
                             <span class="attribut">48 heures</span>
@@ -206,16 +206,16 @@ include_once 'PHP/header.php'
                             <span class="colone">Membres</span>
                         </li>
                         <li class="cellule">
-                            <img class="acces check" src="img/page-05-infos/check.svg" alt="check">
+                            <img class="acces check" src="asset/img/page-05-infos/check.svg" alt="check">
                         </li>
                         <li class="cellule">
-                            <img class="acces refus" src="img/page-05-infos/close.svg" alt="refus">
+                            <img class="acces refus" src="asset/img/page-05-infos/close.svg" alt="refus">
                         </li>
                         <li class="cellule">
-                            <img class="acces refus" src="img/page-05-infos/close.svg" alt="refus">
+                            <img class="acces refus" src="asset/img/page-05-infos/close.svg" alt="refus">
                         </li>
                         <li class="cellule">
-                            <img class="acces check" src="img/page-05-infos/check.svg" alt="check">
+                            <img class="acces check" src="asset/img/page-05-infos/check.svg" alt="check">
                         </li>
                         <li class="cellule">
                             <span class="attribut">3 jours</span>
@@ -259,16 +259,16 @@ include_once 'PHP/header.php'
                             <span class="colone">Premium</span>
                         </li>
                         <li class="cellule">
-                            <img class="acces check" src="img/page-05-infos/check.svg" alt="check">
+                            <img class="acces check" src="asset/img/page-05-infos/check.svg" alt="check">
                         </li>
                         <li class="cellule">
-                            <img class="acces check" src="img/page-05-infos/check.svg" alt="check">
+                            <img class="acces check" src="asset/img/page-05-infos/check.svg" alt="check">
                         </li>
                         <li class="cellule">
-                            <img class="acces check" src="img/page-05-infos/check.svg" alt="check">
+                            <img class="acces check" src="asset/img/page-05-infos/check.svg" alt="check">
                         </li>
                         <li class="cellule">
-                            <img class="acces check" src="img/page-05-infos/check.svg" alt="check">
+                            <img class="acces check" src="asset/img/page-05-infos/check.svg" alt="check">
                         </li>
                         <li class="cellule">
                             <span class="attribut">5 jours</span>
@@ -284,7 +284,7 @@ include_once 'PHP/header.php'
     <!--main annonce centre-->
     <article id="contenu-centre-part1">
         <p>Faites commme Lilou et obtenez un multipass</p>
-        <img id="leeloo" src="img/page-05-infos/leeloo.png" alt="multipass de Leeloo">
+        <img id="leeloo" src="asset/img/page-05-infos/leeloo.png" alt="multipass de Leeloo">
     </article>
     <article id="contenu-centre-part2">
         <p>Envie d'essayer si vous êtes fait pour la communauté de l'abo? </p>
@@ -298,14 +298,14 @@ include_once 'PHP/header.php'
                 Venez avec moi!</p>
             <div class="block"></div>
             <div class="block"></div>
-            <img class="img-mascote" src="img/page-05-infos/mascotte-v01.png" alt="mascotte">
+            <img class="img-mascote" src="asset/img/page-05-infos/mascotte-v01.png" alt="mascotte">
         </a>
     </article>
 </main>
 <!--boite contact-->
 <aside id="boite-contact">
     <article id="article1-aside">
-        <img id="photo-magasin" src="img/page-05-infos/magasin.jpg" alt="photo magasin">
+        <img id="photo-magasin" src="asset/img/page-05-infos/magasin.jpg" alt="photo magasin">
         <div id="boite-texte">
             <p class="majuscule">contactez nous </p>
             <a class="lien-contact" href="mediacity-page06-contact.php">c'est par ici</a>

@@ -8,5 +8,5 @@ include_once 'PHP/treatment-gestion-BDD/mediacity-lib-BD.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <title>Mediacity</title>
-    <link rel="icon" type="image/png" href="img/mediacity.png">
+    <link rel="icon" type="image/png" href="asset/img/mediacity.png">
 </head>

@@ -403,7 +403,7 @@ footer{
 #contact{
   margin: 1em;
   width: 100%;
-  text-emphasis: center;
+  text-align: center;
   font-size: 1.5em;
   text-decoration: underline ;
 }
@@ -613,45 +613,12 @@ main{
   align-items: center;
   text-align: center;
 }
-
-/* 9.1. carouselle page-03*/
-
-#page03 .box-carouselle{
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+.img-select-chef-series{
+  height:20em;
+  width:15em;
+  border: 1.5px solid #FFDE59;
+  border-radius: 5px;
 }
-#page03 .carouselle{
-  width: 60%;
-  overflow: hidden;
-}
-#page03 .carouselle-figure {
-  position: relative;   
-  display: flex;
-  margin: 0;
-  padding: 0;
-  height: 500%;
-  width: 500%;
-  animation: 15s slidy infinite;
-}
-#page03 .img-serie{
-  float: left;
-  width: 20%;
-}
-@keyframes slidy {
-  0% { left: 0%; }
-  20% { left: 0%; }
-  25% { left: -100%; }
-  45% { left: -100%; }
-  50% { left: -200%; }
-  70% { left: -200%; }
-  75% { left: -300%; }
-  95% { left: -300%; }
-  100% { left: -400%; }
-}
-
 .container-slide{
   max-width: 75%;
   margin: 0 auto;

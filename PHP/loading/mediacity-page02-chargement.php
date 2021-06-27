@@ -1,20 +1,8 @@
 <?php
 include_once 'PHP/treatment-gestion-BDD/mediacity-lib-BD.php';
 
-$conn = connectionBDD();
 
-function recupDonneCreateHtmlBDD($conn,$nameTable,$zoneEmplacement,$emplacement){
-    $donnes = getDataPage($conn,$nameTable,$zoneEmplacement,$emplacement);
-    foreach ($donnes as $tab){
-        foreach($tab as $key => $value){
-            $params [':' . $key] = (isset($tab[$key]) && !empty($tab[$key])) ? $tab[$key] : null;
-        }
-    };
-    return  $params;
-};
-
-
-function createHtml($conn,$nameTable,$zoneEmplacement,$emplacement){
+function createHtmlFilm($conn,$nameTable,$zoneEmplacement,$emplacement){
     $params = recupDonneCreateHtmlBDD($conn,$nameTable,$zoneEmplacement,$emplacement);
 
     if ($zoneEmplacement== "chef") {

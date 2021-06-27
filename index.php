@@ -1,5 +1,6 @@
 <?php
-include_once 'PHP/head.php'
+include_once 'PHP/head.php';
+include_once 'PHP/loading/mediacity-index-chargement.php';
 ?>
 <body id="page01">
 <?php
@@ -21,24 +22,14 @@ include_once 'PHP/header.php'
                 <h3 class="titre-entete majuscule">
                     les films
                 </h3>
-                <a class="lien plus" href="mediacity-page02-films.html">plus...</a>
+                <a class="lien plus" href="mediacity-page02-films.php">plus...</a>
             </div>
             <div class="liste-contenu box-image">
-                <figure class="effet-affiche">
-                    <a href="mediacity-page02-films.html#action">
-                        <img class="img video" src="img/page-01-acceuil/creed2.jpg" alt="afffiche creed2">
-                    </a>
-                </figure>
-                <figure class="effet-affiche">
-                    <a href="mediacity-page02-films.html#comedie">
-                        <img class="img video" src="img/page-01-acceuil/themask.jpg" alt="affiche the mask">
-                    </a>
-                </figure>
-                <figure class="effet-affiche">
-                    <a href="mediacity-page02-films.html#animation">
-                        <img class="img video" src="img/page-01-acceuil/roilion.jpg" alt="affiche le roi lion">
-                    </a>
-                </figure>
+                <?php 
+                    createHtmlAcceuil($conn,"contenuaccueil","ac-film","emp1");
+                    createHtmlAcceuil($conn,"contenuaccueil","ac-film","emp2");
+                    createHtmlAcceuil($conn,"contenuaccueil","ac-film","emp3");
+                ?>
             </div>
         </article>
         <article>
@@ -46,24 +37,14 @@ include_once 'PHP/header.php'
                 <h3 class="titre-entete majuscule">
                     les series
                 </h3>
-                <a class="lien plus" href="mediacity-page03-series.html">plus...</a>
+                <a class="lien plus" href="mediacity-page03-series.php">plus...</a>
             </div>
             <div class="liste-contenu box-image">
-                <span class="effet-affiche">
-                    <a href="mediacity-page03-series.html#action">
-                        <img class="img video" src="img/page-01-acceuil/got.jpg" alt="affiche game of throne">
-                    </a>
-                </span>
-                <span class="effet-affiche">
-                    <a href="mediacity-page03-series.html#comedie">
-                        <img class="img video" src="img/page-01-acceuil/tbbt.jpg" alt="affiche the big bang theory">
-                    </a>
-                </span>
-                <span class="effet-affiche">
-                    <a href="mediacity-page03-series.html#animation">
-                        <img class="img video" src="img/page-01-acceuil/Les_Simpson.jpg" alt="affiche les simpson">
-                    </a>
-                </span>
+                <?php 
+                    createHtmlAcceuil($conn,"contenuaccueil","ac-series","emp1");
+                    createHtmlAcceuil($conn,"contenuaccueil","ac-series","emp2");
+                    createHtmlAcceuil($conn,"contenuaccueil","ac-series","emp3");
+                ?>
             </div>
         </article>
         <article>
@@ -74,21 +55,21 @@ include_once 'PHP/header.php'
                 <a class="lien plus" href="mediacity-page04-musique.html">plus...</a>
             </div>
             <div class="liste-contenu box-image">
-                <span class="effet-affiche">
+                <figure class="effet-affiche">
                     <a href="mediacity-page04-musique.html">
-                        <img class="img audio" src="img/page-01-acceuil/damso.jpg" alt="affiche de damso">
+                        <img class="img audio" src="asset/img/page-01-acceuil/damso.jpg" alt="affiche de damso">
                     </a>
-                </span>
-                <span class="effet-affiche">
+                </figure>
+                <figure class="effet-affiche">
                     <a href="mediacity-page04-musique.html">
-                        <img class="img audio" src="img/page-01-acceuil/acdc.jpg" alt="affiche de ACDC">
+                        <img class="img audio" src="asset/img/page-01-acceuil/acdc.jpg" alt="affiche de ACDC">
                     </a>
-                </span>
-                <span class="effet-affiche">
+                </figure>
+                <figure class="effet-affiche">
                     <a href="mediacity-page04-musique.html">
-                        <img class="img audio" src="img/page-01-acceuil/thewknd.jpg" alt="affiche de the wknd">
+                        <img class="img audio" src="asset/img/page-01-acceuil/thewknd.jpg" alt="affiche de the wknd">
                     </a>
-                </span>
+                </figure>
             </div>
         </article>
     </section>

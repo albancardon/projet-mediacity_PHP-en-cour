@@ -52,13 +52,13 @@
         <div class="footer-aside">
             <div class="bloc-reseau">
                 <a href="https://twitter.com/?lang=fr">
-                    <img class="reseau" src="logo/twitter.svg" alt="logo twitter">
+                    <img class="reseau" src="asset/logo/twitter.svg" alt="logo twitter">
                 </a>
                 <a href="https://www.facebook.com/">
-                    <img class="reseau" src="logo/facebook.svg" alt="logo facebook">
+                    <img class="reseau" src="asset/logo/facebook.svg" alt="logo facebook">
                 </a>
                 <a href="https://www.instagram.com/?hl=fr">
-                    <img class="reseau" src="logo/instagram.svg" alt="logo instagram">
+                    <img class="reseau" src="asset/logo/instagram.svg" alt="logo instagram">
                 </a>
             </div>
             <p class="copiright">

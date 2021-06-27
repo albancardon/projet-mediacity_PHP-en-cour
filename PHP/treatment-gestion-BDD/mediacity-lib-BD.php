@@ -25,6 +25,16 @@ function getDataPage($conn,$nameTable,$zoneEmplacement,$emplacement){
     }
 }
 
+function recupDonneCreateHtmlBDD($conn,$nameTable,$zoneEmplacement,$emplacement){
+    $donnes = getDataPage($conn,$nameTable,$zoneEmplacement,$emplacement);
+    foreach ($donnes as $tab){
+        foreach($tab as $key => $value){
+            $params [':' . $key] = (isset($tab[$key]) && !empty($tab[$key])) ? $tab[$key] : null;
+        }
+    };
+    return  $params;
+}
+
 function getDataModif($conn,$titre){
     try{
         $qry = $conn->query("SELECT * FROM ressource WHERE titre = '".$titre."'");
@@ -37,4 +47,5 @@ function getDataModif($conn,$titre){
 }
 
 $conn = connectionBDD();
+
 ?>

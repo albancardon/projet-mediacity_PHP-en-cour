@@ -9,9 +9,9 @@ include_once 'PHP/header.php'
 <main class="quizz">
     <article class="entete-quizz">
         <div class="titre-page-quizz">
-            <img class="img-pop" src="img/page-07-quizz/pop.png" alt="pop-corn">
+            <img class="img-pop" src="asset/img/page-07-quizz/pop.png" alt="pop-corn">
             <h2 class="majuscule">Envie de tester l'abonnement premium??!</h2>
-            <img class="img-pop" src="img/page-07-quizz/pop.png" alt="pop-corn">
+            <img class="img-pop" src="asset/img/page-07-quizz/pop.png" alt="pop-corn">
         </div>
         <p>Il vous suffit de répondre à ce quizz!</p>
         <p class="precision">pour participer l'incription gratuite est obligatoire.</p>
@@ -27,23 +27,23 @@ include_once 'PHP/header.php'
         <div class="dialogue dial__visibility">
             <a href="#modal1" class="lien btn-quizz btn-start-modal js-modal">Lancer le test!!</a>
             <div class="block"></div>
-            <img class="img-mascote" src="img/page-07-quizz/mascotte-v02.png" alt="mascotte">
+            <img class="img-mascote" src="asset/img/page-07-quizz/mascotte-v02.png" alt="mascotte">
         </div>
         <div class="dialogue dial__hidden">
             <div class="block"></div>
             <a href="#modal2" class="lien btn-quizz btn-start-modal js-modal">Passer au deuxième questionnaire.</a>
-            <img class="img-mascote" src="img/page-07-quizz/mascotte-v02.png" alt="mascotte">
+            <img class="img-mascote" src="asset/img/page-07-quizz/mascotte-v02.png" alt="mascotte">
             <div class="block"></div>
         </div>
         <div class="dialogue dial__hidden">
             <a href="#modal3" class="lien btn-quizz btn-start-modal js-modal">Courage c'est bientôt la fin.</a>
             <div class="block"></div>
-            <img class="img-mascote" src="img/page-07-quizz/mascotte-v02.png" alt="mascotte">
+            <img class="img-mascote" src="asset/img/page-07-quizz/mascotte-v02.png" alt="mascotte">
         </div>
         <div class="dialogue dial__hidden">
             <div class="block"></div>
             <a href="#modal4" class="lien btn-quizz btn-start-modal js-modal">Et un petit dernier pour finir!</a>
-            <img class="img-mascote" src="img/page-07-quizz/mascotte-v02.png" alt="mascotte">
+            <img class="img-mascote" src="asset/img/page-07-quizz/mascotte-v02.png" alt="mascotte">
             <div class="block"></div>
         </div>
         <div class="dialogue dial__hidden">
@@ -53,7 +53,7 @@ include_once 'PHP/header.php'
                 Pour vous réconpensez je vous offre une semaine de compte prénium!!!
             </p>
             <div class="block"></div>
-            <img class="img-mascote" src="img/page-07-quizz/mascotte-v02.png" alt="mascotte">
+            <img class="img-mascote" src="asset/img/page-07-quizz/mascotte-v02.png" alt="mascotte">
         </div>
     </article>
 </main>
@@ -64,7 +64,7 @@ include_once 'PHP/header.php'
         </h3>
         <button class="js-modal-close btn-quizz btn-valider">Fermer le quizz</button>
         <fieldset class="box-question-quizz">
-            <img class="img-quizz img" src="img/page-07-quizz/quizz/1-film/seigneur-des-anneaux.jpg" alt="affiche du film le seigneur des anneaux">
+            <img class="img-quizz img" src="asset/img/page-07-quizz/quizz/1-film/seigneur-des-anneaux.jpg" alt="affiche du film le seigneur des anneaux">
             <p>
                 Dans le seigneur des anneaux: quelle objet Frodon doit détruire?
             </p>
@@ -92,7 +92,7 @@ include_once 'PHP/header.php'
             </section>
         </fieldset>
         <fieldset class="box-question-quizz">
-            <img class="img-quizz img" src="img/page-07-quizz/quizz/1-film/le-pari.jpg" alt="affiche du film le pari">
+            <img class="img-quizz img" src="asset/img/page-07-quizz/quizz/1-film/le-pari.jpg" alt="affiche du film le pari">
             <p>
                 Dans le pari: quel est le pari en question?
             </p>
@@ -120,7 +120,7 @@ include_once 'PHP/header.php'
             </section>
         </fieldset>
         <fieldset class="box-question-quizz">
-            <img class="img-quizz img" src="img/page-07-quizz/quizz/1-film/hulk.jpg" alt="affiche du film hulk">
+            <img class="img-quizz img" src="asset/img/page-07-quizz/quizz/1-film/hulk.jpg" alt="affiche du film hulk">
             <p>
                 Quelle est la particularité de Hulk?
             </p>
@@ -148,7 +148,7 @@ include_once 'PHP/header.php'
             </section>
         </fieldset>
         <fieldset class="box-question-quizz">
-            <img class="img-quizz img" src="img/page-07-quizz/quizz/1-film/jurassic-park.jpg" alt="affiche du film jurassic park">
+            <img class="img-quizz img" src="asset/img/page-07-quizz/quizz/1-film/jurassic-park.jpg" alt="affiche du film jurassic park">
             <p>
                 Que vienne voir les visiteur de jurassic park?
             </p>
@@ -176,7 +176,7 @@ include_once 'PHP/header.php'
             </section>
         </fieldset>
         <fieldset class="box-question-quizz">
-            <img class="img-quizz img" src="img/page-07-quizz/quizz/1-film/titanic.jpg" alt="affiche du film titanic">
+            <img class="img-quizz img" src="asset/img/page-07-quizz/quizz/1-film/titanic.jpg" alt="affiche du film titanic">
         <p>
             Dans titanic: à cause de quoi le bateau a coulé?
         </p>
@@ -213,7 +213,7 @@ include_once 'PHP/header.php'
         </h3>
         <button class="js-modal-close btn-quizz btn-valider">Fermer le quizz</button>
         <fieldset class="box-question-quizz">
-            <img class="img-quizz img" src="img/page-07-quizz/quizz/2-serie/x-files.jpg" alt="affiche de la série x-files">
+            <img class="img-quizz img" src="asset/img/page-07-quizz/quizz/2-serie/x-files.jpg" alt="affiche de la série x-files">
             <p>
                 Dans X-file: quelle métier font les agents Scully et Mulder?
             </p>
@@ -241,7 +241,7 @@ include_once 'PHP/header.php'
             </section>
         </fieldset>
         <fieldset class="box-question-quizz">
-            <img class="img-quizz img" src="img/page-07-quizz/quizz/2-serie/experts.jpg" alt="affiche de la série les experts Miami">
+            <img class="img-quizz img" src="asset/img/page-07-quizz/quizz/2-serie/experts.jpg" alt="affiche de la série les experts Miami">
             <p>
                 Dans les experts Miami: comment les enquêtes sont résolus?
             </p>
@@ -269,7 +269,7 @@ include_once 'PHP/header.php'
             </section>
         </fieldset>
         <fieldset class="box-question-quizz">
-            <img class="img-quizz img" src="img/page-07-quizz/quizz/2-serie/bob-eponge.jpg" alt="affiche de la série bob l'eponge">
+            <img class="img-quizz img" src="asset/img/page-07-quizz/quizz/2-serie/bob-eponge.jpg" alt="affiche de la série bob l'eponge">
             <p>
                 Où ce déroule l'intrigue de de Bob l'éponge?
             </p>
@@ -297,7 +297,7 @@ include_once 'PHP/header.php'
             </section>
         </fieldset>
         <fieldset class="box-question-quizz">
-            <img class="img-quizz img" src="img/page-07-quizz/quizz/2-serie/breaking-bad.jpg" alt="affiche de la série breaking bad">
+            <img class="img-quizz img" src="asset/img/page-07-quizz/quizz/2-serie/breaking-bad.jpg" alt="affiche de la série breaking bad">
             <p>
                 Dans breaking bad: quelle activité illegal font pricipalement les protagonistes?
             </p>
@@ -325,7 +325,7 @@ include_once 'PHP/header.php'
             </section>
         </fieldset>
         <fieldset class="box-question-quizz">
-            <img class="img-quizz img" src="img/page-07-quizz/quizz/2-serie/walking-dead.jpg" alt="affiche de la série walking dead">
+            <img class="img-quizz img" src="asset/img/page-07-quizz/quizz/2-serie/walking-dead.jpg" alt="affiche de la série walking dead">
             <p>
                 Dans walking dead: que fuit les humains?
             </p>
@@ -362,7 +362,7 @@ include_once 'PHP/header.php'
         </h3>
         <button class="js-modal-close btn-quizz btn-valider">Fermer le quizz</button>
         <fieldset class="box-question-quizz">
-            <img class="img-quizz img" src="img/page-07-quizz/quizz/3-musique/florent-pagny.jpg" alt="affiche de Florant Pagny">
+            <img class="img-quizz img" src="asset/img/page-07-quizz/quizz/3-musique/florent-pagny.jpg" alt="affiche de Florant Pagny">
             <p>
                 Dans les années 90: dans quelle chanson Florent Pagny signer les paroles?
             </p>
@@ -390,7 +390,7 @@ include_once 'PHP/header.php'
             </section>
         </fieldset>
         <fieldset class="box-question-quizz">>
-            <img class="img-quizz img" src="img/page-07-quizz/quizz/3-musique/the-police.jpg" alt="affiche de the police">
+            <img class="img-quizz img" src="asset/img/page-07-quizz/quizz/3-musique/the-police.jpg" alt="affiche de the police">
             <p>
                 Dans leur chanson quelle nom le groupe The Police chanter?
             </p>
@@ -418,7 +418,7 @@ include_once 'PHP/header.php'
             </section>
         </fieldset>
         <fieldset class="box-question-quizz">
-            <img class="img-quizz img" src="img/page-07-quizz/quizz/3-musique/shaggy.jpg" alt="affiche de shaggy">
+            <img class="img-quizz img" src="asset/img/page-07-quizz/quizz/3-musique/shaggy.jpg" alt="affiche de shaggy">
             <p>
                 Quel est le plus gros tube de Shaggy?
             </p>
@@ -446,7 +446,7 @@ include_once 'PHP/header.php'
             </section>
         </fieldset>
         <fieldset class="box-question-quizz">
-            <img class="img-quizz img" src="img/page-07-quizz/quizz/3-musique/elvis-presley.jpg" alt="affiche de Elvis Presley">
+            <img class="img-quizz img" src="asset/img/page-07-quizz/quizz/3-musique/elvis-presley.jpg" alt="affiche de Elvis Presley">
             <p>
                 Quel genre musicale pratique Elvis?
             </p>
@@ -474,7 +474,7 @@ include_once 'PHP/header.php'
             </section>
         </fieldset>
         <fieldset class="box-question-quizz">
-            <img class="img-quizz img" src="img/page-07-quizz/quizz/3-musique/crazy-frog.jpg" alt="affiche de crazy frog">
+            <img class="img-quizz img" src="asset/img/page-07-quizz/quizz/3-musique/crazy-frog.jpg" alt="affiche de crazy frog">
             <p>
                 Comment s'appel la grenouille bleu qui chante?
             </p>
@@ -513,7 +513,7 @@ include_once 'PHP/header.php'
         <p>
             Niveau très facile (d'après le Dr Sheldon Cooper)
         </p>
-        <img class="img-quizz img" src="img/page-07-quizz/quizz/4-bonus/sheldon-cooper.gif" alt="affiche de Sheldon Cooper">
+        <img class="img-quizz img" src="asset/img/page-07-quizz/quizz/4-bonus/sheldon-cooper.gif" alt="affiche de Sheldon Cooper">
         <p>
             Le Dr Cooper vous demande de calculer le temps d'arrivé d'un rayon du soleil sur la Terre?
         </p>    

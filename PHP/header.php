@@ -2,7 +2,7 @@
 <header class="header-desktop majuscule">
     <div id="logo-societe">
         <a href="index.php">
-            <img id="logo-dessin" src="img/mediacity.png" alt="logo magasin">
+            <img id="logo-dessin" src="asset/img/mediacity.png" alt="logo magasin">
         </a>
     </div>
     <nav class="barre-nav">
@@ -22,7 +22,7 @@
                 href="mediacity-page09-gestion-base-donnee.php">gestion media</a></li>
             <li id="lien-page06" class="liste-nav effet-lien">
                 <a class="lien" href="mediacity-page06-contact.php">
-                    <img class="reseau" src="logo/user.svg" alt="logo user">
+                    <img class="reseau" src="asset/logo/user.svg" alt="logo user">
                 </a>
             </li>
         </ul>
@@ -32,7 +32,7 @@
 <header class="header-mobile majuscule">
     <div id="logo-societe">
         <a href="index.php">
-            <img id="logo-dessin" src="img/mediacity.png" alt="logo magasin">
+            <img id="logo-dessin" src="asset/img/mediacity.png" alt="logo magasin">
         </a>
     </div>
     <details class="liste-nav_mobile">
@@ -58,7 +58,7 @@
                     href="mediacity-page09-gestion-base-donnee.php">gestion media</a></li>
                 <li id="lien-page06" class="liste-nav effet-lien">
                     <a class="lien" href="mediacity-page06-contact.php">
-                        <img class="reseau" src="logo/user.svg" alt="logo user">
+                        <img class="reseau" src="asset/logo/user.svg" alt="logo user">
                     </a>
                 </li>
             </ul>
@@ -66,4 +66,4 @@
     </details>
 </header>
 <!--bouton haut de page-->
-    <a class="bouton-up" href="#remonter"><img class="up" src="logo/up.svg" alt="flèche vers le haut"></a>
+    <a class="bouton-up" href="#remonter"><img class="up" src="asset/logo/up.svg" alt="flèche vers le haut"></a>
