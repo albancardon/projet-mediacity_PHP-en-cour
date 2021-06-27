@@ -37,7 +37,7 @@ VALUES (4414, "highlander"),
 
 
 INSERT INTO ressource (media__idMedia, titre, typeMedia, genrePrincipale, nbPossede, disponibilite, reserver, idPoster)
-VALUES (4414, "highlander", "series", "act", 3, 3, FALSE, "/vwoWfGx0ZYvpK7gTPeen64M0QS5.jpg"),
+VALUES (4414, "highlander", "series", "act", 3, 3, FALSE, "/wn3kArg2CZtgUxyHJiYMKTGCreG.jpg"),
 (4515, "loïs et clack", "series", "act", 1, 1, FALSE ,"/1LbPs6i1h4BKjVUwK5S9GjPCydi.jpg"),
 (232842, "flash", "series", "act", 2, 2, FALSE, "/1EuPzhbzDgZmTHvS0nC0KSdEslI.jpg"),
 (2875, "macgyver", "series", "act", 4, 4, FALSE, "/tE4CLS3YHTGbAnUo1ZkeH8E7NrQ.jpg"),
@@ -75,7 +75,7 @@ VALUES (4414, "highlander", "series", "act", 3, 3, FALSE, "/vwoWfGx0ZYvpK7gTPeen
 
 
 INSERT INTO contenuSerie (media__idMedia, titre, typeMedia, zoneEmplacement, emplacement, idPoster)
-VALUES (4414, "highlander", "series", "chef", "emp1", "/vwoWfGx0ZYvpK7gTPeen64M0QS5.jpg"),
+VALUES (4414, "highlander", "series", "chef", "emp1", "/wn3kArg2CZtgUxyHJiYMKTGCreG.jpg"),
 (4018, "code quantum", "series", "chef", "emp2", "/1969fw0KkFGfFK6z1RwrehXNOG3.jpg"),
 (4327, "mr. bean", "series", "chef", "emp3", "/bUBuXOa64h45uybuxBb6FTATzb4.jpg"),
 
