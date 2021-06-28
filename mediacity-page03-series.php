@@ -36,8 +36,8 @@ include_once 'PHP/header.php'
             ?>
         </section>
         <section class="box-fleche">
-            <img id="left-act" class="btn-fleche" src="logo/flèche-left.png" alt="fléche vers gauche">
-            <img id="right-act" class="btn-fleche" src="logo/flèche-right.png" alt="fléche vers droite">
+            <img id="left-act" class="btn-fleche" src="asset/logo/flèche-left.png" alt="fléche vers gauche">
+            <img id="right-act" class="btn-fleche" src="asset/logo/flèche-right.png" alt="fléche vers droite">
         </section>
     </article>
     <article class="container-slide">
@@ -50,8 +50,8 @@ include_once 'PHP/header.php'
             ?>
         </section>
         <section class="box-fleche">
-            <img id="left-com" class="btn-fleche" src="logo/flèche-left.png" alt="fléche vers gauche">
-            <img id="right-com" class="btn-fleche" src="logo/flèche-right.png" alt="fléche vers droite">
+            <img id="left-com" class="btn-fleche" src="asset/logo/flèche-left.png" alt="fléche vers gauche">
+            <img id="right-com" class="btn-fleche" src="asset/logo/flèche-right.png" alt="fléche vers droite">
         </section>
     </article>
     <article class="container-slide">
@@ -64,8 +64,8 @@ include_once 'PHP/header.php'
             ?>
         </section>
         <section class="box-fleche">
-            <img id="left-fam" class="btn-fleche" src="logo/flèche-left.png" alt="fléche vers gauche">
-            <img id="right-fam" class="btn-fleche" src="logo/flèche-right.png" alt="fléche vers droite">
+            <img id="left-fam" class="btn-fleche" src="asset/logo/flèche-left.png" alt="fléche vers gauche">
+            <img id="right-fam" class="btn-fleche" src="asset/logo/flèche-right.png" alt="fléche vers droite">
         </section>
     </article>
 </main>
