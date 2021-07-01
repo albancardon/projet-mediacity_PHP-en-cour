@@ -45,13 +45,14 @@ include_once 'PHP/header.php'
         <div id="js___posterFilm" class="affiche_container">
         </div>
     </article>
-    <form action="/php_projet-CDA/99.mediacity/projet-mediacity_PHP-en-cour/PHP/treatment-gestion-BDD/mediacity-ajout-media-BDD.php"  method="get">
+    <form action="/php_projet-CDA/6.projet-mediacity_PHP/projet-mediacity_PHP-en-cour/PHP/treatment-gestion-BDD/mediacity-ajout-media-BDD.php"  method="get">
         <input id="id-selection" type="text" name="id"/>
         <input id="titre-selection" type="text" name="titre"/>
         <input id="type-selection" type="text" name="type" value="film"/>
         <input id="genre-selection" type="text" name="genre" value="act"/>
         <input id="nbpossede-selection" type="text" name="nbpossede" value="4"/>
         <input id="idPoster-selection" type="text" name="idPosterSelection"/>
+        <input id="synopsis-selection" type="text" name="synopsisSelection"/>
         <button id="btn-envoyer1" class="btn btn-send invisibilityBtnEnvoyer">Envoyer</button>
     </form>
 </main>
@@ -72,7 +73,7 @@ include_once 'PHP/header.php'
     </article>
     <article id="aside09__select-action" class="invisibility">
         <h2>Que voulez vous faire?</h2>
-        <form action="/php_projet-CDA/99.mediacity/projet-mediacity_PHP-en-cour/PHP/treatment-gestion-BDD/medicity-modif-quantite-BDD.php"  method="get" class="boite-formulaire action__boxAction">
+        <form action="/php_projet-CDA/6.projet-mediacity_PHP/projet-mediacity_PHP-en-cour/PHP/treatment-gestion-BDD/medicity-modif-quantite-BDD.php"  method="get" class="boite-formulaire action__boxAction">
             <input id="titreRecherche" type="text" name="id"/>
             <div class="boxAction_contain">
                 <label for="modifNbCopie">
@@ -89,7 +90,7 @@ include_once 'PHP/header.php'
             </div>
             <button class="btn btn-new-media" id="btn-valider-modifNb">Valider</button>
         </form>
-        <form action="/php_projet-CDA/99.mediacity/projet-mediacity_PHP-en-cour/PHP/treatment-gestion-BDD/medicity-modif-quantite-BDD.php"  method="get" class="boite-formulaire action__boxAction">
+        <form action="/php_projet-CDA/6.projet-mediacity_PHP/projet-mediacity_PHP-en-cour/PHP/treatment-gestion-BDD/medicity-modif-quantite-BDD.php"  method="get" class="boite-formulaire action__boxAction">
             <input id="titreRecherche1" type="text" name="id"/>
             <div class="boxAction_contain">
                 <label for="supprimerMedia">

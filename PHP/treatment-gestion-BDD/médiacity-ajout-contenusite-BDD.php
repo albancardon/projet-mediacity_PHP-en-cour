@@ -1,7 +1,7 @@
 <?php
 include_once 'mediacity-lib-BD.php';
 
-function ajoutMedia ($conn, $idMedia, $titre){
+function ajoutMediaContenuFilm ($conn, $idMedia, $titre){
     try{
         $qry = $conn->prepare("INSERT INTO media (idMedia, titre) Values (?, ?)");
         $qry-> bindParam(1, $idMedia);
@@ -18,7 +18,7 @@ function ajoutMedia ($conn, $idMedia, $titre){
                 <div style='display:flex; flex-direction: column; text-align: center;'>
                     <h2>Erreur !</h2>
                     <h3>Ce média existe déjà  dans la base de donnée!</h3>
-                    <a href='../../mediacity-page09-gestion-base-donnee.php'>Retour à page ajout de film</a>
+                    <a href='../../mediacity-page08-ajout-site.php'>Retour à page ajout de film</a>
                 </div>";
         }else{
             print $e->getMessage();
@@ -28,7 +28,7 @@ function ajoutMedia ($conn, $idMedia, $titre){
     }
 }
 
-function ajoutRessource($conn, $idMedia, $titre, $typeMedia, $genrePrincipale, $nbPossede, $reserver, $synopsis, $idposter){
+function ajoutRessourceContenuFilm($conn, $idMedia, $titre, $typeMedia, $genrePrincipale, $nbPossede, $reserver, $synopsis, $idposter){
     try {
         $qry2 = $conn->prepare("INSERT INTO ressource (media__idMedia, titre, typeMedia, genrePrincipale, nbPossede, disponibilite, reserver, synopsis, idposter) Values (?, ?, ?, ?, ?, ?, ?, ?,?)");
         $qry2-> bindParam(1, $idMedia);
@@ -40,6 +40,24 @@ function ajoutRessource($conn, $idMedia, $titre, $typeMedia, $genrePrincipale, $
         $qry2-> bindParam(7, $reserver);
         $qry2-> bindParam(8, $synopsis);
         $qry2-> bindParam(9, $idposter);
+        
+        $qry2->execute();
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage() . "<br/>";
+        die();
+    }
+}
+
+function ajoutContenuFilm ($conn, $idMedia, $titre, $typeMedia, $zoneEmplacement, $emplacement, $idposter, $idVideo){{
+    try {
+        $qry2 = $conn->prepare("INSERT INTO ressource (media__idMedia, titre, typeMedia, zoneEmplacement, emplacement, idposter, idVideo) Values (?, ?, ?, ?, ?, ?, ?)");
+        $qry2-> bindParam(1, $idMedia);
+        $qry2-> bindParam(2, $titre);
+        $qry2-> bindParam(3, $typeMedia);
+        $qry2-> bindParam(4, $zoneEmplacement);
+        $qry2-> bindParam(5, $emplacement);
+        $qry2-> bindParam(6, $idposter);
+        $qry2-> bindParam(7, $idVideo);
         
         $qry2->execute();
     } catch (PDOException $e) {
@@ -64,12 +82,12 @@ function recupDonneeEntre(){
     $idposter =  $params[":idPosterSelection"];
     $reserver = FALSE;
     
+
     ajoutMedia ($conn, $idMedia, $titre);
     ajoutRessource ($conn, $idMedia, $titre, $typeMedia, $genrePrincipale, $nbPossede, $reserver, $synopsis, $idposter);
     
-    header('Location: /php_projet-CDA/6.projet-mediacity_PHP/projet-mediacity_PHP-en-cour/mediacity-page09-gestion-base-donnee.php');
-    exit();
+    // header('Location: /php_projet-CDA/6.projet-mediacity_PHP/projet-mediacity_PHP-en-cour/mediacity-page08-ajout-site.php');
+    // exit();
 }
 
-recupDonneeEntre()
 ?>

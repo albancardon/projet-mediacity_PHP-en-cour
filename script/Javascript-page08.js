@@ -8,7 +8,7 @@ var filmName = document.getElementById("nomFilm");
 var btnValider = document.getElementById("btn-valider");
 var posterFilm = document.getElementById("js___posterFilm");
 var baFilm = document.getElementById("js___baFilm");
-var btnEnvoyer = document.getElementById("btn-envoyer");
+var btnEnvoyer = document.getElementById("btn-envoyer1");
 var form = document.getElementById("main08");
 var nbCopie = document.getElementById("nbCopie");
 
@@ -168,7 +168,7 @@ function ajoutListeEmplacement(){
 
     }
     else{
-        alert("Erreur Saisie1");
+        alert("Erreur Saisie");
     }
 }
 
@@ -258,6 +258,7 @@ function selectionFilmPoster (recupdonnee){
         div.appendChild(pTitle);
         div.appendChild(pDate);
         posterFilm.appendChild(div);
+        recupSynopsis(idTemp);
     }
 }
 
@@ -310,7 +311,9 @@ function selectionBaVid (donneRecup){
         iframe.classList.add("vid");
         iframe.setAttribute("src", "https://www.youtube.com/embed/"+linkKeyRecup);
 
-        let div2 = document.createElement("div");
+        let div2 = document.createElement("a");
+        div2.setAttribute("href", "#modal1");
+        div2.classList.add("js-modal");
         div2.classList.add("vid_legende");
 
         let p1 = document.createElement("p");
@@ -363,6 +366,25 @@ function resetPage(){
 
 function sendData(){
     resetPage();
-    alert("Nouveau média ajouter")
 }
 
+
+function recupSynopsis(idTemp) {
+    let xhr = new XMLHttpRequest();
+    let api1 = "https://api.themoviedb.org/3/movie/"+idTemp+"?api_key=369494a80cb8a4b4357c06142e1b61cf&language=FR";
+    xhr.open("GET", api1, true);
+    xhr.send();
+    xhr.onreadystatechange = function() {
+        let ajoutfilm = document.getElementById(idTemp);
+        if(xhr.readyState == 4 && (xhr.status == 200 || xhr.status ==0)){
+            donneJsonSynopsis=JSON.parse(xhr.responseText);
+            let synopsisRecup = donneJsonSynopsis.overview;
+            let pSynopsis = document.createElement("p");
+            let idFilm = "synopsis"+idTemp;
+            pSynopsis.setAttribute("id",idFilm);
+            pSynopsis.classList.add("synopsis");
+            pSynopsis.innerHTML = synopsisRecup;
+            ajoutfilm.appendChild(pSynopsis);
+        }
+    }
+}

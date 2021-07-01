@@ -1,6 +1,6 @@
 <?php
 include_once 'PHP/head.php';
-include_once 'PHP/loading/mediacity-page02-chargement.php';
+include_once 'PHP/loading/mediacity-chargement.php';
 ?>
 <body id="page02">
 <?php

@@ -10,8 +10,11 @@ function modifNbCopie ($conn){
         $modifNbCopie = $params[":modifNbCopie"];
         $modifNbCopieConfirm = $params[":modifNbCopieConfirm"];
         if ($modifNbCopie === $modifNbCopieConfirm) {
-            $qry = $conn->query("UPDATE ressource SET nbPossede = ".$modifNbCopie." WHERE titre = '".$idTitre."' ");
-            $qry2 = $conn->query("UPDATE ressource SET disponibilite = ".$modifNbCopie." WHERE titre = '".$idTitre."' ");
+            $qry = $conn->prepare("UPDATE ressource SET nbPossede = ? WHERE titre = ? ");
+            $qry->execute(array($modifNbCopie,$idTitre));
+
+            $qry2 = $conn->prepare("UPDATE ressource SET disponibilite = ? WHERE titre = ? ");
+            $qry2->execute(array($modifNbCopie,$idTitre));
         }else{
             echo "
                 <div style='display:flex; flex-direction: column; text-align: center;'>
@@ -25,7 +28,7 @@ function modifNbCopie ($conn){
         print "Erreur !: " . $e->getMessage() . "<br/>";
         die();
     }
-    header('Location: /php_projet-CDA/99.mediacity/projet-mediacity_PHP-en-cour/mediacity-page09-gestion-base-donnee.php');
+    header('Location: /php_projet-CDA/6.projet-mediacity_PHP/projet-mediacity_PHP-en-cour/mediacity-page09-gestion-base-donnee.php');
     exit();
 }
 
@@ -37,11 +40,16 @@ function suppCopie ($conn){
         $idTitre = $params[":id"];
         $supprimerMedia = $params[":supprimerMedia"];
         if ($supprimerMedia === "suppression du media") {
-            $qry = $conn->query("DELETE FROM ressource WHERE titre = '".$idTitre."' ");
-            $qry2 = $conn->query("DELETE FROM media WHERE titre = '".$idTitre."' ");
-            $qry2 = $conn->query("DELETE FROM contenuaccueil WHERE titre = '".$idTitre."' ");
-            $qry2 = $conn->query("DELETE FROM contenufilm WHERE titre = '".$idTitre."' ");
-            $qry2 = $conn->query("DELETE FROM contenuserie WHERE titre = '".$idTitre."' ");
+            $qry = $conn->prepare("DELETE FROM ressource WHERE titre = ? ");
+            $qry->execute(array($idTitre));
+            $qry2 = $conn->prepare("DELETE FROM media WHERE titre = ? ");
+            $qry2->execute(array($idTitre));
+            $qry3 = $conn->prepare("DELETE FROM contenuaccueil WHERE titre = ? ");
+            $qry3->execute(array($idTitre));
+            $qry4 = $conn->prepare("DELETE FROM contenufilm WHERE titre = ? ");
+            $qry4->execute(array($idTitre));
+            $qry5 = $conn->prepare("DELETE FROM contenuserie WHERE titre = ? ");
+            $qry5->execute(array($idTitre));
         }else{
             echo "
                 <div style='display:flex; flex-direction: column; text-align:center; background-color: #0c1e5e; color: white;'>
@@ -56,7 +64,7 @@ function suppCopie ($conn){
         print "Erreur !: " . $e->getMessage() . "<br/>";
         die();
     }
-    header('Location: /php_projet-CDA/99.mediacity/projet-mediacity_PHP-en-cour/mediacity-page09-gestion-base-donnee.php');
+    header('Location: /php_projet-CDA/6.projet-mediacity_PHP/projet-mediacity_PHP-en-cour/mediacity-page09-gestion-base-donnee.php');
     exit();
 }
 

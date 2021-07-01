@@ -7,7 +7,8 @@ function getUrlPoster($conn){
             $params[':' . $key] = (isset($_GET[$key]) && !empty($_GET[$key])) ? htmlspecialchars($_GET[$key]) : null;
         }
         $idTitre = $params[":nomFilmGet"];
-        $qry = $conn->query("SELECT idPoster FROM ressource WHERE titre LIKE '".$idTitre."'");
+        $qry = $conn->prepare("SELECT idPoster FROM ressource WHERE titre LIKE ?");
+        $qry->execute(array($idTitre));
         $donnees = $qry->fetchAll();
         foreach ($donnees as $tab){
             foreach($tab as $key => $value){

@@ -16,8 +16,26 @@ function connectionBDD(){
 
 function getDataPage($conn,$nameTable,$zoneEmplacement,$emplacement){
     try{
-        $qry = $conn->query("SELECT * FROM ".$nameTable." WHERE zoneEmplacement = '".$zoneEmplacement."' AND emplacement = '".$emplacement."'");
-        $donnees = $qry->fetchAll();
+        switch ($nameTable) {
+            case 'contenuaccueil':
+                $qry = $conn->prepare("SELECT * FROM `contenuaccueil` WHERE zoneEmplacement = ? AND emplacement = ?");
+                $qry->execute(array($zoneEmplacement,$emplacement));
+                $donnees = $qry->fetchAll();
+                break;
+            case 'contenufilm':
+                $qry = $conn->prepare("SELECT * FROM `contenufilm` WHERE zoneEmplacement = ? AND emplacement = ?");
+                $qry->execute(array($zoneEmplacement,$emplacement));
+                $donnees = $qry->fetchAll();
+                break;
+            case 'contenuserie':
+                $qry = $conn->prepare("SELECT * FROM `contenuserie` WHERE zoneEmplacement = ? AND emplacement = ?");
+                $qry->execute(array($zoneEmplacement,$emplacement));
+                $donnees = $qry->fetchAll();
+                break;
+            default:
+                $donnees = "Error!!";
+                break;
+        }
         return $donnees;
     } catch (PDOException $e) {
         print "Erreur !: " . $e->getMessage() . "<br/>";
@@ -37,7 +55,8 @@ function recupDonneCreateHtmlBDD($conn,$nameTable,$zoneEmplacement,$emplacement)
 
 function getDataModif($conn,$titre){
     try{
-        $qry = $conn->query("SELECT * FROM ressource WHERE titre = '".$titre."'");
+        $qry = $conn->prepare("SELECT * FROM ressource WHERE titre = ?");
+        $qry->execute(array($titre));
         $donnees = $qry->fetchAll();
         return $donnees;
     } catch (PDOException $e) {
@@ -47,5 +66,4 @@ function getDataModif($conn,$titre){
 }
 
 $conn = connectionBDD();
-
 ?>

@@ -15,6 +15,7 @@ var typeSelection = document.getElementById("type-selection");
 var genreSelection = document.getElementById("genre-selection");
 var nbpossedeSelection = document.getElementById("nbpossede-selection");
 var idPosterSelection = document.getElementById("idPoster-selection");
+var synopsisSelection = document.getElementById("synopsis-selection");
 var affichePoster = document.getElementById("affiche-Poster");
 
 type.addEventListener("change",ajoutListeGenre);
@@ -116,7 +117,6 @@ function getInfoFilm(){
         if(xhr.readyState == 4 && (xhr.status == 200 || xhr.status ==0)){
             donneJson=JSON.parse(xhr.responseText);
             let tabRecup = donneJson.results;
-            console.log(tabRecup);
             selectionFilmPoster(tabRecup);
             let container = document.getElementsByClassName("container_selection");
             for (j = 0; j < container.length; j++){
@@ -138,8 +138,6 @@ function selectionFilmPoster (recupdonnee){
         let dateTemp = recupdonnee[i].release_date;
         let idTemp = recupdonnee[i].id;
         let dateFRATemp = reorganizationDate(dateTemp);
-        console.log(titleTemp);
-        console.log(linkPosterTemp);
 
         let div = document.createElement("div");
         div.classList.add("container_selection");
@@ -159,10 +157,32 @@ function selectionFilmPoster (recupdonnee){
         pDate.classList.add("selection_titre");
         pDate.innerHTML = "Date de sortie " + dateFRATemp;
 
+
         div.appendChild(img);
         div.appendChild(pTitle);
         div.appendChild(pDate);
         posterFilm.appendChild(div);
+        recupSynopsis(idTemp);
+    }
+}
+
+function recupSynopsis(idTemp) {
+    let xhr = new XMLHttpRequest();
+    let api1 = "https://api.themoviedb.org/3/movie/"+idTemp+"?api_key=369494a80cb8a4b4357c06142e1b61cf&language=FR";
+    xhr.open("GET", api1, true);
+    xhr.send();
+    xhr.onreadystatechange = function() {
+        let ajoutfilm = document.getElementById(idTemp);
+        if(xhr.readyState == 4 && (xhr.status == 200 || xhr.status ==0)){
+            donneJsonSynopsis=JSON.parse(xhr.responseText);
+            let synopsisRecup = donneJsonSynopsis.overview;
+            let pSynopsis = document.createElement("p");
+            let idFilm = "synopsis"+idTemp;
+            pSynopsis.setAttribute("id",idFilm);
+            pSynopsis.classList.add("synopsis");
+            pSynopsis.innerHTML = synopsisRecup;
+            ajoutfilm.appendChild(pSynopsis);
+        }
     }
 }
 
@@ -203,10 +223,12 @@ function sendData(){
 }
 
 function dataSend (idRecup, titleRecup,idPosterRecupTemp){
+    let synopsisSelectionTemp = document.getElementById("synopsis"+ idRecup.id).innerHTML;
     idSelection.value = idRecup.id;
     titreSelection.value = titleRecup;
     idPosterRecup = idPosterRecupTemp.replace("https://image.tmdb.org/t/p/w500",'');
     idPosterSelection.value = idPosterRecup;
+    synopsisSelection.value = synopsisSelectionTemp;
 }
 
 function changeData (data,saisie){
@@ -242,7 +264,7 @@ function recupLinkPoster (){
     filmSelect.classList.add("aside09__film-select");
     var xhr = new XMLHttpRequest();
     let envoiNomFilm = nomFilm.value;
-    var page = "http://localhost/php_projet-CDA/99.mediacity/projet-mediacity_PHP-en-cour/PHP/treatment-gestion-BDD/mediacity-get-ajax.php?nomFilmGet="+envoiNomFilm;
+    var page = "http://localhost/php_projet-CDA/6.projet-mediacity_PHP/projet-mediacity_PHP-en-cour/PHP/treatment-gestion-BDD/mediacity-get-ajax.php?nomFilmGet="+envoiNomFilm;
     xhr.open("GET", page, true);
     xhr.send(null);
     xhr.onreadystatechange = function() {

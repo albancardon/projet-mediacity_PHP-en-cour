@@ -1456,7 +1456,6 @@ main{
   transform: scale(1.25);
 }
 .selection_img{
-
   height: 15em;
   width: 10em;
 }
@@ -1597,4 +1596,21 @@ main{
   justify-content: space-between;
   margin: 1em;
   width: 80%;
+}
+.synopsis{
+  display:block;
+  height:5em;
+  width: 15em;
+  overflow-y: auto;
+  font-size: 0.9em;
+}
+.synopsis::-webkit-scrollbar {
+  width: 0.2em;
+} 
+.synopsis::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(12, 30, 94, 0.3);
+}
+.synopsis::-webkit-scrollbar-thumb {
+  background-color: #FFDE59;
+  outline: 1px solid slategrey;
 }

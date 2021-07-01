@@ -124,7 +124,7 @@ document.querySelectorAll(".js-modal").forEach(a=>{//pour chaque element "a" du 
     a.addEventListener("click",openModal);
 })
 document.querySelectorAll(".js-modal-switch").forEach(a=>{//pour chaque element "a" du tableau appliquer un écouteur
-a.addEventListener("click",change);})
+    a.addEventListener("click",change);})
 
 window.addEventListener("keydown",function(e){
     if (e.key === "Escape" || e.key === "Esc"){
