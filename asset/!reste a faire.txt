@@ -1,10 +1,16 @@
+-page d'acceuil fait
+-page bibliotheque film fait
+-bdd serie fait
+-page serie fait
+-page bibliotheque serie fait
 -creation de compte Ok-Fait
 -connexion Ok-Fait
--acces page en fonction du type de compte
 -page ajout site
--page d'acceuil
--page bibliotheque film
--bdd serie
--page serie
--page bibliotheque serie
+
+-page gestion compte 
+-page toute contenue de la ressource
+-page recherche
+-page description/resultat recherche avec synopsis
+-acces page en fonction du type de compte
+-page quizz dinamique et via bdd
 -créer un captcha pour la connexion et pour l'inscription

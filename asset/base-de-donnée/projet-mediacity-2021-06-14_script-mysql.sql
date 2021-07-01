@@ -36,6 +36,8 @@ CREATE TABLE ressource(
     titre VARCHAR (50) NOT NULL,
     typeMedia VARCHAR (25) NOT NULL,
     genrePrincipale VARCHAR (25) NOT NULL,
+    genreSecondaire VARCHAR (25) DEFAULT NULL,
+    synopsis VARCHAR (750) DEFAULT NULL,
     idPoster VARCHAR (40) NOT NULL,
     nbPossede smallint(3),
     disponibilite smallint(3),
