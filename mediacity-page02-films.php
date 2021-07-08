@@ -37,6 +37,7 @@ include_once 'PHP/header.php'
                 createHtmlFilm($conn,"contenufilm","act","emp3");
                 createHtmlFilm($conn,"contenufilm","act","emp4");
             ?>
+            test
         </section>
     </article>
 
