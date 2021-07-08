@@ -5,7 +5,7 @@
 -page bibliotheque serie fait
 -creation de compte Ok-Fait
 -connexion Ok-Fait
--page ajout site
+-page ajout site Ok-Fait
 
 -page gestion compte 
 -page toute contenue de la ressource

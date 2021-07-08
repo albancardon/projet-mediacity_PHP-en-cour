@@ -3,7 +3,17 @@ include_once 'PHP/head.php';
 ?>
 <body id="page09">
 <?php
-include_once 'PHP/header.php'
+include_once 'PHP/header.php';
+$ajout = (isset($_GET['ajout']) && !empty($_GET['ajout'])) ? htmlspecialchars($_GET['ajout']) : null;
+if ($ajout == "oui"){
+    echo '<script language="Javascript">
+    alert ("Ajout effectuer." )
+    </script>';
+}else if ($ajout == "non"){
+    echo '<script language="Javascript">
+    alert ("Ajout non effectuer!!" )
+    </script>';
+}
 ?>
 <main id="page09_main">
     <h1 class="majuscule">Gerer un media</h1>
@@ -16,14 +26,13 @@ include_once 'PHP/header.php'
                 <label for="type1">Type de media</label>
                 <select name="type1" id="type1" class="boxlist_list" required>
                     <option value="">Choisissez un type</option>
-                    <option value="film" selected>Film</option>
+                    <option value="film">Film</option>
                     <option value="serie">Série</option>
                 </select>
             </div>
             <div class="contain_boxlist boxlistP9">
                 <label for="genre1">Genre média</label>
                 <select name="genre1" id="genre1" class="boxlist_list" required>
-                    <option class="optionGenre" value="act" selected>Select</option>
 
                 </select>
             </div>
@@ -31,11 +40,11 @@ include_once 'PHP/header.php'
         <div class="main-contenu_newMedia" id="main-contenu_box-bas">
             <div class="box-bas_contain">
                 <label for="nomFilm1">Titre média</label>
-                <input class="zone-remplir zone-film " type="text" name="nomFilm1" id="nomFilm1" placeholder="Nom média" required value="gladiator"/>
+                <input class="zone-remplir zone-film " type="text" name="nomFilm1" id="nomFilm1" placeholder="Nom média" required/>
             </div>
             <div class="box-bas_contain">
                 <label for="nbCopie">Nombre de copies</label>
-                <input class="zone-remplir zone-film" type="number" name="nbCopie" id="nbCopie" min="1" max="100" placeholder="nombre copie" required value="4"/>
+                <input class="zone-remplir zone-film" type="number" name="nbCopie" id="nbCopie" min="1" max="100" placeholder="nombre copie" required/>
             </div>
             <div type="button" class="btn btn-new-media" id="btn-valider1">Valider</div>
         </div>
@@ -48,9 +57,9 @@ include_once 'PHP/header.php'
     <form action="/php_projet-CDA/6.projet-mediacity_PHP/projet-mediacity_PHP-en-cour/PHP/treatment-gestion-BDD/mediacity-ajout-media-BDD.php"  method="get">
         <input id="id-selection" type="text" name="id"/>
         <input id="titre-selection" type="text" name="titre"/>
-        <input id="type-selection" type="text" name="type" value="film"/>
-        <input id="genre-selection" type="text" name="genre" value="act"/>
-        <input id="nbpossede-selection" type="text" name="nbpossede" value="4"/>
+        <input id="type-selection" type="text" name="type"/>
+        <input id="genre-selection" type="text" name="genre"/>
+        <input id="nbpossede-selection" type="text" name="nbpossede"/>
         <input id="idPoster-selection" type="text" name="idPosterSelection"/>
         <input id="synopsis-selection" type="text" name="synopsisSelection"/>
         <button id="btn-envoyer1" class="btn btn-send invisibilityBtnEnvoyer">Envoyer</button>

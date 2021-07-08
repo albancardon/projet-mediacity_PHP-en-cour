@@ -52,6 +52,7 @@ CREATE TABLE demande(
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE noteRessource(
+	idNoteRessource int PRIMARY KEY AUTO_INCREMENT,
     users_idUtilisateur int NOT NULL,
     ressource_idRessource int NOT NULL,
     noteDonner smallint(2) NOT NULL,
@@ -61,15 +62,18 @@ CREATE TABLE noteRessource(
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE contenuAccueil(
+	idContenuAccueil int PRIMARY KEY AUTO_INCREMENT,
     media__idMedia int NOT NULL,
     titre VARCHAR (50) NOT NULL,
     typeMedia VARCHAR(25) NOT NULL,
     zoneEmplacement VARCHAR (25) NOT NULL,
     emplacement VARCHAR (5) NOT NULL,
-    idPoster VARCHAR (40) NOT NULL
+    idPoster VARCHAR (40) NOT NULL,
+    idVideo VARCHAR (25) DEFAULT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE contenuFilm(
+	idContenuFilm int PRIMARY KEY AUTO_INCREMENT,
     media__idMedia int NOT NULL,
     titre VARCHAR (50) NOT NULL,
     typeMedia VARCHAR(25) NOT NULL,
@@ -80,12 +84,14 @@ CREATE TABLE contenuFilm(
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE contenuSerie(
+	idContenuSerie int PRIMARY KEY AUTO_INCREMENT,
     media__idMedia int NOT NULL,
     titre VARCHAR (50) NOT NULL,
     typeMedia VARCHAR(25) NOT NULL,
     zoneEmplacement VARCHAR (25) NOT NULL,
     emplacement VARCHAR (5) NOT NULL,
-    idPoster VARCHAR (40) NOT NULL
+    idPoster VARCHAR (40) NOT NULL,
+    idVideo VARCHAR (25) DEFAULT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE media(

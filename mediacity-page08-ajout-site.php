@@ -1,9 +1,19 @@
 <?php
-include_once 'PHP/head.php'
+include_once 'PHP/head.php';
 ?>
 <body id="page08">
 <?php
-include_once 'PHP/header.php'
+include_once 'PHP/header.php';
+$ajout = (isset($_GET['ajout']) && !empty($_GET['ajout'])) ? htmlspecialchars($_GET['ajout']) : null;
+if ($ajout == "oui"){
+    echo '<script language="Javascript">
+    alert ("Ajout effectuer." )
+    </script>';
+}else if ($ajout == "non"){
+    echo '<script language="Javascript">
+    alert ("Ajout non effectuer!!" )
+    </script>';
+}
 ?>
 <main id="page08_main">
     <h1 class="majuscule">Ajouter un nouveau media </br>sur le site</h1>
@@ -13,16 +23,15 @@ include_once 'PHP/header.php'
                 <div class="contain_boxlist">
                     <label for="type">Page du media</label>
                     <select name="type" id="type" class="boxlist_list" required>
-                        <option value="">Choisissez un type</option>
+                        <option>Choisissez un type</option>
                         <option value="acc">Acceuil</option>
-                        <option value="film" selected>Film</option>
+                        <option value="film">Film</option>
                         <option value="serie">Série</option>
                     </select>
                 </div>
                 <div class="contain_boxlist">
                     <label for="genre">Genre média</label>
                     <select name="genre" id="genre" class="boxlist_list" required>
-                    <option class="optionGenre" value="act" selected>Genre action</option>
 
                     </select>
                 </div>
@@ -30,7 +39,6 @@ include_once 'PHP/header.php'
             <div class="box-haut_contain2">
                 <label for="emplacement">Emplacement</label>
                 <select name="emplacement" id="emplacement" class="boxlist_list" required>
-                    <option class="optionGenre" value="emp1" selected>Emplacement 1</option>
 
                 </select>
             </div>
@@ -38,7 +46,7 @@ include_once 'PHP/header.php'
         <div class="main-contenu_newMedia" id="main-contenu_box-bas">
             <div class="box-bas_contain">
                 <label for="nomFilm">Titre média</label>
-                <input class="zone-remplir zone-film" type="text" name="nomFilm" id="nomFilm" placeholder="Nom média" required value="gladiator"/>
+                <input class="zone-remplir zone-film" type="text" name="nomFilm" id="nomFilm" placeholder="Nom média" required/>
             </div>
             <div type="button" class="btn btn-new-media" id="btn-valider">Valider</div>
         </div>
@@ -53,16 +61,18 @@ include_once 'PHP/header.php'
         <div id="js___baFilm" class="ba_liste-ba">
         </div>
     </article>
-    <form action="/php_projet-CDA/6.projet-mediacity_PHP/projet-mediacity_PHP-en-cour/PHP/treatment-gestion-BDD/médiacity-ajout-contenusite-BDD.php"  method="get">
+    <form action="/php_projet-CDA/6.projet-mediacity_PHP/projet-mediacity_PHP-en-cour/PHP/treatment-gestion-BDD/mediacity-ajout-contenusite-BDD.php"  method="get">
         <input id="id-selection" type="text" name="id"/>
         <input id="titre-selection" type="text" name="titre"/>
-        <input id="type-selection" type="text" name="type" value="film"/>
-        <input id="genre-selection" type="text" name="genre" value="act"/>
-        <input id="nbpossede-selection" type="text" name="nbpossede" value="4"/>
+        <input id="type-selection" type="text" name="type"/>
+        <input id="zone-selection" type="text" name="zoneEmplacement"/>
+        <input id="emplacement-selection" type="text" name="emplacement"/>
+        <input id="nbpossede-selection" type="text" name="nbpossede"/>
         <input id="idPoster-selection" type="text" name="idPosterSelection"/>
+        <input id="idVideo-selection" type="text" name="idVideoSelection"/>
         <input id="synopsis-selection" type="text" name="synopsisSelection"/>
-        <a href="#modal1" id="btn-envoyer1" class="btn btn-send js-modal invisibilityBtnEnvoyer">Envoyer</a>
-        <!-- <button id="btn-envoyer1" class="btn btn-send invisibilityBtnEnvoyer">Envoyer</button> -->
+        <a href="#modal1" id="btn-envoyer1" class="btn btn-send js-modal invisibilityBtnEnvoyer">soumettre</a>
+        <button id="btn-envoyer" class="btn btn-send invisibility">Envoyer</button>
     </form>
 </main>
 
@@ -72,10 +82,9 @@ include_once 'PHP/header.php'
             Nombre de copie possédé?
         </h3>
         <div class="box-bas_contain">
-            <label for="nbCopie">Nombre de copies</label>
-            <input class="zone-remplir zone-film" type="text" name="nbCopie" id="nbCopie" placeholder="nombre copie"/>
+            <input class="zone-remplir zone-film" type="text" name="nbCopie" id="nbCopie" placeholder="nombre copie" required/>
         </div>
-        <button class="js-btn-val js-modal-close">Oui, ajouter média</button>
+        <button id="js-btn-val" class="js-btn-val js-modal-close">Valider</button>
     </form>
 </aside>
 <script src="script/Javascript-page08.js" defer></script>

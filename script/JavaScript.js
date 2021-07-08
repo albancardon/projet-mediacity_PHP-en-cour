@@ -2,7 +2,6 @@ var btnUp=document.querySelectorAll(".bouton-up")[0];
 var title=document.getElementsByClassName("title")[0];
 var hauteurScrool=(window.innerHeight/10);
 var opacite=0;
-var idPage = "";
 
 btnUp.addEventListener("click",moveInteval);
 window.addEventListener("scroll",fctOpacityBtnUp);
@@ -136,20 +135,22 @@ window.addEventListener("keydown",function(e){
 })
 
 //quizz page07 affichage boite dialogue
-
-var btnVal=document.getElementsByClassName("js-btn-val");
-var dial=Array.from(document.getElementsByClassName("dialogue"));
-var a=0;
-var b=0;
-for(i=0;i<btnVal.length;i++){
-    btnVal[i].addEventListener("click",()=>{
-        a++;
-        dial[a].classList.toggle("dial__visibility");
-        dial[a].classList.toggle("dial__hidden");
-        dial[b].classList.toggle("dial__visibility");
-        dial[b].classList.toggle("dial__hidden");
-        b++;
-    });
+let idPage = document.getElementById("page07");
+if (idPage!==null){
+    var btnVal=document.getElementsByClassName("js-btn-val");
+    var dial=Array.from(document.getElementsByClassName("dialogue"));
+    var a=0;
+    var b=0;
+    for(i=0;i<btnVal.length;i++){
+        btnVal[i].addEventListener("click",()=>{
+            a++;
+            dial[a].classList.toggle("dial__visibility");
+            dial[a].classList.toggle("dial__hidden");
+            dial[b].classList.toggle("dial__visibility");
+            dial[b].classList.toggle("dial__hidden");
+            b++;
+        });
+    }
 }
 
 //fonction ajout bande annonce (BA)

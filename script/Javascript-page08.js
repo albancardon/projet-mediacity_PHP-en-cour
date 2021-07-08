@@ -8,13 +8,31 @@ var filmName = document.getElementById("nomFilm");
 var btnValider = document.getElementById("btn-valider");
 var posterFilm = document.getElementById("js___posterFilm");
 var baFilm = document.getElementById("js___baFilm");
-var btnEnvoyer = document.getElementById("btn-envoyer1");
+var btnEnvoyer1 = document.getElementById("btn-envoyer1");
+var btnEnvoyer2 = document.getElementById("js-btn-val");
+var btnEnvoyer = document.getElementById("btn-envoyer");
 var form = document.getElementById("main08");
 var nbCopie = document.getElementById("nbCopie");
+var Ba = 1;
+var idSelection = document.getElementById("id-selection");
+var titreSelection = document.getElementById("titre-selection");
+var typeSelection = document.getElementById("type-selection");
+var zoneSelection = document.getElementById("zone-selection");
+var emplacementSelection = document.getElementById("emplacement-selection");
+var nbpossedeSelection = document.getElementById("nbpossede-selection");
+var idPosterSelection = document.getElementById("idPoster-selection");
+var idVideoSelection = document.getElementById("idVideo-selection");
+var synopsisSelection = document.getElementById("synopsis-selection");
+var affichePoster = document.getElementById("affiche-Poster");
 
 type.addEventListener("change",ajoutListeGenre);
 genre.addEventListener("change",ajoutListeEmplacement);
 btnValider.addEventListener("click",getInfoFilm);
+type.addEventListener("change",()=>changeData (typeSelection,type));
+genre.addEventListener("change",()=>changeData (zoneSelection,genre));
+emplacement.addEventListener("change",()=>changeData (emplacementSelection,emplacement));
+btnEnvoyer1.addEventListener("click",dataSend);
+btnEnvoyer2.addEventListener("click",ajoutNombre);
 btnEnvoyer.addEventListener("click",sendData);
 
 function reorganizationDate(dateENG){
@@ -194,7 +212,7 @@ function getInfoFilm(){
 
     let invisibilityBtnEnvoyerOld = document.getElementsByClassName("invisibilityBtnEnvoyer");
     if (invisibilityBtnEnvoyerOld.length<1){
-        btnEnvoyer.classList.add("invisibilityBtnEnvoyer")
+        btnEnvoyer1.classList.add("invisibilityBtnEnvoyer")
     }
 
     let baOld = document.getElementsByClassName("liste-ba_vid");
@@ -265,7 +283,7 @@ function selectionFilmPoster (recupdonnee){
 function selectionFilmBa () {
     let invisibilityBtnEnvoyerOld = document.getElementsByClassName("invisibilityBtnEnvoyer");
     if (invisibilityBtnEnvoyerOld.length<1){
-        btnEnvoyer.classList.add("invisibilityBtnEnvoyer")
+        btnEnvoyer1.classList.add("invisibilityBtnEnvoyer")
     }
     let selctOld = document.getElementsByClassName("js___select");
     if (selctOld.length>0){
@@ -281,13 +299,14 @@ function selectionFilmBa () {
         }
     }
     let idRecupTemp = this.id;
-    console.log(idRecupTemp);
     let xhr = new XMLHttpRequest();
     let api = "http://api.themoviedb.org/3/movie/" + idRecupTemp + "/videos?api_key=155fc5a9bbcf6f9a6241b3dbaf8b1656&append_to_response=videos&language=fr-FR";
     xhr.open("GET", api, true);
     xhr.send();
     xhr.onreadystatechange = function() {
-        if(xhr.readyState == 4 && (xhr.status == 200 || xhr.status ==0)){
+        if (xhr.status == 404) {
+            noBaSelectionner();
+        }else if(xhr.readyState == 4 && (xhr.status == 200 || xhr.status ==0)){
             donneJson=JSON.parse(xhr.responseText);
             let baRecup = donneJson.results;
             selectionBaVid (baRecup);
@@ -311,9 +330,7 @@ function selectionBaVid (donneRecup){
         iframe.classList.add("vid");
         iframe.setAttribute("src", "https://www.youtube.com/embed/"+linkKeyRecup);
 
-        let div2 = document.createElement("a");
-        div2.setAttribute("href", "#modal1");
-        div2.classList.add("js-modal");
+        let div2 = document.createElement("div");
         div2.classList.add("vid_legende");
 
         let p1 = document.createElement("p");
@@ -338,16 +355,22 @@ function baSelectionner () {
             BAselctOld[y].classList.remove("js___BAselect");
         }
     }
-    console.log(this.parentElement.id);
     this.parentElement.classList.add("js___BAselect");
+    let selectTemp = document.getElementsByClassName("js___BAselect")[0];
+    selectRecupTemp = selectTemp.childNodes[0].src;
+    selectRecup = selectRecupTemp.replace("https://www.youtube.com/embed/",'');
+    idVideoSelection.value = selectRecup;
+    btnEnvoyer1.classList.remove("invisibilityBtnEnvoyer");
+}
 
-    btnEnvoyer.classList.remove("invisibilityBtnEnvoyer");
+function noBaSelectionner () {
+    btnEnvoyer1.classList.remove("invisibilityBtnEnvoyer");
 }
 
 function resetPage(){
     let invisibilityBtnEnvoyerOld = document.getElementsByClassName("invisibilityBtnEnvoyer");
     if (invisibilityBtnEnvoyerOld.length<1){
-        btnEnvoyer.classList.add("invisibilityBtnEnvoyer")
+        btnEnvoyer1.classList.add("invisibilityBtnEnvoyer")
     }
     let baOld = document.getElementsByClassName("liste-ba_vid");
     if (baOld.length>0){
@@ -363,11 +386,6 @@ function resetPage(){
     }
     form.reset();
 }
-
-function sendData(){
-    resetPage();
-}
-
 
 function recupSynopsis(idTemp) {
     let xhr = new XMLHttpRequest();
@@ -387,4 +405,33 @@ function recupSynopsis(idTemp) {
             ajoutfilm.appendChild(pSynopsis);
         }
     }
+}
+
+function changeData (data,saisie){
+    data.value = saisie.value;
+}
+
+function dataSend (){
+    let jsSelect = document.getElementsByClassName('js___select')[0];
+    EnfantsRecup = jsSelect.childNodes;
+    idSelection.value = jsSelect.id;
+    titreSelection.value = EnfantsRecup[1].innerHTML;
+    idPosterRecupTemp = EnfantsRecup[0].src;
+    idPosterRecup = idPosterRecupTemp.replace("https://image.tmdb.org/t/p/w500",'');
+    idPosterSelection.value = idPosterRecup;
+    let synopsisSelectionTemp = document.getElementById("synopsis"+jsSelect.id);
+    if (synopsisSelectionTemp !== null){
+        synopsisSelection.value = synopsisSelectionTemp.innerHTML;
+    }
+}
+
+function ajoutNombre(){
+    let nbCopie = document.getElementById("nbCopie");
+    nbpossedeSelection.value = nbCopie.value;
+    btnEnvoyer.classList.remove("invisibility");
+}
+
+function sendData(){
+    btnEnvoyer.classList.add("invisibility");
+    resetPage();
 }
