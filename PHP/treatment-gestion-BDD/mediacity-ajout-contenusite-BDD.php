@@ -9,9 +9,9 @@ function recupDonneeEntre(){
         $params[':' . $key] = (isset($_GET[$key]) && !empty($_GET[$key])) ? htmlspecialchars($_GET[$key]) : null;
     }
     $conn = connectionBDD();
-    $idMedia =  $params[":id"];
+    $idApi =  $params[":id"];
     $titre =  $params[":titre"]; 
-    $typeMedia =  $params[":type"];
+    $categorie =  $params[":type"];
     $zoneEmplacement =  $params[":zoneEmplacement"];
     $emplacement =  $params[":emplacement"];
     $nbPossede =  $params[":nbpossede"];
@@ -29,7 +29,7 @@ function recupDonneeEntre(){
     $reserver = FALSE;
     
 
-    verifExists ($conn, $idMedia, $titre, $typeMedia, $zoneEmplacement, $emplacement, $nbPossede, $reserver, $synopsis, $idposter, $idVideo);
+    verifExists ($conn, $idApi, $titre, $categorie, $zoneEmplacement, $emplacement, $nbPossede, $reserver, $synopsis, $idposter, $idVideo);
     exit();
 }
 recupDonneeEntre()

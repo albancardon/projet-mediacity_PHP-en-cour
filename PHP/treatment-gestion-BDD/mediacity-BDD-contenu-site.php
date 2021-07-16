@@ -1,46 +1,46 @@
 <?php
 include_once 'mediacity-lib-BD.php';
 
-function verifExists ($conn, $idMedia, $titre, $typeMedia, $zoneEmplacement, $emplacement, $nbPossede, $reserver, $synopsis, $idposter, $idVideo){
+function verifExists ($conn, $idApi, $titre, $categorie, $zoneEmplacement, $emplacement, $nbPossede, $reserver, $synopsis, $idposter, $idVideo){
     try {
-        $vqryRe = $conn-> prepare("SELECT * FROM `ressource` WHERE media__idMedia=?");
-        $vqryRe-> bindParam(1, $idMedia);
+        $vqryRe = $conn-> prepare("SELECT * FROM `ressource` WHERE media__idApi=?");
+        $vqryRe-> bindParam(1, $idApi);
         $vqryRe->execute();
         $countLigne = $vqryRe->rowCount();
         if ( $countLigne>= 1){
-            if ($typeMedia ==" acc") {
-                $vqryPag= $conn-> prepare("SELECT * FROM `contenuaccueil` WHERE media__idMedia=?");
-                $vqryPag-> bindParam(1, $idMedia);
+            if ($categorie ==" acc") {
+                $vqryPag= $conn-> prepare("SELECT * FROM `contenuaccueil` WHERE media__idApi=?");
+                $vqryPag-> bindParam(1, $idApi);
                 $vqryPag->execute();
                 $countLigne2 = $vqryPag->rowCount();
                 if ( $countLigne2< 1){
-                    ajoutContenuMedia ($conn, $idMedia, $titre, $typeMedia, $zoneEmplacement, $emplacement, $idposter, $idVideo);
+                    ajoutContenuMedia ($conn, $idApi, $titre, $categorie, $zoneEmplacement, $emplacement, $idposter, $idVideo);
                     header('Location: /php_projet-CDA/6.projet-mediacity_PHP/projet-mediacity_PHP-en-cour/mediacity-page08-ajout-site.php?ajout=oui');
                     die();
                 }else {
                     header('Location: /php_projet-CDA/6.projet-mediacity_PHP/projet-mediacity_PHP-en-cour/mediacity-page08-ajout-site.php?ajout=non');
                     die();
                 }
-            }else if($typeMedia ==" film"){
-                $vqryPag= $conn-> prepare("SELECT * FROM `contenufilm` WHERE media__idMedia=?");
-                $vqryPag-> bindParam(1, $idMedia);
+            }else if($categorie ==" film"){
+                $vqryPag= $conn-> prepare("SELECT * FROM `contenufilm` WHERE media__idApi=?");
+                $vqryPag-> bindParam(1, $idApi);
                 $vqryPag->execute();
                 $countLigne3 = $vqryPag->rowCount();
                 if ( $countLigne3< 1){
-                    ajoutContenuMedia ($conn, $idMedia, $titre, $typeMedia, $zoneEmplacement, $emplacement, $idposter, $idVideo);
+                    ajoutContenuMedia ($conn, $idApi, $titre, $categorie, $zoneEmplacement, $emplacement, $idposter, $idVideo);
                     header('Location: /php_projet-CDA/6.projet-mediacity_PHP/projet-mediacity_PHP-en-cour/mediacity-page08-ajout-site.php?ajout=oui');
                     die();
                 }else {
                     header('Location: /php_projet-CDA/6.projet-mediacity_PHP/projet-mediacity_PHP-en-cour/mediacity-page08-ajout-site.php?ajout=non');
                     die();
                 }
-            }else if ($typeMedia ==" serie"){
-                $vqryPag= $conn-> prepare("SELECT * FROM `contenuserie` WHERE media__idMedia=?");
-                $vqryPag-> bindParam(1, $idMedia);
+            }else if ($categorie ==" serie"){
+                $vqryPag= $conn-> prepare("SELECT * FROM `contenuserie` WHERE media__idApi=?");
+                $vqryPag-> bindParam(1, $idApi);
                 $vqryPag->execute();
                 $countLigne4 = $vqryPag->rowCount();
                 if ( $countLigne4< 1){
-                    ajoutContenuMedia ($conn, $idMedia, $titre, $typeMedia, $zoneEmplacement, $emplacement, $idposter, $idVideo);
+                    ajoutContenuMedia ($conn, $idApi, $titre, $categorie, $zoneEmplacement, $emplacement, $idposter, $idVideo);
                     header('Location: /php_projet-CDA/6.projet-mediacity_PHP/projet-mediacity_PHP-en-cour/mediacity-page08-ajout-site.php?ajout=oui');
                     die();
                 }else {
@@ -50,9 +50,9 @@ function verifExists ($conn, $idMedia, $titre, $typeMedia, $zoneEmplacement, $em
             }
             die();
         }else{
-            ajoutMediaContenuSite ($conn, $idMedia, $titre);
-            ajoutRessourceContenuSite($conn, $idMedia, $titre, $typeMedia, $zoneEmplacement, $emplacement, $nbPossede, $reserver, $synopsis, $idposter);
-            ajoutContenumedia ($conn, $idMedia, $titre, $typeMedia, $zoneEmplacement, $emplacement, $idposter, $idVideo);
+            ajoutMediaContenuSite ($conn, $idApi, $titre);
+            ajoutRessourceContenuSite($conn, $idApi, $titre, $categorie, $zoneEmplacement, $emplacement, $nbPossede, $reserver, $synopsis, $idposter);
+            ajoutContenumedia ($conn, $idApi, $titre, $categorie, $zoneEmplacement, $emplacement, $idposter, $idVideo);
             header('Location: /php_projet-CDA/6.projet-mediacity_PHP/projet-mediacity_PHP-en-cour/mediacity-page08-ajout-site.php?ajout=oui');
         }
     } catch (PDOException $e) {
@@ -61,17 +61,17 @@ function verifExists ($conn, $idMedia, $titre, $typeMedia, $zoneEmplacement, $em
     }
 }
 
-function ajoutMediaContenuSite ($conn, $idMedia, $titre){
+function ajoutMediaContenuSite ($conn, $idApi, $titre){
     try{
-        $qry = $conn->prepare("INSERT INTO media (idMedia, titre) Values (?, ?)");
-        $qry-> bindParam(1, $idMedia);
+        $qry = $conn->prepare("INSERT INTO media (idApi, titre) Values (?, ?)");
+        $qry-> bindParam(1, $idApi);
         $qry-> bindParam(2, $titre);
         
         $qry->execute();
         
     
     } catch (PDOException $e) { 
-        $codErreur = "SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '".$idMedia."' for key 'PRIMARY'";
+        $codErreur = "SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '".$idApi."' for key 'PRIMARY'";
         $exeption = $e->getMessage();
         if ($exeption==$codErreur){
             echo "
@@ -88,11 +88,11 @@ function ajoutMediaContenuSite ($conn, $idMedia, $titre){
     }
 }
 
-function ajoutRessourceContenuSite($conn, $idMedia, $titre, $typeMedia, $zoneEmplacement, $emplacement, $nbPossede, $reserver, $synopsis, $idposter){
+function ajoutRessourceContenuSite($conn, $idApi, $titre, $categorie, $zoneEmplacement, $emplacement, $nbPossede, $reserver, $synopsis, $idposter){
     try {
-        if ($typeMedia == "acc" && $zoneEmplacement == "film" && $emplacement == "emp1") {
-            $qry2 = $conn->prepare("INSERT INTO ressource (media__idMedia, titre, typeMedia, genrePrincipale, nbPossede, disponibilite, reserver, synopsis, idposter) Values (?, ?, ?, ?, ?, ?, ?, ?,?)");
-            $qry2-> bindParam(1, $idMedia);
+        if ($categorie == "acc" && $zoneEmplacement == "film" && $emplacement == "emp1") {
+            $qry2 = $conn->prepare("INSERT INTO ressource (media__idApi, titre, categorie, typePrincipale, nbPossede, disponibilite, reserver, synopsis, idposter) Values (?, ?, ?, ?, ?, ?, ?, ?,?)");
+            $qry2-> bindParam(1, $idApi);
             $qry2-> bindParam(2, $titre);
             $qry2-> bindParam(3, $zoneEmplacement);
             $qry2-> bindParam(4, "act");
@@ -103,9 +103,9 @@ function ajoutRessourceContenuSite($conn, $idMedia, $titre, $typeMedia, $zoneEmp
             $qry2-> bindParam(9, $idposter);
             
             $qry2->execute();
-        } else if ($typeMedia == "acc" && $zoneEmplacement == "film" && $emplacement == "emp") {
-            $qry2 = $conn->prepare("INSERT INTO ressource (media__idMedia, titre, typeMedia, genrePrincipale, nbPossede, disponibilite, reserver, synopsis, idposter) Values (?, ?, ?, ?, ?, ?, ?, ?,?)");
-            $qry2-> bindParam(1, $idMedia);
+        } else if ($categorie == "acc" && $zoneEmplacement == "film" && $emplacement == "emp") {
+            $qry2 = $conn->prepare("INSERT INTO ressource (media__idApi, titre, categorie, typePrincipale, nbPossede, disponibilite, reserver, synopsis, idposter) Values (?, ?, ?, ?, ?, ?, ?, ?,?)");
+            $qry2-> bindParam(1, $idApi);
             $qry2-> bindParam(2, $titre);
             $qry2-> bindParam(3, $zoneEmplacement);
             $qry2-> bindParam(4, "com");
@@ -116,9 +116,9 @@ function ajoutRessourceContenuSite($conn, $idMedia, $titre, $typeMedia, $zoneEmp
             $qry2-> bindParam(9, $idposter);
             
             $qry2->execute();
-        } else if ($typeMedia == "acc" && $zoneEmplacement == "film" && $emplacement == "emp") {
-            $qry2 = $conn->prepare("INSERT INTO ressource (media__idMedia, titre, typeMedia, genrePrincipale, nbPossede, disponibilite, reserver, synopsis, idposter) Values (?, ?, ?, ?, ?, ?, ?, ?,?)");
-            $qry2-> bindParam(1, $idMedia);
+        } else if ($categorie == "acc" && $zoneEmplacement == "film" && $emplacement == "emp") {
+            $qry2 = $conn->prepare("INSERT INTO ressource (media__idApi, titre, categorie, typePrincipale, nbPossede, disponibilite, reserver, synopsis, idposter) Values (?, ?, ?, ?, ?, ?, ?, ?,?)");
+            $qry2-> bindParam(1, $idApi);
             $qry2-> bindParam(2, $titre);
             $qry2-> bindParam(3, $zoneEmplacement);
             $qry2-> bindParam(4, "fam");
@@ -131,10 +131,10 @@ function ajoutRessourceContenuSite($conn, $idMedia, $titre, $typeMedia, $zoneEmp
             $qry2->execute();
         }
 
-        $qry2 = $conn->prepare("INSERT INTO ressource (media__idMedia, titre, typeMedia, genrePrincipale, nbPossede, disponibilite, reserver, synopsis, idposter) Values (?, ?, ?, ?, ?, ?, ?, ?,?)");
-        $qry2-> bindParam(1, $idMedia);
+        $qry2 = $conn->prepare("INSERT INTO ressource (media__idApi, titre, categorie, typePrincipale, nbPossede, disponibilite, reserver, synopsis, idposter) Values (?, ?, ?, ?, ?, ?, ?, ?,?)");
+        $qry2-> bindParam(1, $idApi);
         $qry2-> bindParam(2, $titre);
-        $qry2-> bindParam(3, $typeMedia);
+        $qry2-> bindParam(3, $categorie);
         $qry2-> bindParam(4, $zoneEmplacement);
         $qry2-> bindParam(5, $nbPossede);
         $qry2-> bindParam(6, $nbPossede);
@@ -149,16 +149,16 @@ function ajoutRessourceContenuSite($conn, $idMedia, $titre, $typeMedia, $zoneEmp
     }
 }
 
-function ajoutContenuMedia ($conn, $idMedia, $titre, $typeMedia, $zoneEmplacement, $emplacement, $idposter, $idVideo){
+function ajoutContenuMedia ($conn, $idApi, $titre, $categorie, $zoneEmplacement, $emplacement, $idposter, $idVideo){
     try {
-        switch ($typeMedia) {
+        switch ($categorie) {
             case 'acc':
                 $table = "contenuaccueil";
                 deleteVideo ($conn, $zoneEmplacement, $emplacement, $table);
-                $qry3 = $conn->prepare("INSERT INTO contenuaccueil (media__idMedia, titre, typeMedia, zoneEmplacement, emplacement, idposter, idVideo) Values (?, ?, ?, ?, ?, ?, ?)");
-                $qry3-> bindParam(1, $idMedia);
+                $qry3 = $conn->prepare("INSERT INTO contenuaccueil (media__idApi, titre, categorie, zoneEmplacement, emplacement, idposter, idVideo) Values (?, ?, ?, ?, ?, ?, ?)");
+                $qry3-> bindParam(1, $idApi);
                 $qry3-> bindParam(2, $titre);
-                $qry3-> bindParam(3, $typeMedia);
+                $qry3-> bindParam(3, $categorie);
                 $qry3-> bindParam(4, $zoneEmplacement);
                 $qry3-> bindParam(5, $emplacement);
                 $qry3-> bindParam(6, $idposter);
@@ -168,10 +168,10 @@ function ajoutContenuMedia ($conn, $idMedia, $titre, $typeMedia, $zoneEmplacemen
             case 'film':
                 $table = "contenufilm";
                 deleteVideo ($conn, $zoneEmplacement, $emplacement, $table);
-                $qry3 = $conn->prepare("INSERT INTO contenufilm (media__idMedia, titre, typeMedia, zoneEmplacement, emplacement, idposter, idVideo) Values (?, ?, ?, ?, ?, ?, ?)");
-                $qry3-> bindParam(1, $idMedia);
+                $qry3 = $conn->prepare("INSERT INTO contenufilm (media__idApi, titre, categorie, zoneEmplacement, emplacement, idposter, idVideo) Values (?, ?, ?, ?, ?, ?, ?)");
+                $qry3-> bindParam(1, $idApi);
                 $qry3-> bindParam(2, $titre);
-                $qry3-> bindParam(3, $typeMedia);
+                $qry3-> bindParam(3, $categorie);
                 $qry3-> bindParam(4, $zoneEmplacement);
                 $qry3-> bindParam(5, $emplacement);
                 $qry3-> bindParam(6, $idposter);
@@ -181,10 +181,10 @@ function ajoutContenuMedia ($conn, $idMedia, $titre, $typeMedia, $zoneEmplacemen
             case 'serie':
                 $table = "contenuserie";
                 deleteVideo ($conn, $zoneEmplacement, $emplacement, $table);
-                $qry3 = $conn->prepare("INSERT INTO contenuserie (media__idMedia, titre, typeMedia, zoneEmplacement, emplacement, idposter, idVideo) Values (?, ?, ?, ?, ?, ?, ?)");
-                $qry3-> bindParam(1, $idMedia);
+                $qry3 = $conn->prepare("INSERT INTO contenuserie (media__idApi, titre, categorie, zoneEmplacement, emplacement, idposter, idVideo) Values (?, ?, ?, ?, ?, ?, ?)");
+                $qry3-> bindParam(1, $idApi);
                 $qry3-> bindParam(2, $titre);
-                $qry3-> bindParam(3, $typeMedia);
+                $qry3-> bindParam(3, $categorie);
                 $qry3-> bindParam(4, $zoneEmplacement);
                 $qry3-> bindParam(5, $emplacement);
                 $qry3-> bindParam(6, $idposter);
@@ -220,16 +220,16 @@ function deleteVideo ($conn, $zoneEmplacement, $emplacement, $table){
 }
 
 
-// $idMedia = 19;
+// $idApi = 19;
 // $titre = "le cinquième élément";
-// $typeMedia = "film";
+// $categorie = "film";
 // $zoneEmplacement = "act";
 // $emplacement = "emp1";
 // $idposter = "/8nx8sttha1Zidt73SbNncVfSwqk.jpg";
 // $idVideo = "7rzmiE-pESk";
 // $reserver = NULL;
-// $genrePrincipale = $zoneEmplacement;
+// $typePrincipale = $zoneEmplacement;
 // $nbPossede = 3;
 // $synopsis = NULL;
 
-// verifExists($conn, $idMedia, $titre, $typeMedia, $zoneEmplacement, $emplacement, $genrePrincipale, $nbPossede, $reserver, $synopsis, $idposter, $idVideo);
+// verifExists($conn, $idApi, $titre, $categorie, $zoneEmplacement, $emplacement, $typePrincipale, $nbPossede, $reserver, $synopsis, $idposter, $idVideo);

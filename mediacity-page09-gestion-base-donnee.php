@@ -4,16 +4,29 @@ include_once 'PHP/head.php';
 <body id="page09">
 <?php
 include_once 'PHP/header.php';
-$ajout = (isset($_GET['ajout']) && !empty($_GET['ajout'])) ? htmlspecialchars($_GET['ajout']) : null;
-if ($ajout == "oui"){
-    echo '<script language="Javascript">
-    alert ("Ajout effectuer." )
-    </script>';
-}else if ($ajout == "non"){
-    echo '<script language="Javascript">
-    alert ("Ajout non effectuer!!" )
-    </script>';
+foreach ($_GET as $key => $value) {
+    $rep[':' . $key] = (isset($_GET[$key]) && !empty($_GET[$key])) ? htmlspecialchars($_GET[$key]) : null;
 }
+if (isset($rep[":ajout"])){  
+    if ($rep[":ajout"] == "oui"){
+        echo '<script language="Javascript">
+        alert ("Ajout effectuer." )
+        </script>';
+    }
+} else if (isset($rep[":nbModif"])){
+    if ($rep[":nbModif"] == "oui"){
+        echo '<script language="Javascript">
+        alert ("Modification du nombre de copie effectuer!!" )
+        </script>';
+    }
+} else if (isset($rep[":supression"])){
+    if ($rep[":supression"] == "oui"){
+        echo '<script language="Javascript">
+        alert ("Suppression effectuer!!" )
+        </script>';
+    }
+};
+
 ?>
 <main id="page09_main">
     <h1 class="majuscule">Gerer un media</h1>
@@ -54,11 +67,11 @@ if ($ajout == "oui"){
         <div id="js___posterFilm" class="affiche_container">
         </div>
     </article>
-    <form action="/php_projet-CDA/6.projet-mediacity_PHP/projet-mediacity_PHP-en-cour/PHP/treatment-gestion-BDD/mediacity-ajout-media-BDD.php"  method="get">
-        <input id="id-selection" type="text" name="id"/>
+    <form action="/php_projet-CDA/6.projet-mediacity_PHP/projet-mediacity_PHP-en-cour/PHP/treatment-gestion-BDD/mediacity-BDD-ajout-media.php"  method="get">
+        <input id="id-selection" type="text" name="idApi"/>
         <input id="titre-selection" type="text" name="titre"/>
-        <input id="type-selection" type="text" name="type"/>
-        <input id="genre-selection" type="text" name="genre"/>
+        <input id="type-selection" type="text" name="categorie"/>
+        <input id="genre-selection" type="text" name="typePrincipale"/>
         <input id="nbpossede-selection" type="text" name="nbpossede"/>
         <input id="idPoster-selection" type="text" name="idPosterSelection"/>
         <input id="synopsis-selection" type="text" name="synopsisSelection"/>
@@ -82,8 +95,8 @@ if ($ajout == "oui"){
     </article>
     <article id="aside09__select-action" class="invisibility">
         <h2>Que voulez vous faire?</h2>
-        <form action="/php_projet-CDA/6.projet-mediacity_PHP/projet-mediacity_PHP-en-cour/PHP/treatment-gestion-BDD/medicity-modif-quantite-BDD.php"  method="get" class="boite-formulaire action__boxAction">
-            <input id="titreRecherche" type="text" name="id"/>
+        <form action="/php_projet-CDA/6.projet-mediacity_PHP/projet-mediacity_PHP-en-cour/PHP/treatment-gestion-BDD/mediacity-BDD-modif-quantite.php"  method="get" class="boite-formulaire action__boxAction">
+            <input id="titreRecherche" type="text" name="titre"/>
             <div class="boxAction_contain">
                 <label for="modifNbCopie">
                     Modifier le nombre d'exemplaire que vous posséder?</br>
@@ -99,8 +112,8 @@ if ($ajout == "oui"){
             </div>
             <button class="btn btn-new-media" id="btn-valider-modifNb">Valider</button>
         </form>
-        <form action="/php_projet-CDA/6.projet-mediacity_PHP/projet-mediacity_PHP-en-cour/PHP/treatment-gestion-BDD/medicity-modif-quantite-BDD.php"  method="get" class="boite-formulaire action__boxAction">
-            <input id="titreRecherche1" type="text" name="id"/>
+        <form action="/php_projet-CDA/6.projet-mediacity_PHP/projet-mediacity_PHP-en-cour/PHP/treatment-gestion-BDD/mediacity-BDD-modif-quantite.php"  method="get" class="boite-formulaire action__boxAction">
+            <input id="titreRecherche1" type="text" name="titre"/>
             <div class="boxAction_contain">
                 <label for="supprimerMedia">
                     Supprimer le média?</br>
