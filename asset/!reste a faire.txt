@@ -7,6 +7,8 @@
 -connexion Ok-Fait
 -page ajout site Ok-Fait
 
+-lors de l'ajout pour les érie ne pas save le synopsis
+-sur page ajout fonctionnalité de recherche non trouver
 -page gestion compte 
 -page toute contenue de la ressource
 -page recherche

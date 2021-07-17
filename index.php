@@ -26,9 +26,9 @@ include_once 'PHP/header.php'
             </div>
             <div class="liste-contenu box-image">
                 <?php 
-                    createHtmlAcceuil($conn,"contenuaccueil","ac-film","emp1");
-                    createHtmlAcceuil($conn,"contenuaccueil","ac-film","emp2");
-                    createHtmlAcceuil($conn,"contenuaccueil","ac-film","emp3");
+                    createHtmlAcceuil($conn,"ac-film1");
+                    createHtmlAcceuil($conn,"ac-film2");
+                    createHtmlAcceuil($conn,"ac-film3");
                 ?>
             </div>
         </article>
@@ -41,9 +41,9 @@ include_once 'PHP/header.php'
             </div>
             <div class="liste-contenu box-image">
                 <?php 
-                    createHtmlAcceuil($conn,"contenuaccueil","ac-series","emp1");
-                    createHtmlAcceuil($conn,"contenuaccueil","ac-series","emp2");
-                    createHtmlAcceuil($conn,"contenuaccueil","ac-series","emp3");
+                    createHtmlAcceuil($conn,"ac-serie1");
+                    createHtmlAcceuil($conn,"ac-serie2");
+                    createHtmlAcceuil($conn,"ac-serie3");
                 ?>
             </div>
         </article>

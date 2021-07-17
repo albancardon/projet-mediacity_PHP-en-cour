@@ -1,8 +1,8 @@
 
 //ajout film
 
-var type = document.getElementById("type");
-var genre = document.getElementById("genre");
+var page = document.getElementById("page");
+var typePrincipale = document.getElementById("typePrincipale");
 var emplacement = document.getElementById("emplacement");
 var filmName = document.getElementById("nomFilm");
 var btnValider = document.getElementById("btn-valider");
@@ -16,20 +16,21 @@ var nbCopie = document.getElementById("nbCopie");
 var Ba = 1;
 var idSelection = document.getElementById("id-selection");
 var titreSelection = document.getElementById("titre-selection");
-var typeSelection = document.getElementById("type-selection");
-var zoneSelection = document.getElementById("zone-selection");
-var emplacementSelection = document.getElementById("emplacement-selection");
-var nbpossedeSelection = document.getElementById("nbpossede-selection");
+var categorieSelection = document.getElementById("categorie-selection");
+var typePrincipaleSelection = document.getElementById("typePrincipale-selection");
 var idPosterSelection = document.getElementById("idPoster-selection");
 var idVideoSelection = document.getElementById("idVideo-selection");
 var synopsisSelection = document.getElementById("synopsis-selection");
+var pageSelection = document.getElementById("page-selection");
+var nbpossedeSelection = document.getElementById("nbpossede-selection");
+var emplacementSelection = document.getElementById("emplacement-selection");
 var affichePoster = document.getElementById("affiche-Poster");
 
-type.addEventListener("change",ajoutListeGenre);
-genre.addEventListener("change",ajoutListeEmplacement);
+page.addEventListener("change",ajoutListeTypePrincipale);
+typePrincipale.addEventListener("change",ajoutListeEmplacement);
 btnValider.addEventListener("click",getInfoFilm);
-type.addEventListener("change",()=>changeData (typeSelection,type));
-genre.addEventListener("change",()=>changeData (zoneSelection,genre));
+page.addEventListener("change",()=>changeData (pageSelection,page));
+typePrincipale.addEventListener("change",()=>changeData (typePrincipaleSelection,typePrincipale));
 emplacement.addEventListener("change",()=>changeData (emplacementSelection,emplacement));
 btnEnvoyer1.addEventListener("click",dataSend);
 btnEnvoyer2.addEventListener("click",ajoutNombre);
@@ -47,7 +48,7 @@ function reorganizationDate(dateENG){
     }
 }
 
-function ajoutListeGenre(){
+function ajoutListeTypePrincipale(){
     let optionEmplacementOld = document.getElementsByClassName("optionEmplacement");
     if (optionEmplacementOld.length>0){
         for (i = optionEmplacementOld.length-1; i >= 0; i--) {
@@ -55,68 +56,37 @@ function ajoutListeGenre(){
         }
     }
 
-    let optionGenreOld = document.getElementsByClassName("optionGenre");
-    if (optionGenreOld.length>0){
-        for (i = optionGenreOld.length-1; i >= 0; i--) {
-            genre.removeChild(optionGenreOld[i]);
+    let optionTypePrincipaleOld = document.getElementsByClassName("optionTypePrincipale");
+    if (optionTypePrincipaleOld.length>0){
+        for (i = optionTypePrincipaleOld.length-1; i >= 0; i--) {
+            typePrincipale.removeChild(optionTypePrincipaleOld[i]);
         }
     }
 
-    let value = type.value;
-    if (value == "acc"){
         let option = document.createElement("option");
-        option.classList.add("optionGenre");
+        option.classList.add("optionTypePrincipale");
         option.textContent = "Choisissez une option";
         option.value="";
-        genre.appendChild(option);
+        typePrincipale.appendChild(option);
 
         let option1 = document.createElement("option");
-        option1.classList.add("optionGenre");
-        option1.textContent = "Film";
-        option1.value="ac-film";
-        genre.appendChild(option1);
+        option1.classList.add("optionTypePrincipale");
+        option1.textContent = "Action, Aventure";
+        option1.value="action/aventure";
+        typePrincipale.appendChild(option1);
 
         let option2 = document.createElement("option");
-        option2.classList.add("optionGenre");
-        option2.textContent = "Série";
-        option2.value="ac-serie";
-        genre.appendChild(option2);
-
-    }else if (value == "film" || value == "serie"){
-        let option = document.createElement("option");
-        option.classList.add("optionGenre");
-        option.textContent = "Choisissez une option";
-        option.value="";
-        genre.appendChild(option);
-
-        let option1 = document.createElement("option");
-        option1.classList.add("optionGenre");
-        option1.textContent = "Selection du chef";
-        option1.value="chef";
-        genre.appendChild(option1);
-
-        let option2 = document.createElement("option");
-        option2.classList.add("optionGenre");
-        option2.textContent = "Action/aventure";
-        option2.value="act";
-        genre.appendChild(option2);
+        option2.classList.add("optionTypePrincipale");
+        option2.textContent = "Comedie, Comique";
+        option2.value="comedie/comique";
+        typePrincipale.appendChild(option2);
 
         let option3 = document.createElement("option");
-        option3.classList.add("optionGenre");
-        option3.textContent = "Comedie/comique";
-        option3.value="com";
-        genre.appendChild(option3);
+        option3.classList.add("optionTypePrincipale");
+        option3.textContent = "Familial, Enfance";
+        option3.value="familial/enfance";
+        typePrincipale.appendChild(option3);
 
-        let option4 = document.createElement("option");
-        option4.classList.add("optionGenre");
-        option4.textContent = "Animation/famillial";
-        option4.value="fam";
-        genre.appendChild(option4);
-
-    }
-    else{
-        alerte("Erreur Saisie");
-    }
 }
 
 function ajoutListeEmplacement(){
@@ -127,8 +97,8 @@ function ajoutListeEmplacement(){
         }
     }
 
-    let value = genre.value;
-    if (value == "chef" || value == "ac-film" || value == "ac-serie"){
+    let valuePage = page.value;
+    if (valuePage === "pageAccueil") {
         let option = document.createElement("option");
         option.classList.add("optionEmplacement");
         option.textContent = "Choisissez une option";
@@ -137,67 +107,155 @@ function ajoutListeEmplacement(){
 
         let option1 = document.createElement("option");
         option1.classList.add("optionEmplacement");
-        option1.textContent = "Emplacement 1";
-        option1.value="emp1";
+        option1.textContent = "Emplacement film 1";
+        option1.value="ac-film1";
         emplacement.appendChild(option1);
 
         let option2 = document.createElement("option");
         option2.classList.add("optionEmplacement");
-        option2.textContent = "Emplacement 2";
-        option2.value="emp2";
+        option2.textContent = "Emplacement film 2";
+        option2.value="ac-film2";
         emplacement.appendChild(option2);
 
         let option3 = document.createElement("option");
         option3.classList.add("optionEmplacement");
-        option3.textContent = "Emplacement 3";
-        option3.value="emp3";
-        emplacement.appendChild(option3);
-
-    }else if (value == "act" || value == "com" || value == "fam"){
-        let option = document.createElement("option");
-        option.classList.add("optionEmplacement");
-        option.textContent = "Choisissez une option";
-        option.value="";
-        emplacement.appendChild(option);
-
-        let option1 = document.createElement("option");
-        option1.classList.add("optionEmplacement");
-        option1.textContent = "Emplacement 1";
-        option1.value="emp1";
-        emplacement.appendChild(option1);
-
-        let option2 = document.createElement("option");
-        option2.classList.add("optionEmplacement");
-        option2.textContent = "Emplacement 2";
-        option2.value="emp2";
-        emplacement.appendChild(option2);
-
-        let option3 = document.createElement("option");
-        option3.classList.add("optionEmplacement");
-        option3.textContent = "Emplacement 3";
-        option3.value="emp3";
+        option3.textContent = "Emplacement film 3";
+        option3.value="ac-film3";
         emplacement.appendChild(option3);
 
         let option4 = document.createElement("option");
         option4.classList.add("optionEmplacement");
-        option4.textContent = "Emplacement 4";
-        option4.value="emp4";
+        option4.textContent = "Emplacement serie 1";
+        option4.value="ac-serie1";
         emplacement.appendChild(option4);
 
-    }
-    else{
-        alert("Erreur Saisie");
+        let option5 = document.createElement("option");
+        option5.classList.add("optionEmplacement");
+        option5.textContent = "Emplacement serie 2";
+        option5.value="ac-serie2";
+        emplacement.appendChild(option5);
+
+        let option6 = document.createElement("option");
+        option6.classList.add("optionEmplacement");
+        option6.textContent = "Emplacement serie 3";
+        option6.value="ac-serie3";
+        emplacement.appendChild(option6);
+
+    } else if (valuePage === "pageFilm" || valuePage === "pageSerie") {
+        let valueTypePrincipale = typePrincipale.value;
+        switch (valueTypePrincipale) {
+            case "action/aventure":
+                let option = document.createElement("option");
+                option.classList.add("optionEmplacement");
+                option.textContent = "Choisissez une option";
+                option.value="";
+                emplacement.appendChild(option);
+
+                let option1 = document.createElement("option");
+                option1.classList.add("optionEmplacement");
+                option1.textContent = "Emplacement 1";
+                option1.value="act1";
+                emplacement.appendChild(option1);
+
+                let option2 = document.createElement("option");
+                option2.classList.add("optionEmplacement");
+                option2.textContent = "Emplacement 2";
+                option2.value="act2";
+                emplacement.appendChild(option2);
+
+                let option3 = document.createElement("option");
+                option3.classList.add("optionEmplacement");
+                option3.textContent = "Emplacement 3";
+                option3.value="act3";
+                emplacement.appendChild(option3);
+
+                let option4 = document.createElement("option");
+                option4.classList.add("optionEmplacement");
+                option4.textContent = "Emplacement 4";
+                option4.value="act4";
+                emplacement.appendChild(option4);
+                break;
+
+            case "comedie/comique":
+                let optionCom = document.createElement("option");
+                optionCom.classList.add("optionEmplacement");
+                optionCom.textContent = "Choisissez une option";
+                optionCom.value="";
+                emplacement.appendChild(option);
+
+                let optionCom1 = document.createElement("option");
+                optionCom1.classList.add("optionEmplacement");
+                optionCom1.textContent = "Emplacement 1";
+                optionCom1.value="com1";
+                emplacement.appendChild(optionCom1);
+
+                let optionCom2 = document.createElement("option");
+                optionCom2.classList.add("optionEmplacement");
+                optionCom2.textContent = "Emplacement 2";
+                optionCom2.value="com2";
+                emplacement.appendChild(optionCom2);
+
+                let optionCom3 = document.createElement("option");
+                optionCom3.classList.add("optionEmplacement");
+                optionCom3.textContent = "Emplacement 3";
+                optionCom3.value="com3";
+                emplacement.appendChild(optionCom3);
+
+                let optionCom4 = document.createElement("option");
+                optionCom4.classList.add("optionEmplacement");
+                optionCom4.textContent = "Emplacement 4";
+                optionCom4.value="com4";
+                emplacement.appendChild(optionCom4);
+                break;
+            
+
+            case "familial/enfance":
+                let optionFam = document.createElement("option");
+                optionFam.classList.add("optionEmplacement");
+                optionFam.textContent = "Choisissez une option";
+                optionFam.value="";
+                emplacement.appendChild(optionFam);
+
+                let optionFam1 = document.createElement("option");
+                optionFam1.classList.add("optionEmplacement");
+                optionFam1.textContent = "Emplacement 1";
+                optionFam1.value="fam1";
+                emplacement.appendChild(optionFam1);
+
+                let optionFam2 = document.createElement("option");
+                optionFam2.classList.add("optionEmplacement");
+                optionFam2.textContent = "Emplacement 2";
+                optionFam2.value="fam2";
+                emplacement.appendChild(optionFam2);
+
+                let optionFam3 = document.createElement("option");
+                optionFam3.classList.add("optionEmplacement");
+                optionFam3.textContent = "Emplacement 3";
+                optionFam3.value="fam3";
+                emplacement.appendChild(optionFam3);
+
+                let optionFam4 = document.createElement("option");
+                optionFam4.classList.add("optionEmplacement");
+                optionFam4.textContent = "Emplacement 4";
+                optionFam4.value="fam4";
+                emplacement.appendChild(optionFam4);
+                break;
+
+            default:
+                alert("Erreur Saisie");
+                break;
+        }
     }
 }
 
 
 function getInfoFilm(){
-    if (type.value == ""){
-        alert("Veuillez choisir un type de media s'il vous plait")
+    if (page.value == ""){
+        alert("Veuillez choisir une page pour le media s'il vous plait")
         return
 
-    }else if (genre.value == ""){
-        alert("Veuillez choisir un genre de media s'il vous plait")
+    }else if (typePrincipale.value == ""){
+        alert("Veuillez choisir un typePrincipale de media s'il vous plait")
         return
 
     }else if (emplacement.value == ""){
@@ -422,6 +480,14 @@ function dataSend (){
     let synopsisSelectionTemp = document.getElementById("synopsis"+jsSelect.id);
     if (synopsisSelectionTemp !== null){
         synopsisSelection.value = synopsisSelectionTemp.innerHTML;
+    }
+    console.log(page.value);
+    if (page.value === "pageFilm" || emplacementSelection.value === "ac-film1" || emplacementSelection.value === "ac-film2" || emplacementSelection === "ac-film3") {
+        categorieSelection.value = "film";
+    }else if (page.value === "pageSerie" || emplacementSelection.value === "ac-serie1" || emplacementSelection.value === "ac-serie2" || emplacementSelection === "ac-serie3"){
+        categorieSelection.value = "series";
+    }else{
+        console.log("Error");
     }
 }
 

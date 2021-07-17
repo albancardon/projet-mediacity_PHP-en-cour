@@ -14,28 +14,11 @@ function connectionBDD(){
     }
 }
 
-function getDataPage($conn,$nameTable,$zoneEmplacement,$emplacement){
+function getDataPage($conn,$page,$emplacement){
     try{
-        switch ($nameTable) {
-            case 'contenuaccueil':
-                $qry = $conn->prepare("SELECT * FROM `contenuaccueil` WHERE zoneEmplacement = ? AND emplacement = ?");
-                $qry->execute(array($zoneEmplacement,$emplacement));
-                $donnees = $qry->fetchAll();
-                break;
-            case 'contenufilm':
-                $qry = $conn->prepare("SELECT * FROM `contenufilm` WHERE zoneEmplacement = ? AND emplacement = ?");
-                $qry->execute(array($zoneEmplacement,$emplacement));
-                $donnees = $qry->fetchAll();
-                break;
-            case 'contenuserie':
-                $qry = $conn->prepare("SELECT * FROM `contenuserie` WHERE zoneEmplacement = ? AND emplacement = ?");
-                $qry->execute(array($zoneEmplacement,$emplacement));
-                $donnees = $qry->fetchAll();
-                break;
-            default:
-                $donnees = "Error!!";
-                break;
-        }
+        $qry = $conn->prepare("SELECT * FROM `media` WHERE page = ? AND emplacement = ?");
+        $qry->execute(array($page,$emplacement));
+        $donnees = $qry->fetchAll();
         return $donnees;
     } catch (PDOException $e) {
         print "Erreur !: " . $e->getMessage() . "<br/>";
@@ -43,8 +26,8 @@ function getDataPage($conn,$nameTable,$zoneEmplacement,$emplacement){
     }
 }
 
-function recupDonneCreateHtmlBDD($conn,$nameTable,$zoneEmplacement,$emplacement){
-    $donnes = getDataPage($conn,$nameTable,$zoneEmplacement,$emplacement);
+function recupDonneCreateHtmlBDD($conn,$page,$emplacement){
+    $donnes = getDataPage($conn,$page,$emplacement);
     foreach ($donnes as $tab){
         foreach($tab as $key => $value){
             $params [':' . $key] = (isset($tab[$key]) && !empty($tab[$key])) ? $tab[$key] : null;
@@ -53,17 +36,17 @@ function recupDonneCreateHtmlBDD($conn,$nameTable,$zoneEmplacement,$emplacement)
     return  $params;
 }
 
-function getDataModif($conn,$titre){
-    try{
-        $qry = $conn->prepare("SELECT * FROM ressource WHERE titre = ?");
-        $qry->execute(array($titre));
-        $donnees = $qry->fetchAll();
-        return $donnees;
-    } catch (PDOException $e) {
-        print "Erreur !: " . $e->getMessage() . "<br/>";
-        die();
-    }
-}
+// function getDataModif($conn,$titre){
+//     try{
+//         $qry = $conn->prepare("SELECT * FROM ressource WHERE titre = ?");
+//         $qry->execute(array($titre));
+//         $donnees = $qry->fetchAll();
+//         return $donnees;
+//     } catch (PDOException $e) {
+//         print "Erreur !: " . $e->getMessage() . "<br/>";
+//         die();
+//     }
+// }
 
 $conn = connectionBDD();
 ?>

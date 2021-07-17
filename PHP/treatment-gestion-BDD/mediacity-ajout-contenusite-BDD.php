@@ -9,27 +9,27 @@ function recupDonneeEntre(){
         $params[':' . $key] = (isset($_GET[$key]) && !empty($_GET[$key])) ? htmlspecialchars($_GET[$key]) : null;
     }
     $conn = connectionBDD();
-    $idApi =  $params[":id"];
+    $idApi =  $params[":idApi"];
     $titre =  $params[":titre"]; 
-    $categorie =  $params[":type"];
-    $zoneEmplacement =  $params[":zoneEmplacement"];
-    $emplacement =  $params[":emplacement"];
-    $nbPossede =  $params[":nbpossede"];
-    if ($params[":synopsisSelection"] == "") {
-        $synopsis = NULL;
-    }else{
-        $synopsis =  $params[":synopsisSelection"];
-    }
-    $idposter =  $params[":idPosterSelection"];
+    $categorie =  $params[":categorie"];
+    $typePrincipale =  $params[":typePrincipale"];
+    $idPoster =  $params[":idPosterSelection"];
     if ($params[":idVideoSelection"] == "") {
         $idVideo = NULL;
     }else{
         $idVideo =  $params[":idVideoSelection"];
-    }
-    $reserver = FALSE;
+    };
+    if ($params[":synopsisSelection"] == "") {
+        $synopsis = NULL;
+    }else{
+        $synopsis =  $params[":synopsisSelection"];
+    };
+    $nbPossede =  $params[":nbpossede"];
+    $page =  $params[":page"];
+    $emplacement =  $params[":emplacement"];
     
 
-    verifExists ($conn, $idApi, $titre, $categorie, $zoneEmplacement, $emplacement, $nbPossede, $reserver, $synopsis, $idposter, $idVideo);
+    verifExists ($conn, $idApi, $titre, $categorie, $typePrincipale, $idPoster, $idVideo, $synopsis, $nbPossede, $page, $emplacement);
     exit();
 }
 recupDonneeEntre()

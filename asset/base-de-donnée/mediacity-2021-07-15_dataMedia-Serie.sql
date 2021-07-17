@@ -85,11 +85,11 @@ NULL,
 
 (1892, "le Prince de Bel-Air", "series", "familial/enfance", "/gYPE5vfStpVTf1ULE11B1Vwm12b.jpg", NULL, 
 NULL, 
-4, 4, FALSE, NULL, NULL),
+4, 4, FALSE, "pageSerie", "fam2"),
 
 (4327, "Mr. Bean", "series", "familial/enfance", "/bUBuXOa64h45uybuxBb6FTATzb4.jpg", NULL, 
 NULL, 
-2, 2, FALSE, "pageSerie", "chaef3"),
+2, 2, FALSE, "pageSerie", "chef3"),
 
 (36406, "yu-Gi-Oh", "series", "familial/enfance", "/gr2iaZHfK1v42p94MbHmfHX7aDL.jpg", NULL, 
 NULL, 
@@ -97,11 +97,11 @@ NULL,
 
 (2632, "il était une fois... la vie", "series", "familial/enfance", "/aH2Cn9sEAx8bPRIHlPVFZHh6uGm.jpg", NULL, 
 NULL, 
-3, 3, FALSE, NULL, NULL),
+3, 3, FALSE, "pageSerie", "fam3"),
 
 (60572, "pokémon", "series", "familial/enfance", "/lP4zwr0F7hWTbAFltfoFTc2AxRG.jpg", NULL, 
 NULL, 
-5, 5, FALSE, NULL, NULL),
+5, 5, FALSE, "pageSerie", "fam4"),
 
 (24106, "olive et tom : le retour", "series", "familial/enfance", "/c340auXMRV9ZJevAD3xe67J5KAD.jpg", NULL, 
 NULL, 
@@ -109,7 +109,7 @@ NULL,
 
 (12971, "dragon ball z", "series", "familial/enfance", "/f2zhRLqwRLrKhEMeIM7Z5buJFo3.jpg", NULL, 
 NULL, 
-4, 4, FALSE, NULL, NULL),
+4, 4, FALSE, "pageSerie", "fam1"),
 
 (8123, "le monde fou de tex avery", "series", "familial/enfance", "/uxbqkT0qAtmP3gZffdLf2e6pMkg.jpg", NULL, 
 NULL, 

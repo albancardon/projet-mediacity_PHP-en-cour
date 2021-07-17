@@ -18,9 +18,9 @@ include_once 'PHP/header.php'
             <!--commun carte page 02-03-->
             <section class="container">
             <?php 
-                createHtmlSerie($conn,"contenuserie","chef","emp1");
-                createHtmlSerie($conn,"contenuserie","chef","emp2");
-                createHtmlSerie($conn,"contenuserie","chef","emp3");
+                createHtmlSerie($conn,"chef1");
+                createHtmlSerie($conn,"chef2");
+                createHtmlSerie($conn,"chef3");
             ?>
             </section>
         </div>
@@ -29,10 +29,10 @@ include_once 'PHP/header.php'
     <article class="container-slide">
         <section class="slider">
             <?php 
-                createHtmlSerie($conn,"contenuserie","act","emp1");
-                createHtmlSerie($conn,"contenuserie","act","emp2");
-                createHtmlSerie($conn,"contenuserie","act","emp3");
-                createHtmlSerie($conn,"contenuserie","act","emp4");
+                createHtmlSerie($conn,"act1");
+                createHtmlSerie($conn,"act2");
+                createHtmlSerie($conn,"act3");
+                createHtmlSerie($conn,"act4");
             ?>
         </section>
         <section class="box-fleche">
@@ -43,10 +43,10 @@ include_once 'PHP/header.php'
     <article class="container-slide">
         <section class="slider">
             <?php 
-                createHtmlSerie($conn,"contenuserie","com","emp1");
-                createHtmlSerie($conn,"contenuserie","com","emp2");
-                createHtmlSerie($conn,"contenuserie","com","emp3");
-                createHtmlSerie($conn,"contenuserie","com","emp4");
+                createHtmlSerie($conn,"com1");
+                createHtmlSerie($conn,"com2");
+                createHtmlSerie($conn,"com3");
+                createHtmlSerie($conn,"com4");
             ?>
         </section>
         <section class="box-fleche">
@@ -57,10 +57,10 @@ include_once 'PHP/header.php'
     <article class="container-slide">
         <section class="slider">
             <?php 
-                createHtmlSerie($conn,"contenuserie","fam","emp1");
-                createHtmlSerie($conn,"contenuserie","fam","emp2");
-                createHtmlSerie($conn,"contenuserie","fam","emp3");
-                createHtmlSerie($conn,"contenuserie","fam","emp4");
+                createHtmlSerie($conn,"fam1");
+                createHtmlSerie($conn,"fam2");
+                createHtmlSerie($conn,"fam3");
+                createHtmlSerie($conn,"fam4");
             ?>
         </section>
         <section class="box-fleche">

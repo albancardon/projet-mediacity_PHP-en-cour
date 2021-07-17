@@ -18,9 +18,9 @@ include_once 'PHP/header.php'
             <!--commun carte page 02-03-->
             <section class="container">
             <?php 
-                createHtmlFilm($conn,"contenufilm","chef","emp1");
-                createHtmlFilm($conn,"contenufilm","chef","emp2");
-                createHtmlFilm($conn,"contenufilm","chef","emp3");
+                createHtmlFilm($conn,"chef1");
+                createHtmlFilm($conn,"chef2");
+                createHtmlFilm($conn,"chef3");
             ?>
             </section>
         </div>
@@ -32,10 +32,10 @@ include_once 'PHP/header.php'
         <h2 class="titre-categorie majuscule">action/aventure</h2>
         <section class="container">
             <?php 
-                createHtmlFilm($conn,"contenufilm","act","emp1");
-                createHtmlFilm($conn,"contenufilm","act","emp2");
-                createHtmlFilm($conn,"contenufilm","act","emp3");
-                createHtmlFilm($conn,"contenufilm","act","emp4");
+                createHtmlFilm($conn,"act1");
+                createHtmlFilm($conn,"act2");
+                createHtmlFilm($conn,"act3");
+                createHtmlFilm($conn,"act4");
             ?>
         </section>
     </article>
@@ -44,10 +44,10 @@ include_once 'PHP/header.php'
         <h2 class="titre-categorie majuscule">comedie/comique</h2>
         <section class="container">
             <?php 
-                createHtmlFilm($conn,"contenufilm","com","emp1");
-                createHtmlFilm($conn,"contenufilm","com","emp2");
-                createHtmlFilm($conn,"contenufilm","com","emp3");
-                createHtmlFilm($conn,"contenufilm","com","emp4");
+                createHtmlFilm($conn,"com1");
+                createHtmlFilm($conn,"com2");
+                createHtmlFilm($conn,"com3");
+                createHtmlFilm($conn,"com4");
             ?>
         </section>
     </article>
@@ -55,10 +55,10 @@ include_once 'PHP/header.php'
         <h2 class="titre-categorie majuscule">animation/familial</h2>
         <section class="container">
             <?php 
-                createHtmlFilm($conn,"contenufilm","fam","emp1");
-                createHtmlFilm($conn,"contenufilm","fam","emp2");
-                createHtmlFilm($conn,"contenufilm","fam","emp3");
-                createHtmlFilm($conn,"contenufilm","fam","emp4");
+                createHtmlFilm($conn,"fam1");
+                createHtmlFilm($conn,"fam2");
+                createHtmlFilm($conn,"fam3");
+                createHtmlFilm($conn,"fam4");
             ?>
         </section>
     </article>

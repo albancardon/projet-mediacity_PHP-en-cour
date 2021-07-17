@@ -2,16 +2,17 @@
 include_once 'PHP/treatment-gestion-BDD/mediacity-lib-BD.php';
 
 
-function createHtmlAcceuil($conn,$nameTable,$zoneEmplacement,$emplacement){
-    $params = recupDonneCreateHtmlBDD($conn,$nameTable,$zoneEmplacement,$emplacement);
+function createHtmlAcceuil($conn,$emplacement){
+    $page = "pageAccueil";
+    $params = recupDonneCreateHtmlBDD($conn,$page,$emplacement);
     
-    $idTemp = $params[":media__idMedia"];
+    $idTemp = $params[":idApi"];
     $titreTemp = $params[":titre"];
     $linkPoster = $params[":idPoster"];
-    $zoneEmplacementTemp = $params[":zoneEmplacement"];
-    if ($zoneEmplacementTemp === "ac-film"){
+    $emplacementTemp = $params[":emplacement"];
+    if ($emplacementTemp === "ac-film1" || $emplacementTemp== "ac-film2" || $emplacementTemp== "ac-film3"){
         $link = "mediacity-page02-films.php";
-    }else if ($zoneEmplacementTemp === "ac-series"){
+    }else if ($emplacementTemp === "ac-serie1" || $emplacementTemp== "ac-serie2" || $emplacementTemp== "ac-serie3"){
         $link = "mediacity-page03-series.php";
     }
 
@@ -28,21 +29,22 @@ function createHtmlAcceuil($conn,$nameTable,$zoneEmplacement,$emplacement){
 }
 
 
-function createHtmlFilm($conn,$nameTable,$zoneEmplacement,$emplacement){
-    $params = recupDonneCreateHtmlBDD($conn,$nameTable,$zoneEmplacement,$emplacement);
+function createHtmlFilm($conn,$emplacement){
+    $page = "pageFilm";
+    $params = recupDonneCreateHtmlBDD($conn,$page,$emplacement);
 
-    if ($zoneEmplacement== "chef") {
+    if ($emplacement== "chef1" || $emplacement== "chef2" || $emplacement== "chef3") {
         $card = "card";
     } else {
         $card = "card-detail";
     }
 
-    $idTemp = $params[":media__idMedia"];
+    $idTemp = $params[":idApi"];
     $titreTemp = $params[":titre"];
     $linkPoster = $params[":idPoster"];
     $linkKeyRecup = $params[":idVideo"];
     $html = 
-    '<figure id="'.$idTemp.'" class="affiche-legende '.$emplacement.'">
+    '<figure id="'.$idTemp.'" class="affiche-legende ">
         <div class="'.$card.'">
             <div class="face face1">
                 <iframe class="img-face1" src="https://www.youtube.com/embed/'.$linkKeyRecup.'" frameborder="0" allowfullscreen></iframe>
@@ -52,7 +54,7 @@ function createHtmlFilm($conn,$nameTable,$zoneEmplacement,$emplacement){
             </div>  
         </div>    
         <span class="saut-ligne"></span>
-        <p class="nom-selection">'.$titreTemp.'</p>
+        <p class="nom-selection majDbutMot">'.$titreTemp.'</p>
         <span class="saut-ligne"></span>
         <p class="legende-selection">Pour voir la bande annonce aller sur l\'affiche</p>
     </figure>';
@@ -61,14 +63,16 @@ function createHtmlFilm($conn,$nameTable,$zoneEmplacement,$emplacement){
 }
 
 
-function createHtmlSerie($conn,$nameTable,$zoneEmplacement,$emplacement){
-    $params = recupDonneCreateHtmlBDD($conn,$nameTable,$zoneEmplacement,$emplacement);
+function createHtmlSerie($conn,$emplacement){
+    $page = "pageSerie";
+    $params = recupDonneCreateHtmlBDD($conn,$page,$emplacement);
     
-    $idTemp = $params[":media__idMedia"];
+    $idTemp = $params[":idApi"];
     $titreTemp = $params[":titre"];
     $linkPoster = $params[":idPoster"];
-    $zoneEmplacementTemp = $params[":zoneEmplacement"];
-    if ($zoneEmplacementTemp === "chef"){
+    $emplacementTemp = $params[":emplacement"];
+    $js__mediaTemp = trim($emplacementTemp, '1234');
+    if ($emplacementTemp === "chef1" || $emplacementTemp === "chef2" || $emplacementTemp === "chef3"){
         $html = 
         '
         <div id="'.$idTemp.' class="active">
@@ -80,14 +84,14 @@ function createHtmlSerie($conn,$nameTable,$zoneEmplacement,$emplacement){
         return;
     }else{
         $emplacementTemp = $params[":emplacement"];
-        if ($emplacementTemp === "emp1"){
+        if ($emplacementTemp === "act1" || $emplacementTemp === "com1" || $emplacementTemp === "fam1"){
             $visibility = "active";
         }else {
             $visibility = "inactive";
         }
         $html = 
         '
-        <div id="'.$idTemp.'" class="js__media-'.$zoneEmplacementTemp.'  '.$visibility.'">
+        <div id="'.$idTemp.'" class="js__media-'.$js__mediaTemp.'  '.$visibility.'">
             <img class="img-slider" src="https://image.tmdb.org/t/p/w500'.$linkPoster.'" alt="afffiche '.$titreTemp.'">
             <p class="legende-slide majuscule">'.$titreTemp.'</p>
         </div>';

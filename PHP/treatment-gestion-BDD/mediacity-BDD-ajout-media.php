@@ -3,7 +3,7 @@ include_once 'mediacity-lib-BD.php';
 
 function ajoutMedia ($conn, $idApi, $titre, $categorie, $typePrincipale, $idPoster, $idVideo, $synopsis, $nbPossede){
     try{
-        $qry = $conn->prepare("INSERT INTO media (idApi, titre, categorie, typePrincipale, idPoster, idVideo, synopsis, nbPossede, disponibilite) Values (?, ?, ?, ?, ?, ?, ?, ?,?)");
+        $qry = $conn->prepare("INSERT INTO media (idApi, titre, categorie, typePrincipale, idPoster, idVideo, synopsis, nbPossede, disponibilite) Values (?, ?, ?, ?, ?, ?, ?, ?, ?)");
         $qry-> bindParam(1, $idApi);
         $qry-> bindParam(2, $titre);
         $qry-> bindParam(3, $categorie);

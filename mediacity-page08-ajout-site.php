@@ -21,17 +21,17 @@ if ($ajout == "oui"){
         <div class="main-contenu_newMedia" id="main-contenu_box-haut">
             <section class="box-haut_contain">
                 <div class="contain_boxlist">
-                    <label for="type">Page du media</label>
-                    <select name="type" id="type" class="boxlist_list" required>
-                        <option>Choisissez un type</option>
-                        <option value="acc">Acceuil</option>
-                        <option value="film">Film</option>
-                        <option value="serie">Série</option>
+                    <label for="page">Page du media</label>
+                    <select name="page" id="page" class="boxlist_list" required>
+                        <option>Choisissez une page</option>
+                        <option value="pageAccueil">Acceuil</option>
+                        <option value="pageFilm">Film</option>
+                        <option value="pageSerie">Série</option>
                     </select>
                 </div>
                 <div class="contain_boxlist">
-                    <label for="genre">Genre média</label>
-                    <select name="genre" id="genre" class="boxlist_list" required>
+                    <label for="typePrincipale">Type principale du média</label>
+                    <select name="typePrincipale" id="typePrincipale" class="boxlist_list" required>
 
                     </select>
                 </div>
@@ -62,15 +62,16 @@ if ($ajout == "oui"){
         </div>
     </article>
     <form action="/php_projet-CDA/6.projet-mediacity_PHP/projet-mediacity_PHP-en-cour/PHP/treatment-gestion-BDD/mediacity-ajout-contenusite-BDD.php"  method="get">
-        <input id="id-selection" type="text" name="id"/>
+        <input id="id-selection" type="text" name="idApi"/>
         <input id="titre-selection" type="text" name="titre"/>
-        <input id="type-selection" type="text" name="type"/>
-        <input id="zone-selection" type="text" name="zoneEmplacement"/>
-        <input id="emplacement-selection" type="text" name="emplacement"/>
-        <input id="nbpossede-selection" type="text" name="nbpossede"/>
+        <input id="categorie-selection" type="text" name="categorie"/>
+        <input id="typePrincipale-selection" type="text" name="typePrincipale"/>
         <input id="idPoster-selection" type="text" name="idPosterSelection"/>
         <input id="idVideo-selection" type="text" name="idVideoSelection"/>
         <input id="synopsis-selection" type="text" name="synopsisSelection"/>
+        <input id="nbpossede-selection" type="text" name="nbpossede"/>
+        <input id="page-selection" type="text" name="page"/>
+        <input id="emplacement-selection" type="text" name="emplacement"/>
         <a href="#modal1" id="btn-envoyer1" class="btn btn-send js-modal invisibilityBtnEnvoyer">soumettre</a>
         <button id="btn-envoyer" class="btn btn-send invisibility">Envoyer</button>
     </form>
