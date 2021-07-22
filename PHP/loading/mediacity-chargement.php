@@ -75,7 +75,7 @@ function createHtmlSerie($conn,$emplacement){
     if ($emplacementTemp === "chef1" || $emplacementTemp === "chef2" || $emplacementTemp === "chef3"){
         $html = 
         '
-        <div id="'.$idTemp.' class="active">
+        <div id="'.$idTemp.'" class="active">
             <img class="img-select-chef-series" src="https://image.tmdb.org/t/p/w500'.$linkPoster.'" alt="">
             <p class="legende-slide majuscule">'.$titreTemp.'</p>
         </div>';
