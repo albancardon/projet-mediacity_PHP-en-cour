@@ -4,7 +4,7 @@ include_once 'PHP/head.php';
 <body id="page08">
 <?php
 include_once 'PHP/header.php';
-$ajout = (isset($_GET['ajout']) && !empty($_GET['ajout'])) ? htmlspecialchars($_GET['ajout']) : null;
+$ajout = (isset($_POST['ajout']) && !empty($_POST['ajout'])) ? htmlspecialchars($_POST['ajout']) : null;
 if ($ajout == "oui"){
     echo '<script language="Javascript">
     alert ("Ajout effectuer." )
@@ -61,7 +61,7 @@ if ($ajout == "oui"){
         <div id="js___baFilm" class="ba_liste-ba">
         </div>
     </article>
-    <form action="/php_projet-CDA/6.projet-mediacity_PHP/projet-mediacity_PHP-en-cour/PHP/treatment-gestion-BDD/mediacity-ajout-contenusite-BDD.php"  method="get">
+    <form action="/php_projet-CDA/6.projet-mediacity_PHP/projet-mediacity_PHP-en-cour/PHP/treatment-gestion-BDD/mediacity-ajout-contenusite-BDD.php"  method="POST">
         <input id="id-selection" type="text" name="idApi"/>
         <input id="titre-selection" type="text" name="titre"/>
         <input id="categorie-selection" type="text" name="categorie"/>

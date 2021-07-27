@@ -4,8 +4,8 @@ include_once 'PHP/head.php';
 <body id="page09">
 <?php
 include_once 'PHP/header.php';
-foreach ($_GET as $key => $value) {
-    $rep[':' . $key] = (isset($_GET[$key]) && !empty($_GET[$key])) ? htmlspecialchars($_GET[$key]) : null;
+foreach ($_POST as $key => $value) {
+    $rep[':' . $key] = (isset($_POST[$key]) && !empty($_POST[$key])) ? htmlspecialchars($_POST[$key]) : null;
 }
 if (isset($rep[":ajout"])){  
     if ($rep[":ajout"] == "oui"){
@@ -67,7 +67,7 @@ if (isset($rep[":ajout"])){
         <div id="js___posterFilm" class="affiche_container">
         </div>
     </article>
-    <form action="/php_projet-CDA/6.projet-mediacity_PHP/projet-mediacity_PHP-en-cour/PHP/treatment-gestion-BDD/mediacity-BDD-ajout-media.php"  method="get">
+    <form action="/php_projet-CDA/6.projet-mediacity_PHP/projet-mediacity_PHP-en-cour/PHP/treatment-gestion-BDD/mediacity-BDD-ajout-media.php"  method="POST">
         <input id="id-selection" type="text" name="idApi"/>
         <input id="titre-selection" type="text" name="titre"/>
         <input id="type-selection" type="text" name="categorie"/>

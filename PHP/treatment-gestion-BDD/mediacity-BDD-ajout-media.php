@@ -37,8 +37,8 @@ function ajoutMedia ($conn, $idApi, $titre, $categorie, $typePrincipale, $idPost
 function recupDonneeEntre(){
     // Récupération des valeurs saisies et application sécurité
     
-    foreach ($_GET as $key => $value) {
-        $params[':' . $key] = (isset($_GET[$key]) && !empty($_GET[$key])) ? htmlspecialchars($_GET[$key]) : null;
+    foreach ($_POST as $key => $value) {
+        $params[':' . $key] = (isset($_POST[$key]) && !empty($_POST[$key])) ? htmlspecialchars($_POST[$key]) : null;
     }
     $conn = connectionBDD();
     $idApi =  $params[":idApi"];

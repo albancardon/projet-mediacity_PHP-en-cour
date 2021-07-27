@@ -3,8 +3,8 @@ include_once 'mediacity-lib-BD.php';
 
 function modifNbCopie ($conn){
     try{
-        foreach ($_GET as $key => $value) {
-            $params[':' . $key] = (isset($_GET[$key]) && !empty($_GET[$key])) ? htmlspecialchars($_GET[$key]) : null;
+        foreach ($_POST as $key => $value) {
+            $params[':' . $key] = (isset($_POST[$key]) && !empty($_POST[$key])) ? htmlspecialchars($_POST[$key]) : null;
         }
         $titre = $params[":titre"];
         $modifNbCopie = $params[":modifNbCopie"];
@@ -34,8 +34,8 @@ function modifNbCopie ($conn){
 
 function suppCopie ($conn){
     try{
-        foreach ($_GET as $key => $value) {
-            $params[':' . $key] = (isset($_GET[$key]) && !empty($_GET[$key])) ? htmlspecialchars($_GET[$key]) : null;
+        foreach ($_POST as $key => $value) {
+            $params[':' . $key] = (isset($_POST[$key]) && !empty($_POST[$key])) ? htmlspecialchars($_POST[$key]) : null;
         }
         $titre = $params[":titre"];
         $supprimerMedia = $params[":supprimerMedia"];
@@ -62,9 +62,9 @@ function suppCopie ($conn){
 
 function gestioNbCopie($conn){
     try{
-        if (isset($_GET["modifNbCopie"])){
+        if (isset($_POST["modifNbCopie"])){
             modifNbCopie ($conn);
-        }else if (isset($_GET["supprimerMedia"])){
+        }else if (isset($_POST["supprimerMedia"])){
             suppCopie ($conn);
         }else {
             print "Erreur ! Données envoyer non conforme!";
