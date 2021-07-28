@@ -54,15 +54,17 @@
   padding: 0;
   box-sizing: border-box;
 }
+body{
+  padding-right: 0;
+  margin-right: 0;
+  width:100%;
+}
 .aside-back{
   background-color: #0c1e5e;
   color: white;
 }
 .majuscule{
 text-transform:uppercase;
-}
-.majDbutMot{
-text-transform: capitalize;
 }
 .saut-ligne{
   display:block;
@@ -122,11 +124,9 @@ border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width : 27em;
 }
 .nom-selection{
-  font-size: 1.7em;
-  text-align: center;
+  font-size: 2em;
 }
 .date-selection{
   font-size: 1.5em;
@@ -406,7 +406,6 @@ footer{
   width: 2.0em;
 }
 #contact{
-  margin: 1em;
   width: 100%;
   text-align: center;
   font-size: 1.5em;
@@ -469,7 +468,7 @@ main{
 .container{
   display: flex;
   justify-content: space-around;
-  align-items: flex-start;
+  align-items: center;
   flex-wrap: wrap;
   grid-template-columns: repeat(auto-fit, minmax(22em, 1fr));
   grid-gap: 1em;
@@ -585,6 +584,7 @@ main{
 #page01 .liste-contenu{
   display: flex;
   justify-content: space-around;
+  margin: 0 5%;
 } 
 #page01 .video{
   height:25em;
@@ -596,7 +596,7 @@ main{
 }
 #page01 .effet-affiche {
   display: inline-block;
-  margin-bottom: 3em;
+  margin: 5%;
   transition: all .2s ease-in-out;
 }
 #page01 .effet-affiche:hover {
