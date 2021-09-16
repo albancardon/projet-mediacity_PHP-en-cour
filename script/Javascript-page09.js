@@ -57,19 +57,19 @@ function ajoutListeGenre(){
         let option1 = document.createElement("option");
         option1.classList.add("optionGenre");
         option1.textContent = "Action/aventure";
-        option1.value="act";
+        option1.value="action/aventure";
         genre.appendChild(option1);
 
         let option2 = document.createElement("option");
         option2.classList.add("optionGenre");
         option2.textContent = "Comedie/comique";
-        option2.value="com";
+        option2.value="comedie/comique";
         genre.appendChild(option2);
 
         let option3 = document.createElement("option");
         option3.classList.add("optionGenre");
         option3.textContent = "Animation/famillial";
-        option3.value="fam";
+        option3.value="familial/enfance";
         genre.appendChild(option3);
 
     }

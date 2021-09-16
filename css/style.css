@@ -66,6 +66,9 @@ body{
 .majuscule{
 text-transform:uppercase;
 }
+.majDbutMot{
+  text-transform: capitalize;
+  }
 .saut-ligne{
   display:block;
   height: 15px;
@@ -124,9 +127,11 @@ border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 27em;
 }
 .nom-selection{
-  font-size: 2em;
+  font-size: 1.7em;
+  text-align: center;
 }
 .date-selection{
   font-size: 1.5em;
@@ -406,6 +411,7 @@ footer{
   width: 2.0em;
 }
 #contact{
+  margin: 1em;
   width: 100%;
   text-align: center;
   font-size: 1.5em;
@@ -468,7 +474,7 @@ main{
 .container{
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
   grid-template-columns: repeat(auto-fit, minmax(22em, 1fr));
   grid-gap: 1em;
@@ -506,6 +512,7 @@ main{
   margin: 0;
   padding: 0;
   width: 100%;
+  height: 90%;
 }
 .face2{
   background-color: #111;
@@ -639,7 +646,6 @@ main{
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
 }
 .suivant{
   animation: fade 1s;

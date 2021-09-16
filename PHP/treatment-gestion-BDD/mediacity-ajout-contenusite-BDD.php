@@ -21,6 +21,8 @@ function recupDonneeEntre(){
     };
     if ($params[":synopsisSelection"] == "") {
         $synopsis = NULL;
+    }else if($params[":categorie"]=="serie"){
+        $synopsis = NULL;
     }else{
         $synopsis =  $params[":synopsisSelection"];
     };

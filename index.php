@@ -29,6 +29,8 @@ include_once 'PHP/header.php'
                     createHtmlAcceuil($conn,"ac-film1");
                     createHtmlAcceuil($conn,"ac-film2");
                     createHtmlAcceuil($conn,"ac-film3");
+                    createHtmlAcceuil($conn,"ac-film4");
+                    createHtmlAcceuil($conn,"ac-film5");
                 ?>
             </div>
         </article>
@@ -44,32 +46,9 @@ include_once 'PHP/header.php'
                     createHtmlAcceuil($conn,"ac-serie1");
                     createHtmlAcceuil($conn,"ac-serie2");
                     createHtmlAcceuil($conn,"ac-serie3");
+                    createHtmlAcceuil($conn,"ac-serie4");
+                    createHtmlAcceuil($conn,"ac-serie5");
                 ?>
-            </div>
-        </article>
-        <article>
-            <div class="entete-categorie">
-                <h3 class="titre-entete majuscule">
-                    les musiques
-                </h3>
-                <a class="lien plus" href="mediacity-page04-musique.html">plus...</a>
-            </div>
-            <div class="liste-contenu box-image">
-                <figure class="effet-affiche">
-                    <a href="mediacity-page04-musique.html">
-                        <img class="img audio" src="asset/img/page-01-acceuil/damso.jpg" alt="affiche de damso">
-                    </a>
-                </figure>
-                <figure class="effet-affiche">
-                    <a href="mediacity-page04-musique.html">
-                        <img class="img audio" src="asset/img/page-01-acceuil/acdc.jpg" alt="affiche de ACDC">
-                    </a>
-                </figure>
-                <figure class="effet-affiche">
-                    <a href="mediacity-page04-musique.html">
-                        <img class="img audio" src="asset/img/page-01-acceuil/thewknd.jpg" alt="affiche de the wknd">
-                    </a>
-                </figure>
             </div>
         </article>
     </section>

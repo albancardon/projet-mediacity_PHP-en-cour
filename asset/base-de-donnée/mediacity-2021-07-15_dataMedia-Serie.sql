@@ -17,7 +17,7 @@ NULL,
 
 (2384, "k2000", "series", "action/aventure", "/29hiAIFglc72sRWY2tNo3lSpNtn.jpg", NULL, 
 NULL, 
-5, 5, FALSE, NULL, NULL),
+5, 5, FALSE, "pageAccueil", "ac-serie4"),
 
 (4087, "x-files : aux frontières du réel", "series", "action/aventure", "/yB4gZINiV9DaZ627K1f0wiJDQGz.jpg", NULL, 
 NULL, 
@@ -77,7 +77,7 @@ NULL,
 
 (1716, "demain à la une", "series", "comedie/comique", "/bYyZIfCeqawGfaBDreadm7z9daU.jpg", NULL, 
 NULL, 
-3, 3, FALSE, NULL, NULL),
+3, 3, FALSE, "pageAccueil", "ac-serie1"),
 
 (2098, "batman : la série animée", "series", "familial/enfance", "/lBomQFW1vlm1yUYMNSbFZ45R4Ox.jpg", NULL, 
 NULL, 

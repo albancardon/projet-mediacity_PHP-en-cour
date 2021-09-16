@@ -12,8 +12,6 @@
                 href="mediacity-page02-films.php">films</a></li>
             <li id="lien-page03" class="liste-nav effet-lien"><a class="lien"
                 href="mediacity-page03-series.php">series</a></li>
-            <li id="lien-page04" class="liste-nav effet-lien"><a class="lien"
-                href="mediacity-page04-musique.php">musiques</a></li>
             <li id="lien-page05" class="liste-nav effet-lien"><a class="lien"
                 href="mediacity-page05-infos.php">infos</a></li>
             <li id="lien-page08" class="liste-nav effet-lien"><a class="lien"
@@ -46,8 +44,6 @@
                         href="mediacity-page02-films.php">films</a></li>
                 <li id="lien-page03" class="liste-nav effet-lien"><a class="lien"
                         href="mediacity-page03-series.php">series</a></li>
-                <li id="lien-page04" class="liste-nav effet-lien"><a class="lien"
-                        href="mediacity-page04-musique.php">musiques</a></li>
                 <li id="lien-page05" class="liste-nav effet-lien"><a class="lien"
                         href="mediacity-page05-infos.php">infos</a></li>
                 <li id="lien-page06" class="liste-nav effet-lien"><a class="lien"

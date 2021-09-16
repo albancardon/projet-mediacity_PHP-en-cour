@@ -10,9 +10,9 @@ function createHtmlAcceuil($conn,$emplacement){
     $titreTemp = $params[":titre"];
     $linkPoster = $params[":idPoster"];
     $emplacementTemp = $params[":emplacement"];
-    if ($emplacementTemp === "ac-film1" || $emplacementTemp== "ac-film2" || $emplacementTemp== "ac-film3"){
+    if ($emplacementTemp === "ac-film1" || $emplacementTemp== "ac-film2" || $emplacementTemp== "ac-film3" || $emplacementTemp== "ac-film4" || $emplacementTemp== "ac-film5"){
         $link = "mediacity-page02-films.php";
-    }else if ($emplacementTemp === "ac-serie1" || $emplacementTemp== "ac-serie2" || $emplacementTemp== "ac-serie3"){
+    }else if ($emplacementTemp === "ac-serie1" || $emplacementTemp== "ac-serie2" || $emplacementTemp== "ac-serie3" || $emplacementTemp== "ac-serie4" || $emplacementTemp== "ac-serie5"){
         $link = "mediacity-page03-series.php";
     }
 

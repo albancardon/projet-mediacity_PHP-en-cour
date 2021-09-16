@@ -47,7 +47,12 @@ function recupDonneeEntre(){
     $typePrincipale =  $params[":typePrincipale"];
     $idPoster =  $params[":idPosterSelection"];
     $idVideo = NULL;
-    $synopsis =  $params[":synopsisSelection"];
+    if ($params[":categorie"]=="serie") {
+        $synopsis = NULL;
+    } else {
+        $synopsis =  $params[":synopsisSelection"];
+    }
+    
     $nbPossede =  $params[":nbpossede"];
     
     ajoutMedia ($conn, $idApi, $titre, $categorie, $typePrincipale, $idPoster, $idVideo, $synopsis, $nbPossede);

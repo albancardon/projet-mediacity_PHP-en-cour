@@ -10,7 +10,7 @@ VALUES
 
 (329, "jurassique park", "film", "action/aventure", "/1EuPzhbzDgZmTHvS0nC0KSdEslI.jpg", NULL, 
 "Ne pas réveiller le chat qui dort... C'est ce que le milliardaire John Hammond aurait dû se rappeler avant de se lancer dans le clonage de dinosaures. C'est à partir d'une goutte de sang absorbée par un moustique fossilisé que John Hammond et son équipe ont réussi à faire renaître une dizaine d'espèces de dinosaures. Il s'apprête maintenant avec la complicité du docteur Alan Grant, paléontologue de renom, et de son amie Ellie, à ouvrir le plus grand parc à thème du monde. Mais c'était sans compter la cupidité et la malveillance de l'informaticien Dennis Nedry, et éventuellement des dinosaures, seuls maîtres sur l'île...", 
-2, 2, FALSE, NULL, NULL),
+2, 2, FALSE, "pageAccueil", "ac-film4"),
 
 (120, "le Seigneur des anneaux : La Communauté de l'anneau", "film", "action/aventure", "/5OPg6M0yHr21Ovs1fni2H1xpKuF.jpg", "vvx7m22GGtA", 
 "Le jeune et timide Hobbit, Frodon Sacquet, hérite d'un anneau. Bien loin d'être une simple babiole, il s'agit de l'Anneau Unique, un instrument de pouvoir absolu qui permettrait à Sauron, le Seigneur des ténèbres, de régner sur la Terre du Milieu et de réduire en esclavage ses peuples. À moins que Frodon, aidé d'une Compagnie constituée de Hobbits, d'Hommes, d'un Magicien, d'un Nain, et d'un Elfe, ne parvienne à emporter l'Anneau à travers la Terre du Milieu jusqu'à la Crevasse du Destin, lieu où il a été forgé, et à le détruire pour toujours. Un tel périple signifie s'aventurer très loin en Mordor, les terres du Seigneur des ténèbres, où est rassemblée son armée d'Orques maléfiques... La Compagnie doit non seulement combattre les forces extérieures du mal mais aussi les dissensions internes et l'influence corruptrice qu'exerce l'Anneau lui-même.", 
@@ -22,7 +22,7 @@ VALUES
 
 (548, "robocop", "film", "action/aventure", "/4wYAfXPb3srrXwURVfEnySCS5JQ.jpg", NULL, 
 "À l'aube de l'an 2000, Détroit est, comme toujours dans cette sorte d'histoire, la proie du crime et de la corruption. Pour pallier ce terrible état, les services de police inventent une nouvelle arme infaillible, Robocop, mi-homme, mi-robot, policier électronique de chair et d'acier qui a pour mission de sauvegarder la tranquillité de la ville. Mais comme souvent, ce cyborg a aussi une âme.", 
-1, 1, FALSE, NULL, NULL),
+1, 1, FALSE, "pageAccueil", "ac-film5"),
 
 (11932, "la fiancée de chucky", "film", "action/aventure", "/zIfMIoWfLsWjzEsvZuhSGmdn2uI.jpg", NULL, 
 "Chucky hooks up with another murderous doll, the bridal gown-clad Tiffany, for a Route 66 murder spree with their unwitting hosts.", 

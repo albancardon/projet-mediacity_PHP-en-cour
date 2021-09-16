@@ -125,21 +125,45 @@ function ajoutListeEmplacement(){
 
         let option4 = document.createElement("option");
         option4.classList.add("optionEmplacement");
-        option4.textContent = "Emplacement serie 1";
-        option4.value="ac-serie1";
+        option4.textContent = "Emplacement film 4";
+        option4.value="ac-film4";
         emplacement.appendChild(option4);
 
         let option5 = document.createElement("option");
         option5.classList.add("optionEmplacement");
-        option5.textContent = "Emplacement serie 2";
-        option5.value="ac-serie2";
+        option5.textContent = "Emplacement film 5";
+        option5.value="ac-film5";
         emplacement.appendChild(option5);
 
         let option6 = document.createElement("option");
         option6.classList.add("optionEmplacement");
-        option6.textContent = "Emplacement serie 3";
-        option6.value="ac-serie3";
+        option6.textContent = "Emplacement serie 1";
+        option6.value="ac-serie1";
         emplacement.appendChild(option6);
+
+        let option7 = document.createElement("option");
+        option7.classList.add("optionEmplacement");
+        option7.textContent = "Emplacement serie 2";
+        option7.value="ac-serie2";
+        emplacement.appendChild(option7);
+
+        let option8 = document.createElement("option");
+        option8.classList.add("optionEmplacement");
+        option8.textContent = "Emplacement serie 3";
+        option8.value="ac-serie3";
+        emplacement.appendChild(option8);
+
+        let option9 = document.createElement("option");
+        option9.classList.add("optionEmplacement");
+        option9.textContent = "Emplacement serie 4";
+        option9.value="ac-serie4";
+        emplacement.appendChild(option9);
+
+        let option10 = document.createElement("option");
+        option10.classList.add("optionEmplacement");
+        option10.textContent = "Emplacement serie 5";
+        option10.value="ac-serie5";
+        emplacement.appendChild(option10);
 
     } else if (valuePage === "pageFilm" || valuePage === "pageSerie") {
         let valueTypePrincipale = typePrincipale.value;

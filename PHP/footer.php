@@ -30,20 +30,6 @@
                     </li>
                 </ul>
             </div>
-            <div class="boite-liste">
-                <a class="lien" href="mediacity-page04-musique.php"><h3 class="footer-titre-liste">musique</h3></a>
-                <ul class="liste-type lien-liste">
-                    <li>
-                        <a class="lien" href="mediacity-page04-musique.php#rock">rock</a>
-                    </li>
-                    <li>
-                        <a class="lien" href="mediacity-page04-musique.php#pop">pop</a>
-                    </li>
-                    <li>
-                        <a class="lien" href="mediacity-page04-musique.php#rap">rap</a>
-                    </li>
-                </ul>
-            </div>
         </div>
         <div id="contact" class="liste-nav">
             <a class="lien" href="mediacity-page06-contact.php#boxAvis">Laissez nous un message!</a>
